@@ -1,0 +1,40 @@
+module.exports = {
+    name: 'shigure',
+    description: "Shigure self introduction!",
+    execute(client, message, args){
+        message.channel.send('https://youtu.be/WgJM99I_IAw')
+        message.channel.send('Shigure Minaduki (水無月 時雨 Minaduki Shigure) is Kashou’s younger sister and the Minaduki catgirls’ owner. Considerably younger than Kashou, she is deeply attached to her elder brother. She has quite the talent for business and secretly runs her own company. She can’t leave home yet, so she supports Kashou from the shadows. She sometimes gets out of control.')
+        message.channel.send('**Appearance**')
+        message.channel.send('Shigure appears as a young girl with dark violet, shoulder-length hair and violet eyes. Her hair has flower ornaments on both sides. She typically wears a kimono with flower patterns on it and dark indigo coloured zori sandals. During working hours, she wears the La Soleil uniform with the addition of a nekomimi headband.')
+        message.channel.send('**Personality**')
+        message.channel.send('Shigure is an elegant and intelligent young girl. She has looked after and trained most of the Minaduki catgirls so they all earn their Bells (the only exceptions being Chocola and Vanilla, and even then they got their Bells only a short while after leaving), so she has developed a very maternal sense of pride in their achievements, as well as mother-like ways of dealing with their various shenanigans. She is always well-composed and remains very calm even when under pressure. Some of the catgirls are even terrified and creeped out when she somehow still smiles while being mad.')
+        message.channel.send('However, despite her intelligence and elegant appearance, she is implied to harbour an incestuous and unrequited love for Kashou, her brother, occasionally lamenting how he doesnt seem as close to her as in the past.')
+        message.channel.send('**Attributes**')
+        message.channel.send('Race : Human')
+        message.channel.send('Gender : Female')
+        message.channel.send('Age : Unknown')
+        message.channel.send('**Characteristics**')
+        message.channel.send('Complexion : Pale')
+        message.channel.send('Height : 133cm')
+        message.channel.send('Weight : 28.6kg')
+        message.channel.send('3 Size : 62cm,49cm,65cm')
+        message.channel.send('Hair Colour : Dark Violet')
+        message.channel.send('Eye Colour : Violet')
+        message.channel.send('Occupations : School Student, La Soleil employee, Broker, Blogger, Shareholder')
+        message.channel.send('**Relationships**')
+        message.channel.send('Azuki - Pet')
+        message.channel.send('Maple - Pet')
+        message.channel.send('Cinnamon - Pet')
+        message.channel.send('Coconut - Pet')
+        message.channel.send('Chocola - Pet')
+        message.channel.send('Vanilla - Pet')
+        message.channel.send('Kashou - Older Brother')
+        message.channel.send('**Trivia**')
+        message.channel.send('Shigure and Milk have the same voice actor.')
+        message.channel.send('During a flashback sequence in the anime, Shigure is not present during the opening of Patisserie La Soleil as an employee. As a matter of fact, Shigure wouldnt work for Patisserie La Soleil until Episode 8, where she ends up feeling embarrassed dressing up like a cat, and decidedly quitting shortly after.')
+        message.channel.send('*Shigure embarrassment of dressing up as a cat is puzzling.*')
+        message.channel.send('In the Nekopara OVA, Shigure kimono has apples at the bottom, however in the anime, this is not the case.')
+        message.channel.send('With their similar personalities and enjoyment in putting the Minaduki Catgirls in lewd situations')
+        message.channel.send('https://static.wikia.nocookie.net/nekopara/images/e/e5/Ch_shi_img_01.png/revision/latest/scale-to-width-down/270?cb=20200519141840');
+    }
+}

@@ -1,0 +1,43 @@
+module.exports = {
+    name: 'vanilla',
+    description: "Vanilla self introduction!",
+    execute(client, message, args){
+        message.channel.send('https://youtu.be/ZmIqFqnMj60')
+        message.channel.send('Vanilla (バニラ Banira) is a clever and quiet catgirl who loves Chocola. She is Chocola’s twin sister and the youngest among the Minaduki catgirls. Vanilla is prone to be misunderstood because she rarely expresses her emotions. In fact, she is quite smart and often makes some remarkable insights. Her sharp wit and I’ll-do-things-my-way attitude make her Chocola’s complete opposite. However, she remains both kind-hearted and, well, catlike.')
+        message.channel.send('**Appearance**')
+        message.channel.send('In contrast to her twin Chocola, Vanilla  ears, tail and hair are primarily white with a subtle pink undertone. She has blue eyes which are often slightly squinted, and her hair is tied up and styled as twin tails supported by a blue ribbon strand.')
+        message.channel.send('Her usual attire consists of a light blue and navy blue lolita-style dress with white shin-length socks with garter trims and blue Mary Jane shoes. She wears two large blue ribbons; one on the top of her head and one on her collar. Her left hand is lightly wrapped around with a blue string and she wears a small garter near the tip of her tail.')
+        message.channel.send('After she passes her independent catgirl training, she receives a gold bell that is placed on her collar ribbon.')
+        message.channel.send('**Personality**')
+        message.channel.send('Vanilla is quiet, calm and very stoic. She rarely expresses her emotions, making her a somewhat of a kūdere character, as opposed to her sister energetic, playful personality. She loves her twin sister Chocola and will accompany her always due to her sis-con-like relationship towards her.')
+        message.channel.send('**Attributes**')
+        message.channel.send('Race : Catgirl')
+        message.channel.send('Breed : Mix Breed')
+        message.channel.send('Gender : Female')
+        message.channel.send('Age : 9 months')
+        message.channel.send('**Characteristics**')
+        message.channel.send('Complexion : Pale')
+        message.channel.send('Height(Kid) : 123cm')
+        message.channel.send('Height(Adult) : 149cm')
+        message.channel.send('Weight(Kid) : 23.6kg')
+        message.channel.send('3 Size(Kid) : 59cm,61cm,66cm')
+        message.channel.send('3 Size(Adult) : 70m,52cm,75cm')
+        message.channel.send('Hair Colour : White with pink undertones')
+        message.channel.send('Eye Colour : Blue')
+        message.channel.send('Occupation : La Soleil employee')
+        message.channel.send('**Relationships**')
+        message.channel.send('Azuki - Older Sister')
+        message.channel.send('Maple - Older Sister')
+        message.channel.send('Cinnamon - Older Sister')
+        message.channel.send('Coconut - Older Sister')
+        message.channel.send('Chocola - Biological Twin Sister')
+        message.channel.send('Shigure - Owner')
+        message.channel.send('Kashou - Owner and Partner')
+        message.channel.send('**Trivia**')
+        message.channel.send('Vanilla has a running gag that whenever she thinks Kashou is acting very perverted, she calls him in perverted names like "horny pastry puffer" or "pervy pastry puffer" (エロパティシエ ero pattishie).')
+        message.channel.send('There are two possible references where her name came from: either from the kind of orchid or the type of flavour [but it is more likely for her name to be based on the latter because her twin name, Chocola, is based on the type of flavour: "chocolate".]')
+        message.channel.send('Vanilla looks more like the same, or older girl type, because of her characteristic for being level-headed and somewhat mature.')
+        message.channel.send('Chocola and Vanilla cat breeds were unidentified until the release of the Nekopara OVA website, where they were confirmed to be mixed.')
+        message.channel.send('https://static.wikia.nocookie.net/nekopara/images/2/27/Ch_van_img_02.png/revision/latest/scale-to-width-down/310?cb=20200519141355');
+    }
+}
