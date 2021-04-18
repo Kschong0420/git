@@ -6,6 +6,8 @@ const fetch = require('node-fetch')
 const querystring = require('querystring')
 const fs = require("fs")
 const { fight } = require('weky')
+const { CanvasSenpai } = require("canvas-senpai")
+const canva = new CanvasSenpai();
 
 const memberCounter = require('./counters/member-counter')
 const config = require("./config.json")
@@ -25,6 +27,24 @@ fs.readdir("./commands/", (err, files) => {
     client.commands.set(cmd.name, cmd)
   })
 })
+
+//welcome card
+client.on('guildMemberAdd', async member => {
+  const channel = member.guild.channels.cache.find(ch => ch.name === '💬-chit-chatting');
+  if (!channel) return;
+
+ let data = await canva.welcome(member, { link: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxZEkMUju9qZyLuvQ12i0JRSrgad1dyn59GA&usqp=CAU", block: false })
+
+  const attachment = new Discord.MessageAttachment(
+    data,
+    "welcome-image.png"
+  );
+
+  channel.send(
+    `Welcome to the server, ${member.user.username}!`,
+    attachment
+  );   
+ });
 
 //global chat
 client.on('message', async message => {
