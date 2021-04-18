@@ -23,7 +23,6 @@
     "common-tags": "^1.8.0",
     "custom-translate": "^2.2.8",
     "discord-battleship": "^1.0.4",
-    "discord-tts": "^1.0.3",
     "discord.js": "^12.5.1",
     "distube": "^2.8.10",
     "dotenv": "^8.2.0",
