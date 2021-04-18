@@ -6,8 +6,8 @@ const fetch = require('node-fetch')
 const querystring = require('querystring')
 const fs = require("fs")
 const { fight } = require('weky')
-const { CanvasSenpai } = require("canvas-senpai")
-const canva = new CanvasSenpai();
+//const { CanvasSenpai } = require("canvas-senpai")
+//const canva = new CanvasSenpai();
 
 const memberCounter = require('./counters/member-counter')
 const config = require("./config.json")
