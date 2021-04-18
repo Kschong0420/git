@@ -29,22 +29,22 @@ fs.readdir("./commands/", (err, files) => {
 })
 
 //welcome card
-client.on('guildMemberAdd', async member => {
-  const channel = member.guild.channels.cache.find(ch => ch.name === '💬-chit-chatting');
-  if (!channel) return;
+//client.on('guildMemberAdd', async member => {
+//  const channel = member.guild.channels.cache.find(ch => ch.name === '💬-chit-chatting');
+//  if (!channel) return;
 
- let data = await canva.welcome(member, { link: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxZEkMUju9qZyLuvQ12i0JRSrgad1dyn59GA&usqp=CAU", block: false })
+// let data = await canva.welcome(member, { link: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxZEkMUju9qZyLuvQ12i0JRSrgad1dyn59GA&usqp=CAU", blur: false })
 
-  const attachment = new Discord.MessageAttachment(
-    data,
-    "welcome-image.png"
-  );
+//  const attachment = new Discord.MessageAttachment(
+//    data,
+//    "welcome-image.png"
+//  );
 
-  channel.send(
-    `Welcome to the server, ${member.user.username}!`,
-    attachment
-  );   
- });
+//  channel.send(
+//    `Welcome to the server, ${member.user.username}!`,
+//    attachment
+//  );   
+// });
 
 //global chat
 client.on('message', async message => {

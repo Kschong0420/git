@@ -18,7 +18,6 @@
     "amethyste-api": "^1.1.5",
     "axios": "^0.21.1",
     "canvacord": "^5.1.0",
-    "canvas-senpai": "^1.0.0",
     "cheerio": "^1.0.0-rc.5",
     "colon-notation": "^1.2.1",
     "common-tags": "^1.8.0",
