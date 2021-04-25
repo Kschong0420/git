@@ -46,6 +46,53 @@ fs.readdir("./commands/", (err, files) => {
 //  );   
 // });
 
+//non nitro emoji 
+///not stable yet
+////sources : https://sourceb.in/LVgLZqK7KI
+client.on("message", async message => {
+  function Check(str) {
+    if (
+      client.emojis.cache.find(emoji => emoji.name === str) ||
+      message.guild.emojis.cache.find(emoji => emoji.name === str)
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  if (message.content.startsWith(":") && message.content.endsWith(":")) {
+    let EmojiName = message.content.slice(1, -1);
+
+    if (Check(EmojiName) === true) {
+      const channel = client.channels.cache.get(message.channel.id);
+      try {
+        let webhooks = await channel.fetchWebhooks();
+        let webhook = webhooks.first();
+        if (webhook === undefined || null || !webhook) {
+          let Created = channel
+            .createWebhook("Vanilla", {
+              avatar:
+                "https://cdn.discordapp.com/avatars/814038095128166400/17c9d4d1b887e40b61be092b9f2988ee.webp?size=256"
+            })
+            .then(async webhook => {
+              const emoji =
+                client.emojis.cache.find(e => e.name == EmojiName).id ||
+                message.guild.emojis.cache.find(e => e.name === EmojiName).id;
+
+              await webhook.send(`${client.emojis.cache.get(emoji)}`, {
+                username: message.author.username,
+                avatarURL: message.author.avatarURL({ dynamic: true })
+              });
+              message.delete();
+            });
+        }
+      } catch (error) {
+        console.log(`Error :\n${error}`);
+      }
+    }
+  }
+});
+
 //chat bot
 client.on('message', async (message) => {
  if (message.author.bot || message.channel.type === 'dm') return;
@@ -55,7 +102,7 @@ if(message.channel.id === '835218953407299584') {
     fetch(`https://api.monkedev.com/fun/chat?msg=${message.content}&uid=${message.author.id}&key=WKTXwCVoosGtQNCNfIymRmx1t`)
     .then(response => response.json())
     .then(data => {
-        message.reply(data.response)
+        message.channel.send(data.response)
     }).catch(() => { message.channel.send('error') })
     
     
