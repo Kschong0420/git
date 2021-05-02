@@ -13,6 +13,7 @@ module.exports = {
             .addFields(
                 { name: '001', value: 'Nekopara opening song playlist' },
                 { name: '002', value: 'Nekopara ending song playlist' },
+                { name: '003', value: 'Japanese song playlist(Incomplete)' },
             )
 
         const pages = [embed1];
