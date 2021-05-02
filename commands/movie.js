@@ -20,7 +20,7 @@ module.exports = {
 			//.addField('Vote Count', random.vote_count, true)
 			.addField('Original Language', random.original_language, true)
 			.addField('Release Date', random.first_air_date || random.release_date, true)
-			.setImage(`https://image.tmdb.org/t/p/w500${random.poster_path}` || `https://image.tmdb.org/t/p/w500${random.backdrop_path}`)
+			.setThumbnail(`https://image.tmdb.org/t/p/w500${random.poster_path}` || `https://image.tmdb.org/t/p/w500${random.backdrop_path}`)
 			.setColor('RANDOM')
 			.setAuthor(message.author.username, message.author.displayAvatarURL());
 		message.channel.send(embed);
