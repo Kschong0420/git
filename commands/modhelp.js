@@ -23,7 +23,7 @@ module.exports = {
           { name: 'slowmode <second> <reason>', value: 'let the channel in slow mode' },//require administrator perms
           { name: 'show <channel>', value: 'show the channel that you mentioned'},//require administrator perms
           { name: 'tempmute <username> <time(ms)>', value: 'mute someone for temporary time in unit ms' },//require manage messages perms
-          { name: 'unlock', value: 'umnlock the channel'},//require administrator perms
+          { name: 'unlock', value: 'unlock the channel'},//require administrator perms
           { name: 'unmute <username>', value: 'unmute someone' },//require manage messages perms
           { name: 'warn <username> <reason>', value: 'warn someone' },//require manage messages perms
         )
