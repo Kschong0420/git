@@ -13,6 +13,9 @@ module.exports = {
             .setDescription('Type v <command> or V <command> to get a NSFW picture!')
             .setFooter('NSFW command only can use in NSFW channel.')
             .addFields(
+                { name: 'sfwaw', value: 'get a sfw anime wallpaper (maybe contain nsfw)' },
+                { name: 'sfwmaw', value: 'get a sfw mobile phone anime wallpaper (maybe contain nsfw)' },
+                { name: 'sfwneko', value: 'get a sfw neko picture (maybe contain nsfw)' },
                 { name: 'nsfwahegao', value: 'So happy woman faces :))'},
                 { name: 'nsfwass', value: 'I know you like anime ass~ uwu'},
                 { name: 'nsfwboobjob', value: 'So soft, round ... gentle ... damn we love it'},

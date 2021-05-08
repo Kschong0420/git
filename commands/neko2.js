@@ -1,17 +1,13 @@
-// Imports Discord.JS and HMtai //
 const Discord = require("discord.js");
-const hmtai = require("hmtai");
-
+const superagent = require('superagent');
 module.exports = {
-    name: 'neko2',
-    async execute(cilent, message, args, Discord) {
-
-        const embed = new Discord.MessageEmbed()
-
-        .setImage(hmtai.neko())
-        message.channel.send(embed)
-    }
-}
-
-//https://www.npmjs.com/package/hmtai
-//search for more command
+    name: "neko2",
+    async execute(client, message, args) {
+    const { body } = await superagent
+       .get('https://nekos.life/api/neko');
+       const embed = new Discord.MessageEmbed()
+       .setColor(0x00A2E8)
+       .setImage(body.neko)
+       message.channel.send(embed)
+ }}
+   

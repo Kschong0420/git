@@ -20,7 +20,7 @@ module.exports = {
                 { name: 'animeimg <pat/hug/waifu/cry/kiss/slap/smug/punch>', value: 'get a anime image or gif according to the type you want' },
                 { name: 'avatar <one or more than one username>', value: 'check their avater' },
                 { name: 'avatar2 <username>', value: 'check the avatar in bigger size' },
-                { name: 'aw', value: 'get a anime wallpaper' },
+                //{ name: 'aw', value: 'get a anime wallpaper' },
             )
 
         const embed2 = new Discord.MessageEmbed()
@@ -36,7 +36,7 @@ module.exports = {
                 { name: 'butter', value: 'fly~' },
                 { name: 'cal <add/subtract/multiply/divide> <first number> <second number>', value: 'do operation between first number to second number' },
                 { name: 'channel <channel name>', value: 'check the channel info' },
-                { name: 'character', value: 'get nekopara character detail and will cause story spoil' },
+                //{ name: 'character', value: 'get nekopara character detail and will cause story spoil' },
                 { name: 'cavatar <avatar>', value: 'check someone avatar in circle form' },
                 { name: 'coinflip', value: 'choose head or tail and see the result' },
             )
@@ -105,7 +105,7 @@ module.exports = {
                 { name: 'lyric <artist>', value: 'after typing this command type the song you want search without prefix to search the song you want' },
                 { name: 'mania <osu username>', value: 'check the detail for that username in mania mode' },
                 { name: 'math <power/root> <first number> <second number>', value: 'calculate harder operation between first number and second number' },
-                { name: 'maw', value: 'get a mobile phone anime wallpaper' },
+                //{ name: 'maw', value: 'get a mobile phone anime wallpaper' },
                 { name: 'mcserver <ip> <port>', value: 'check minecraft server detail' },
                 { name: 'membercount', value: 'show the server got how many member include bot' },
                 { name: 'meme', value: 'get a meme' },
@@ -121,8 +121,8 @@ module.exports = {
             .addFields(
                 { name: 'movie <query>', value: 'search movie' },
                 { name: 'neko', value: 'get a neko picture' },
+                //{ name: 'neko2', value: 'get a neko picture' },
                 { name: 'neko2', value: 'get a neko picture' },
-                { name: 'neko3', value: 'get a neko picture' },
                 { name: 'nsfwhelp', value: 'get a nsfw command list' },
                 { name: 'numberguess', value: 'guess a number between 1 to 100' },
                 { name: 'op', value: 'check all nekopara opening song' },
