@@ -6,6 +6,7 @@ const fetch = require('node-fetch')
 const querystring = require('querystring')
 const fs = require("fs")
 const { fight } = require('weky')
+const { DiscordTogether } = require('discord-together');
 //const { CanvasSenpai } = require("canvas-senpai")
 //const canva = new CanvasSenpai();
 
@@ -17,6 +18,7 @@ client.aliases = new Discord.Collection()
 client.snipes = new Discord.Collection()
 client.commands = new Discord.Collection()
 client.events = new Discord.Collection()
+client.discordTogether = new DiscordTogether(client);
 
 fs.readdir("./commands/", (err, files) => {
   if (err) return console.log("Could not find any commands!")
@@ -45,6 +47,58 @@ fs.readdir("./commands/", (err, files) => {
 //    attachment
 //  );   
 // });
+
+//Discord Together - youtube
+client.on('message', async message => {
+  if (message.content.startsWith('v youtube-together')) {
+    if(!message.member.voice.channel) return message.channel.send('You need to join a voice channel to use this command.')
+      if(message.member.voice.channel) {
+          client.discordTogether.createTogetherCode(message.member.voice.channelID, 'youtube').then(async invite => {
+              message.channel.send(`${invite.code}`);
+              message.channel.send('Click the link to join (Only for PC users)')
+          });
+      };
+  };
+});
+
+//Discord Together - poker
+client.on('message', async message => {
+  if (message.content.startsWith('v poker-together')) {
+    if(!message.member.voice.channel) return message.channel.send('You need to join a voice channel to use this command.')
+      if(message.member.voice.channel) {
+          client.discordTogether.createTogetherCode(message.member.voice.channelID, 'poker').then(async invite => {
+              message.channel.send(`${invite.code}`);
+              message.channel.send('Click the link to join (Only for PC users)')
+          });
+      };
+  };
+});
+
+//Discord Together - fishing
+client.on('message', async message => {
+  if (message.content.startsWith('v fishing-together')) {
+    if(!message.member.voice.channel) return message.channel.send('You need to join a voice channel to use this command.')
+      if(message.member.voice.channel) {
+          client.discordTogether.createTogetherCode(message.member.voice.channelID, 'fishing').then(async invite => {
+              message.channel.send(`${invite.code}`);
+              message.channel.send('Click the link to join (Only for PC users)')
+          });
+      };
+  };
+});
+
+//Discord Together - betrayal
+client.on('message', async message => {
+  if (message.content.startsWith('v betrayal-together')) {
+    if(!message.member.voice.channel) return message.channel.send('You need to join a voice channel to use this command.')
+      if(message.member.voice.channel) {
+          client.discordTogether.createTogetherCode(message.member.voice.channelID, 'betrayal').then(async invite => {
+              message.channel.send(`${invite.code}`);
+              message.channel.send('Click the link to join (Only for PC users)')
+          });
+      };
+  };
+});
 
 //non nitro emoji 
 ///not stable yet
