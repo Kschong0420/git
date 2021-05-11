@@ -1,16 +1,21 @@
-const { MessageEmbed } = require('discord.js');
+const { MessageEmbed } = require('discord.js')
 
 module.exports = {
     name: 'snipe',
     async execute(client, message, args) {
         const msg = client.snipes.get(message.channel.id)
-        if (!msg) return message.reply('There\'s nothing to snipe!')
+        if (!msg) {
+            return message.channel.send('There is nothing to snipe.')
+        }
+
         const embed = new MessageEmbed()
-            .setAuthor(msg.author, msg.member.user.displayAvatarURL())
-            .setDescription(msg.content)
-            .setFooter('Get sniped lol')
-            .setColor("RED")
-            .setTimestamp()
+        .setAuthor(msg.author, msg.profilephoto)
+        .setDescription(msg.content)
+        .setColor('RANDOM')
+        .setTimestamp(msg.date)
+        .setFooter('Get sniped lol')
+        if (msg.image) embed.setImage(msg.image)
+
         message.channel.send(embed)
-    }
+    } //that should be it, now lets test it !
 }

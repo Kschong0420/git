@@ -214,13 +214,16 @@ client.on('message', async message => {
 })
 
 //snipe core
-client.on("messageDelete", (message) => {
-  client.snipes.set(message.channel.id, {
-    content: message.content,
-    author: message.author.tag,
-    member: message.member,
-    image: message.attachments.first() ? message.attachments.first().proxyURL : null
-  })
+client.snipes = new Map();
+client.on('messageDelete', function(message, channel) {
+      if (message.author.bot) return;
+      client.snipes.set(message.channel.id, {
+         content: message.content,
+         profilephoto: message.author.displayAvatarURL({ dynamic : true }),
+         author: message.author.tag,
+         date: message.createdTimestamp,
+         image: message.attachments.first() ? message.attachments.first().proxyURL : null
+      }) 
 })
 
 //status
