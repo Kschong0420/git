@@ -11,7 +11,7 @@ module.exports = {
 
         try {
             
-            message.channel.send('Command Accepted! Self-Remove program activated!');
+            message.channel.send('Command Accepted! Self-Removed program activated!');
             message.delete();
             message.guild.leave();
     

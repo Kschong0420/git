@@ -8,15 +8,7 @@ module.exports = {
     async execute(client, message, args) {
        if (message.author.bot) return
 
-  let user;
-
-  if (message.mentions.users.first()) {
-    user = message.mentions.users.first();
-  } else if (args[0]) {
-    user = message.guild.members.cache.get(args[0]).user;
-  } else {
-    user = message.author;
-  }
+  let user = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(r => r.user.username.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.guild.members.cache.find(r => r.displayName.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.member;
 
 let status;
 if (user.presence.activities.length === 1) status = user.presence.activities[0];

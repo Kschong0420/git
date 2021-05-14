@@ -4,7 +4,7 @@ module.exports = {
     name: "compliment",
     aliases: ["comp"],
     async execute(client, message, args) {
-    let user = message.mentions.users.first();
+    let user = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(r => r.user.username.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.guild.members.cache.find(r => r.displayName.toLowerCase() === args.join(' ').toLocaleLowerCase())
     if (message.mentions.users === message.author.username) return message.reply('You can not compliment yourself');
     if (message.mentions.users.size < 1) return message.reply('You must mention someone to compliment them.')
     var roast = [

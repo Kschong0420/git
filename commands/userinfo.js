@@ -37,7 +37,7 @@ module.exports = {
             "VERIFIED_DEVELOPER": "Dev"
         };
 
-        let user = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.member;
+        let user = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(r => r.user.username.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.guild.members.cache.find(r => r.displayName.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.member;
 
         let members = message.guild.members.cache
             .sort((a, b) => a.joinedTimestamp - b.joinedTimestamp)

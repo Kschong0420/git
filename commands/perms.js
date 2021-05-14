@@ -4,7 +4,7 @@ module.exports = {
     name: "permscheck",
     aliases: ["perms", "permissions", "perm", "permcheck"],
     async execute(client, message, args, Discord) {
-        let user = message.mentions.members.first() || message.member
+        let user = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(r => r.user.username.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.guild.members.cache.find(r => r.displayName.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.member;
         let no = "❌"
         let yes = "✅"
         let embed = new Discord.MessageEmbed({

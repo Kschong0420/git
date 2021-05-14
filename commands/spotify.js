@@ -6,12 +6,7 @@ module.exports = {
     name: "spotify",
     aliases: ['spot', 'sy', 'stf'],
     async execute(client, message, args) {
-        let user;
-        if (message.mentions.users.first()) {
-            user = message.mentions.users.first();
-        } else {
-            user = message.author;
-        }
+        let user = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(r => r.user.username.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.guild.members.cache.find(r => r.displayName.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.member;
     
         let status;
         if (user.presence.activities.length === 1) status = user.presence.activities[0];

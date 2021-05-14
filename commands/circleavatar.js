@@ -7,7 +7,7 @@ module.exports = {
 
     async execute(client, message, args) {
 
-        const user = message.mentions.users.first() || message.author || client.users.cache.get(u => u.id === args[0])
+        const user = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(r => r.user.username.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.guild.members.cache.find(r => r.displayName.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.member;
 
         let avatar = user.displayAvatarURL({size: 4096, dynamic: true, format: "png"});
 
