@@ -10,10 +10,10 @@ module.exports = {
         .setTitle('Vanilla Command List')
         .setDescription('Type v <command> or V <command> to use me!')
         .addFields(
-          //{ name: 'ban <username> <reason>', value: 'ban someone' },//require administrator perms
+          { name: 'ban <username> <reason>', value: 'ban someone' },//require ban members perms
           { name: 'hangman <channel> <word>', value: 'open a new hangman game' },//require manage message perms
           { name: 'hide <channel>', value: 'hide the channel that you mentioned'},//require administrator perms
-          //{ name: 'kick <username> <reason>', value: 'kick someone' },//require administrator perms
+          { name: 'kick <username> <reason>', value: 'kick someone' },//require kick perms
           { name: 'lock', value: 'lock the channel where you use this command'},//require administrator perms
           { name: 'lockdown <on/off>', value: 'lock down the whole server' },//require administrator perms
          // { name: 'mute <username>', value: 'mute someone' },//require manage messages perms
