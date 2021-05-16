@@ -161,7 +161,7 @@ client.on("message", async message => {
 client.on('message', async (message) => {
  if (message.author.bot || message.channel.type === 'dm') return;
 
-if(message.channel.id === '835218953407299584') { 
+if(message.channel.name === 'vanilla-chat-bot' || message.channel.id === '835218953407299584') { 
 
     fetch(`https://api.monkedev.com/fun/chat?msg=${message.content}&uid=${message.author.id}&key=WKTXwCVoosGtQNCNfIymRmx1t`)
     .then(response => response.json())
