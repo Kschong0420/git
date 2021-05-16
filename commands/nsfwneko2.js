@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const snekfetch = require('snekfetch');
 module.exports = {
     name: 'nsfwneko2',
-    aliases: ['nneko2'],
+    aliases: ['nneko2', 'hneko2'],
     async execute(client, message, args) {
         const { body } = await snekfetch
             .get('https://nekos.life/api/lewd/neko')
