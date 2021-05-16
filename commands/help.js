@@ -127,6 +127,7 @@ module.exports = {
                 { name: 'numberguess', value: 'guess a number between 1 to 100' },
                 { name: 'op', value: 'check all nekopara opening song' },
                 { name: 'osu <osu username>', value: 'check the detail for that username in circle mode' },
+                { name: 'people <query>', value: 'check a people detail in real life' },
                 { name: 'percentage <amount> <maximum>', value: 'calculate the percentage according to query given' },
                 { name: 'perms <username>', value: 'check someone permissions in current server' },
             )
