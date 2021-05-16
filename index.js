@@ -243,6 +243,7 @@ client.once('ready', () => {
 client.on('messageDelete', async message => {
   const logchannel = message.guild.channels.cache.find(ch => ch.name === 'logchannel')
   if (!logchannel) return
+  if (message.author.bot) return
   const embed = new Discord.MessageEmbed()
     .setColor('#0352fc')
     .setTitle('Deleted Message')
@@ -261,6 +262,7 @@ client.on('messageDelete', async message => {
 client.on('messageUpdate', async message => {
   const logchannel = message.guild.channels.cache.find(ch => ch.name === 'logchannel')
   if (!logchannel) return
+  if (message.author.bot) return
   const embed = new Discord.MessageEmbed()
     .setColor('#fca503')
     .setTitle('Edited Message')
