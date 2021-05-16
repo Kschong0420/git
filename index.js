@@ -308,7 +308,7 @@ client.on('message', async message => {
   const prefix = process.env.PREFIX
   const args = message.content.substring(prefix.length).split(' ')
 
-  if (message.content.startsWith(`${prefix}urban`)) {
+  if (message.content.toLowerCase().startsWith(`${prefix}urban`)) {
     const searchString = querystring.stringify({ term: args.slice(1).join(' ') })
 
     if (!args.slice(1).join(' ')) {
