@@ -8,6 +8,10 @@ module.exports = {
     var user = message.mentions.users.first();
     if(!user) return message.reply('You didn\'t mention anyone!');
 
+    if(user.id === message.author.id) {
+        return message.reply("You cannot warn yourself!")
+    }
+
     var member;
 
     try {
