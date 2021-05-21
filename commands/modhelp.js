@@ -11,6 +11,7 @@ module.exports = {
         .setDescription('Type v <command> or V <command> to use me!')
         .addFields(
           { name: 'ban <username> <reason>', value: 'ban someone' },//require ban members perms
+          { name: 'embed', value: 'can use for some important announcement' },//require manage messages perms
           { name: 'hangman <channel> <word>', value: 'open a new hangman game' },//require manage message perms
           { name: 'hide <channel>', value: 'hide the channel that you mentioned'},//require administrator perms
           { name: 'kick <username> <reason>', value: 'kick someone' },//require kick perms
