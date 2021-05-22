@@ -2,7 +2,7 @@ const Discord = require('discord.js')
 
 module.exports = {
   name: 'membercount',
-  cooldown: 30,
+  cooldown: 15,
   description: 'show amount of users in the server!',
   execute (client, message, args) {
     const membersInServer = message.guild.memberCount

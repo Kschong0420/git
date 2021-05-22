@@ -3,7 +3,7 @@ const { MessageEmbed } = require('discord.js');
 module.exports = {
     name: 'unlock',
     aliases: ["lockoff", "lock_off", "lock-off"],
-    cooldown: 15,
+    cooldown: 5,
     async execute(client, message, args) {
 
         if (!message.guild.member(message.author).hasPermission("ADMINISTRATOR"))

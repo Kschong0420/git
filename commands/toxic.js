@@ -2,7 +2,7 @@ const { MessageEmbed } = require("discord.js")
 
 module.exports = {
     name: "toxic",
-    cooldown: 15,
+    cooldown: 5,
     async execute(client, message, args) {
         const embed = new MessageEmbed()
             .setTitle('TOXIC!!!')

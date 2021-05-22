@@ -4,7 +4,7 @@ const fetch = require("node-fetch");
 module.exports = {
         name: "love",
         description: "Shows Image of 2 Lovers, 3 persons!",
-        cooldown: 20,
+        cooldown: 10,
         usage: "[mention(1) | ID(1) | name(1) | nickname(1)] [mention(2) | ID(2) | name(2) | nickname(2)]",
         accessableby: "everyone",
 
