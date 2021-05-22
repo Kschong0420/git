@@ -2,6 +2,7 @@ const discord = require('discord.js')
 
 module.exports = {
 	name: "coinflip",
+	cooldown: 5,
 	description: "coinflip",
 	async execute(client, message, args) {
 		let embed = new discord.MessageEmbed()

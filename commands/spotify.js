@@ -5,6 +5,7 @@ const convert = require('parse-ms')
 module.exports = {
     name: "spotify",
     aliases: ['spot', 'sy', 'stf'],
+    cooldown: 5,
     async execute(client, message, args) {
         let user = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(r => r.user.username.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.guild.members.cache.find(r => r.displayName.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.member;
     

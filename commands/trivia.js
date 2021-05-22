@@ -1,6 +1,7 @@
 module.exports = {
 	name: 'trivia',
     description: 'Answer trivia questions',
+    cooldown: 5,
 	async execute(client, message, args) {
         const discord = require('discord.js')
 const fetch = require("node-fetch"); 

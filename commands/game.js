@@ -11,6 +11,7 @@ const RockPaperScissors = new koenie06games.RockPaperScissors()
 module.exports = {
     name: 'game',
     aliases: ['games'],
+    cooldown: 10,
     description: 'Play bunch of games with other people',
     usage: 'game <gamename>',
    

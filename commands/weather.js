@@ -5,6 +5,7 @@ const Discord = require('discord.js');
 module.exports = {
     name: 'weather',
     aliases: ['wthr'],
+    cooldown: 5,
     async execute(client, message, args) {
     
         weather.find({search: args.join(" "), degreeType: 'C'}, function (error, result){

@@ -2,6 +2,7 @@ const Discord = require("discord.js")
 
 module.exports = {
     name: "ship",
+    cooldown: 5,
     async execute(client, message, args) {
         if (!args[0]) return message.channel.send("Please mention someone!")
         if (!args[1]) return message.channel.send("Please menton someone else!")

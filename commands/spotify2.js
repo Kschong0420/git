@@ -5,6 +5,7 @@ module.exports = {
     name : 'spotify2',
     aliases : ['spot2' , 'sy2'],
     description : 'Spotify',
+    cooldown: 5,
     async execute(client, message, args) {
        if (message.author.bot) return
 

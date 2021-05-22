@@ -3,6 +3,7 @@ const random = require("something-random-on-discord").Random
 module.exports = {
     name: "animeimg",
     aliases: ["ai"],
+    cooldown: 20,
     async execute(client, message, args) {
 
         const type = args.join(' ')

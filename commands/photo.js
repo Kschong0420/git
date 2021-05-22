@@ -4,6 +4,7 @@ const ReactionPages = recon.ReactionPages;
 
 module.exports = {
   name: 'photo',
+  cooldown: 45,
 
   async execute (client, message, args) {
     const character = args.join(' ')

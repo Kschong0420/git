@@ -2,6 +2,7 @@ const Discord = require('discord.js')
 
 module.exports = {
   name: 'character',
+  cooldown: 30,
   description: 'Nekopara Introduction',
   execute (client, message, args) {
     const newEmbed = new Discord.MessageEmbed()

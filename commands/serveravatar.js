@@ -2,6 +2,7 @@ const { MessageEmbed } = require('discord.js');
 
 module.exports = {
       name: 'servericon',
+      cooldown: 10,
       aliases: ['serveravatar', 'savatar', 'si'],
 
   async execute(client, message, args) {

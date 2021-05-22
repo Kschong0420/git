@@ -3,6 +3,7 @@ const { FastType } = require('weky')
 
 module.exports = {
     name: 'fasttype',
+    cooldown: 15,
     aliases: ['ftg', 'fast', 'type', 'fasttypegame', 'typegame'],
     async execute(client, message, args) {
         const game = new FastType({

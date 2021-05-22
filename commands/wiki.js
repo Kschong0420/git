@@ -4,6 +4,7 @@ const fetch = require("node-fetch");
 module.exports = {
   name: "wiki",
   aliases: ["wikipedia2"],
+  cooldown: 5,
   async execute(client, message, args) {
   const body = await fetch(
       `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(

@@ -1,5 +1,6 @@
 module.exports = {
     name: "reactionrole",
+    cooldown: 5,
     async execute(client, message, args, Discord) {
         if (message.author.id !== "759368420453384213") return message.channel.send("Unknown Command.");
         const channel = '802535435548491786'

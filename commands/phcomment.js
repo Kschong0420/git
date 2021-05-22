@@ -4,6 +4,7 @@ const fetch = require("node-fetch");
 module.exports = {
     name: "phcomment",
     aliases: ["phc", "ph"],
+    cooldown: 10,
 
      async execute(client, message, args) {
 

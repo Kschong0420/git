@@ -3,6 +3,7 @@ const Discord = require("discord.js");
 module.exports = {
     name: 'feedback',
     aliases: ['feed-back'],
+    cooldown: 30,
     utilisation: '{prefix}feedback [your report here]. Thanks for your valuable feedback',
     async execute(client, message, args) {
         let feedback = args.join(" ").slice(0);

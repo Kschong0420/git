@@ -1,5 +1,6 @@
 module.exports = {
   name: 'cal',
+  cooldown: 2,
   description: 'Calculates something!',
   execute (client, message, args) {
     const method = args[0]

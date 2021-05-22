@@ -1,6 +1,7 @@
 module.exports = { 
     name: "kick",
     description: "kicks someone",
+    cooldown: 0,
     async execute(client, message, args, Discord) {
 	  if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send("Unknown Command.")
         let target = message.mentions.members.first()

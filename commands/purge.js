@@ -3,6 +3,7 @@ const { MessageFlags } = require('discord.js')
 module.exports = {
   name: 'purge',
   description: 'Deletes amount of messages inputted!',
+  cooldown: 0,
   async execute (client, message, args) {
     if (message.member.hasPermission('MANAGE_MESSAGES')) {
       const deleteCount = parseInt(args[0], 10)

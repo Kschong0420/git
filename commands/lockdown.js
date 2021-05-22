@@ -13,6 +13,9 @@ module.exports = {
     category: "moderation",
 
 
+    cooldown: 60,
+
+
     async execute(client, message, args) {
         if(!message.member.permissions.has("ADMINISTRATOR")) return message.channel.send('Unknown Command.');
 

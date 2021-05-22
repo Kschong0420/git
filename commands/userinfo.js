@@ -12,6 +12,8 @@ module.exports = {
     name: "userinfo",
 
     aliases: ["whois", "ui", "user"],
+    
+    cooldown: 5,
 
     async execute(client, message, args) {
 

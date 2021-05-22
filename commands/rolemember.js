@@ -3,6 +3,7 @@ const { MessageEmbed } = require('discord.js');
 module.exports = {
         name: "rolemember",
         aliases: ['rm', 'rl', 'rolelist'],
+        cooldown: 0,
        
     async execute(client, message, args) {
         if (args.includes("@everyone")) return;

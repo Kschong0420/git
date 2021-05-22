@@ -3,6 +3,7 @@ const { Client, Message, MessageEmbed } = require('discord.js');
 const prefix = "your prefix"
 module.exports = {
    name: 'show',
+   cooldown: 10,
    aliases: ["shown", "unhide", "show-channel", "shown-channel"],
    async execute(client, message, args) {
 

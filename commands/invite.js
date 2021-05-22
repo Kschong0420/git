@@ -3,6 +3,7 @@ const Discord = require('discord.js');
 module.exports = {
         name: "invite",
         aliases: ['invites', 'invitations', 'inv', 'invinfo', 'inviteinfo', 'ii'],
+        cooldown: 20,
     async execute(client, message, args) {
         try {
             let member = await message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(r => r.user.username.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.guild.members.cache.find(r => r.displayName.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.member;

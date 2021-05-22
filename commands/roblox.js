@@ -3,6 +3,7 @@ const snekfetch = require('snekfetch')
 
 module.exports = {
     name: "roblox",
+    cooldown: 5,
     async execute(client, message, args) {
         let saybot = args.join('_');
         const url = `https://api.roblox.com/users/get-by-username?username=${saybot}`;

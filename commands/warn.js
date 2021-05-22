@@ -2,6 +2,7 @@ var Discord = require('discord.js');
 
 module.exports = {
     name: 'warn',
+    cooldown: 0,
     async execute(client, message, args) {
     if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send('Unknown Command.');
 

@@ -1,5 +1,6 @@
 module.exports = { 
     name: "ban",
+    cooldown: 0,
     description: "ban someone",
     async execute(client, message, args, Discord) {
     if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send("Unknown Command.")

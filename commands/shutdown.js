@@ -2,6 +2,8 @@ module.exports = {
 
     name: "shutdown",
 
+    cooldown: 0,
+
     category: "owner",
 
     async execute(client, message, args) {

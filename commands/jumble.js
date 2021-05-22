@@ -2,6 +2,7 @@ const Jumble = require('jumble-words');
 
 module.exports = {
   name: 'jumble',
+  cooldown: 5,
 
 async execute(client, message, args) {
     const jumble = new Jumble();

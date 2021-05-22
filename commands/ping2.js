@@ -1,5 +1,6 @@
 module.exports = {
     name: "ping2",
+    cooldown: 5,
     async execute(client, message, args, Discord) {
         let circles = {
             green: ":green_circle:",

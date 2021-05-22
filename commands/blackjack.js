@@ -2,6 +2,7 @@ const Discord = require("discord.js")
 module.exports = {
     name: "blackjack",
     aliases: ['bj'],
+    cooldown: 10,
     usage: '..blackjack (amount)',
     async execute(client, message, args) {
     const userId = message.author

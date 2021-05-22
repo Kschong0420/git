@@ -1,5 +1,6 @@
 module.exports = {
     name: 'silence',
+    cooldown: 10,
     description: 'this is a silence command!',
     execute (client, message, args) {
       message.channel.send('Silence Please!')

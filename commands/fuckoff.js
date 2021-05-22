@@ -1,5 +1,6 @@
 module.exports = {
     name: "fuckoff",
+    cooldown: 43200,
     inVoiceChannel: true,
     async execute(client, message, args) {
         if (!message.member.voice.channel) return message.channel.send('Hentai baker master, someone rude at me!')

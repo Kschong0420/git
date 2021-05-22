@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 
 module.exports = {
     name: "afk",
+    cooldown: 3600,
     async execute(client, message, args) {
         
     let reason = args.join(' ') ? args.join(' ') : 'I am currently afk, I will reply as soon possible.';

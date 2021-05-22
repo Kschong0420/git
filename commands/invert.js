@@ -4,6 +4,7 @@ const Discord = require('discord.js')
 module.exports = {
     name: "invert",
     description: "invert gif",
+    cooldown: 10,
 
     async execute(client, message, args) {
 

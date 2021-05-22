@@ -4,6 +4,7 @@ const Discord = require('discord.js')
 module.exports = {
     name: "rainbow",
     aliases: ["gay"],
+    cooldown: 10,
     description: "rainbow gif",
 
     async execute(client, message, args) {

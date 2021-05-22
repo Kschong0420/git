@@ -4,6 +4,7 @@ const ReactionPages = recon.ReactionPages;
 
 module.exports = {
     name: 'help',
+    cooldown: 60,
     async execute(client, message, args, Discord) {
         const embed1 = new Discord.MessageEmbed()
             .setColor('RANDOM')

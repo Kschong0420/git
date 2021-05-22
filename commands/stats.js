@@ -6,6 +6,7 @@ const { stripIndent } = require('common-tags');
 module.exports = {
     name: 'stats',
     aliases: ['statistics', 'metrics', 'stat'],
+    cooldown: 10,
     async execute(client, message, args) {
         const d = moment.duration(message.client.uptime);
         const days = (d.days() == 1) ? `${d.days()} day` : `${d.days()} days`;

@@ -1,6 +1,7 @@
 const axios = require('axios');
 module.exports = {
 	name: 'npm',
+	cooldown: 0,
 	async execute(client, message, args) {
 		const query = args[0];
 		if(!query) return message.channel.send(`Please specify a query!`)

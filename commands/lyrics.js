@@ -4,6 +4,7 @@ const lyricsFinder = require('lyrics-finder');
 module.exports = {
     name: 'lyric',
     aliases: ["l", "lyrics", "lyr"],
+    cooldown: 15,
     async execute(client, message, args, Discord) {
 
         let artist = args.join(" ");

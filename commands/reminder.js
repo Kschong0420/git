@@ -2,6 +2,7 @@ const { MessageEmbed } = require('discord.js');
 const ms = require("ms")
 module.exports = {
     name: 'reminder',
+    cooldown: 10,
     async execute(client, message, args) {
         let time = args[0]
         if(!time) return message.channel.send("What is the time when the reminder should be off?")

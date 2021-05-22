@@ -1,5 +1,6 @@
 module.exports = {
     name: 'hack',
+    cooldown: 30,
     async execute(client, message, args) {
         function wait(ms){
             let start = new Date().getTime();

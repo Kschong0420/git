@@ -5,6 +5,7 @@ const { readdirSync } = require("fs");
 module.exports = {
   name: "",
   aliases : ['h'],
+  cooldown: 5,
   description: "Shows all available bot commands.",
   categories: "info",
   async execute(client, message, args) {

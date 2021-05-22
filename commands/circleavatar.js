@@ -4,6 +4,7 @@ const Discord = require('discord.js')
 module.exports = {
     name: "circleavatar",
     aliases: ["ca", "ci", "cicon", "cavatar"],
+    cooldown: 10,
 
     async execute(client, message, args) {
 

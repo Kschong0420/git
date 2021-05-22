@@ -3,6 +3,7 @@ const Discord = require("discord.js");
 module.exports = {
     name: 'achievement',
     aliases: ["achieve", "ach"],
+    cooldown: 5,
     async execute(client, message, args) {
         try {
             const icon = Math.floor(Math.random() * 39)

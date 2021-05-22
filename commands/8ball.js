@@ -4,6 +4,7 @@ module.exports = {
   name: '8ball',
   category: 'fun',
   aliases: ['yes or not', 'yes or no', 'yon'],
+  cooldown: 5,
   description: 'this is a butterfly command!',
   async execute(client, message, args) {
 

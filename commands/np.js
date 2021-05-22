@@ -4,6 +4,7 @@ const { toColonNotation } = require("colon-notation")
 module.exports = {
     name: "np",
     aliases: ["now_playing"],
+    cooldown: 5,
     async execute(client, message) {
         if (!message.member.voice.channel) return message.channel.send(`${client.emotes.error} | You must be in a voice channel!`)
         const queue = client.distube.getQueue(message)

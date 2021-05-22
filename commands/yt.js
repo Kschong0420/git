@@ -4,6 +4,7 @@ const { MessageEmbed } = require('discord.js');
 module.exports = {
     name: 'yt',
     aliases: 'youtube',
+    cooldown: 5,
     async execute(client, message, args) {
         const query = args.join(" ");
         if (!query) return message.reply("Please provide a search query.");

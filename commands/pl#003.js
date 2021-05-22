@@ -1,5 +1,6 @@
 module.exports = {
     name: "pl#003",
+    cooldown: 45,
     inVoiceChannel: true,
     aliases: ["ja-song"],
     async execute(client, message, args) {

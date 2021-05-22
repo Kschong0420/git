@@ -3,6 +3,7 @@ const { MessageEmbed } = require('discord.js');
 module.exports = {
     name: 'roll',
     aliases: ['dice', 'r'],
+    cooldown: 5,
     async execute(client, message, args) {
         let limit = args[0];
         if (!limit) limit = 6;

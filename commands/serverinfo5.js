@@ -3,6 +3,7 @@ const Discord = require("discord.js");
 module.exports = {
   name: 'serverinfo5',
   aliases: ['si5'],
+  cooldown: 20,
  
   async execute(client, message, args) {
     if (!message.guild) return message.channel.send("this command is only meant to be used in servers.")

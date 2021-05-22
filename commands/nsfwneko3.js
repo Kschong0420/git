@@ -5,6 +5,7 @@ const { MessageEmbed } = require('discord.js');
 module.exports = {
     name: "nsfwneko3",
     aliases: ['hneko3', "nneko3"],
+    cooldown: 0,
     async execute(client, message, args) {
         if (!message.channel.nsfw) return message.channel.send("This command can only be used in channels marked nsfw.")
         try {

@@ -2,6 +2,7 @@ const { toMilliseconds } = require("colon-notation")
 module.exports = {
     name: "seek",
     aliases: ["s"],
+    cooldown: 0,
     description: "jump to the second of the song you want",
     cooldown: "5",
 

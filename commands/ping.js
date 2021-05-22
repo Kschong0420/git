@@ -2,6 +2,7 @@ const { MessageEmbed } = require('discord.js');
 module.exports = {
   name: "ping",
   aliases: ["ms"],
+  cooldown: 5,
   description: "Returns Latency and API Ping",
   timeout: 10000,
     async execute(client, message, args) {

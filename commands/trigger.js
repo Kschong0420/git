@@ -4,6 +4,7 @@ const Discord = require('discord.js')
 module.exports = {
     name: "trigger",
     description: "Trigger gif",
+    cooldown: 10,
 
     async execute(client, message, args) {
 

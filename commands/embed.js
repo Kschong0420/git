@@ -2,6 +2,7 @@ const discord = require("discord.js");
 
 module.exports = {
   name: 'embed',
+  cooldown: 30,
 
   async execute(client, message, args) {
     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Unknown Command.")

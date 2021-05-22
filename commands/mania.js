@@ -7,6 +7,7 @@ const emo_config = require('../emoji_config.json')
 
 module.exports = {
     name: "mania",
+    cooldown: 5,
     async execute(client, message, args) {
         try {
             const user = args.join(' ')

@@ -1,6 +1,7 @@
 const axios = require('axios');
 module.exports = {
     name: 'binary',
+    cooldown: 5,
 
     async execute(client, message, args, Discord) {
         if (!args[0]) return message.reply('Please specify whether you want to encode or decode');

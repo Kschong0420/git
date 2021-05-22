@@ -3,6 +3,7 @@ const { MessageEmbed } = require("discord.js")
 module.exports = { // Your Command Handler
     name: "serverinfo3",
     description: 'Gives Info About A Server',
+    cooldown: 20,
 
     async execute(client, message, args) { // Your Command Handler
 

@@ -1,5 +1,6 @@
 module.exports = {
     name: "math",
+    cooldown: 3,
     description: "performs simple math functions",
     execute(client, message, args) {
       let op = args[0]

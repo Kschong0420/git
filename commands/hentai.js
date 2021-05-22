@@ -1,5 +1,6 @@
 module.exports = {
   name: 'hentai',
+  cooldown: 30,
   description: 'this is a hentai command!',
   execute (client, message, args) {
     message.channel.send('Who is hentai? Report HIM!!!')

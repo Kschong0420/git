@@ -3,6 +3,7 @@ const figlet = require('figlet');
 
 module.exports = {
     name: "text",
+    cooldown: 7,
 
     async execute(client, message, args) {
         figlet.text(args.join(" "), {

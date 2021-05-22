@@ -1,6 +1,7 @@
 module.exports = {
     name: "jump",
     inVoiceChannel: true,
+    cooldown: 3,
     async execute(client, message, args) {
         try {
             if (!message.member.voice.channel) return message.channel.send(`${client.emotes.error} | You must be in a voice channel!`)

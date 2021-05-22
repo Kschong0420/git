@@ -3,6 +3,7 @@ const { MessageEmbed } = require("discord.js");
 module.exports = {
         name: 'emoji2',
         aliases: ['e2'],
+        cooldown: 30,
     async execute(client, message, args) {
   
       const emojis = [];

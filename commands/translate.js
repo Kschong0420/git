@@ -4,6 +4,7 @@ const translate = require("@k3rn31p4nic/google-translate-api");
 module.exports = {
     name: "translate",
     aliases: ["tl"],
+    cooldown: 3,
     description: "Translate a sentence.",
     async execute(client, message, args) {
         let language = args[0];

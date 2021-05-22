@@ -3,6 +3,7 @@ const { letterTrans } = require('custom-translate');
 module.exports = {
     name: "textflip",
     aliases: ["tf", "ft", "fliptext", "textupsidedown"],
+    cooldown: 5,
     async execute(client, message, args) {
         var dictionary = {
             "a": "ɐ",

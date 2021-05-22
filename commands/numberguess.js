@@ -24,6 +24,7 @@ function guildAttemptsMap(message) {
 module.exports = {
     name: "numberguess",
     aliases: ["ng", "nbg", "number", "numbguess", "numb", "no.", "no.guess"],
+    cooldown: 30,
     async execute(client, message, args, Discord) {
         const { member, channel, guild } = message;
 

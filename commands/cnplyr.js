@@ -4,6 +4,7 @@ const lyricsFinder = require("lyrics-finder")
 module.exports = {
     name: 'cnplyr',
     aliases: ["clearly-now-playing-lyrics"],
+    cooldown: 30,
 
 
     async execute (client, message, args) {

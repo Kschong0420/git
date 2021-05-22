@@ -1,6 +1,7 @@
 module.exports = {
   name: 'avatar',
   aliases: ['icon', 'pfp', 'profilepic'],
+  cooldown: 5,
   description: 'Return a user(s) avatar picture!',
   // Use your own execute parameters
   execute (client, message, args, Discord) {

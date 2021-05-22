@@ -3,6 +3,7 @@ const { MessageEmbed } = require('discord.js');
 module.exports = {
         name: "poll",
         aliases: ["polls"],
+        cooldown: 30,
     
     async execute(client, message, args) {
         if (!message.member.hasPermission('MANAGE_GUILD')) return message.channel.send("Unknown Command.");

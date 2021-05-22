@@ -1,5 +1,6 @@
 module.exports = {
   name: 'congrats',
+  cooldown: 5,
   description: 'this is a congrats command!',
   execute (client, message, args) {
     message.channel.send('Congratulations!')

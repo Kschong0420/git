@@ -4,6 +4,7 @@ const prefix = "your prefix"
 module.exports = {
     name: 'hide',
     aliases: ["hc", "hide-channel"],
+    cooldown: 10,
     async execute(client, message, args) {
 
         if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send('Unknown Command.');

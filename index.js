@@ -2,11 +2,7 @@ const Discord = require('discord.js')
 const DisTube = require("distube")
 require('dotenv').config()
 const client = new Discord.Client()
-const fetch = require('node-fetch')
-const querystring = require('querystring')
 const fs = require("fs")
-const { fight } = require('weky')
-const { DiscordTogether } = require('discord-together');
 //const { CanvasSenpai } = require("canvas-senpai")
 //const canva = new CanvasSenpai();
 
@@ -18,7 +14,6 @@ client.aliases = new Discord.Collection()
 client.snipes = new Discord.Collection()
 client.commands = new Discord.Collection()
 client.events = new Discord.Collection()
-client.discordTogether = new DiscordTogether(client);
 
 fs.readdir("./commands/", (err, files) => {
   if (err) return console.log("Could not find any commands!")
@@ -48,57 +43,44 @@ fs.readdir("./commands/", (err, files) => {
 //  );   
 // });
 
-//Discord Together - youtube
-client.on('message', async message => {
-  if (message.content.startsWith('v youtube-together')) {
-    if(!message.member.voice.channel) return message.channel.send('You need to join a voice channel to use this command.')
-      if(message.member.voice.channel) {
-          client.discordTogether.createTogetherCode(message.member.voice.channelID, 'youtube').then(async invite => {
-              message.channel.send(`${invite.code}`);
-              message.channel.send('Click the link to join (Only for PC users)')
-          });
-      };
-  };
-});
-
 //Discord Together - poker
-client.on('message', async message => {
-  if (message.content.startsWith('v poker-together')) {
-    if(!message.member.voice.channel) return message.channel.send('You need to join a voice channel to use this command.')
-      if(message.member.voice.channel) {
-          client.discordTogether.createTogetherCode(message.member.voice.channelID, 'poker').then(async invite => {
-              message.channel.send(`${invite.code}`);
-              message.channel.send('Click the link to join (Only for PC users)')
-          });
-      };
-  };
-});
+//client.on('message', async message => {
+//  if (message.content.startsWith('v poker-together')) {
+//    if(!message.member.voice.channel) return message.channel.send('You need to join a voice channel to use this command.')
+//      if(message.member.voice.channel) {
+//          client.discordTogether.createTogetherCode(message.member.voice.channelID, 'poker').then(async invite => {
+//            message.channel.send(`${invite.code}`);
+//              message.channel.send('Click the link to join (Only for PC users)')
+//          });
+//      };
+//  };
+//});
 
 //Discord Together - fishing
-client.on('message', async message => {
-  if (message.content.startsWith('v fishing-together')) {
-    if(!message.member.voice.channel) return message.channel.send('You need to join a voice channel to use this command.')
-      if(message.member.voice.channel) {
-          client.discordTogether.createTogetherCode(message.member.voice.channelID, 'fishing').then(async invite => {
-              message.channel.send(`${invite.code}`);
-              message.channel.send('Click the link to join (Only for PC users)')
-          });
-      };
-  };
-});
+//client.on('message', async message => {
+//  if (message.content.startsWith('v fishing-together')) {
+//    if(!message.member.voice.channel) return message.channel.send('You need to join a voice channel to use this command.')
+//     if(message.member.voice.channel) {
+//          client.discordTogether.createTogetherCode(message.member.voice.channelID, 'fishing').then(async invite => {
+//             message.channel.send(`${invite.code}`);
+//             message.channel.send('Click the link to join (Only for PC users)')
+//          });
+//      };
+//  };
+//});
 
 //Discord Together - betrayal
-client.on('message', async message => {
-  if (message.content.startsWith('v betrayal-together')) {
-    if(!message.member.voice.channel) return message.channel.send('You need to join a voice channel to use this command.')
-      if(message.member.voice.channel) {
-          client.discordTogether.createTogetherCode(message.member.voice.channelID, 'betrayal').then(async invite => {
-              message.channel.send(`${invite.code}`);
-              message.channel.send('Click the link to join (Only for PC users)')
-          });
-      };
-  };
-});
+//client.on('message', async message => {
+//  if (message.content.startsWith('v betrayal-together')) {
+//    if(!message.member.voice.channel) return message.channel.send('You need to join a voice channel to use this command.')
+//      if(message.member.voice.channel) {
+//         client.discordTogether.createTogetherCode(message.member.voice.channelID, 'betrayal').then(async invite => {
+//              message.channel.send(`${invite.code}`);
+//              message.channel.send('Click the link to join (Only for PC users)')
+//         });
+//      };
+//  };
+//});
 
 //non nitro emoji 
 ///not stable yet
@@ -198,21 +180,6 @@ client.on('message', async message => {
   }
 })
 
-//attack
-client.on('message', async message => {
-  if (message.content.startsWith('v fight')) {
-    if (!message.mentions.users.first()) return message.reply('Ping someone to fight')
-    const x = new fight({
-      client: client,
-      message: message,
-      acceptMessage: 'Click to fight with ' + message.author,
-      challenger: message.author,
-      opponent: message.mentions.users.first()
-    })
-    x.start()
-  }
-})
-
 //snipe core
 client.snipes = new Map();
 client.on('messageDelete', function(message, channel) {
@@ -304,48 +271,6 @@ client.on('messageUpdate', async message => {
 //  if (message.author.bot) return;
 //  if (message.content === ' ') message.delete()
 //})
-
-//urban
-client.on('message', async message => {
-  const prefix = process.env.PREFIX
-  const args = message.content.substring(prefix.length).split(' ')
-
-  if (message.content.toLowerCase().startsWith(`${prefix}urban`)) {
-    const searchString = querystring.stringify({ term: args.slice(1).join(' ') })
-
-    if (!args.slice(1).join(' ')) {
-      return message.channel.send(new MessageEmbed()
-        .setColor('BLUE')
-        .setDescription('You need to specify something you want to search the urban dictionary')
-      )
-    }
-
-    const { list } = await fetch(`https://api.urbandictionary.com/v0/define?${searchString}`).then(response => response.json())
-
-    try {
-      const [answer] = list
-
-      const trim = (str, max) => ((str.length > max) ? `${str.slice(0, max - 3)}...` : str)
-
-      const embed = new Discord.MessageEmbed()
-        .setColor('BLUE')
-        .setTitle(answer.word)
-        .setURL(answer.permalink)
-        .addFields(
-          { name: 'Definition', value: trim(answer.definition, 1024) },
-          { name: 'Example', value: trim(answer.example, 1024) },
-          { name: 'Rating', value: `${answer.thumbs_up} 👍. ${answer.thumbs_down} 👎.` }
-        )
-      message.channel.send(embed)
-    } catch (error) {
-      console.log(error)
-      return message.channel.send(new Discord.MessageEmbed()
-        .setColor('BLUE')
-        .setDescription(`No results were found for **${args.slice(1).join(' ')}**`)
-      )
-    }
-  }
-});
 
 //afk core
 client.afk = new Map();

@@ -3,6 +3,7 @@ const { MessageEmbed } = require("discord.js");
 module.exports = {
         name: 'roleinfo',
         aliases: ["rinfo", "ri"],
+        cooldown: 0,
     async execute(client, message, args) {
         if (!args[0]) return message.channel.send("Please Enter A Role!")
         let role = message.mentions.roles.first() || message.guild.roles.cache.get(args[0]) || message.guild.roles.cache.find(r => r.name.toLowerCase() === args.join(' ').toLocaleLowerCase());

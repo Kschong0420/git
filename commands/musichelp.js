@@ -3,6 +3,7 @@ const Discord = require('discord.js')
 module.exports = {
   name: 'music_help',
   aliases: ["mh", "music", "musichelp"],
+  cooldown: 30,
   async execute (client, message, args, Discord) {
       const newEmbed = new Discord.MessageEmbed()
         .setColor('#FFE666')

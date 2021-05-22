@@ -4,6 +4,7 @@ const fetch = require("node-fetch");
 module.exports = {
     name: "kannapaper",
     aliases: ["kp"],
+    cooldown: 3,
 
      async execute(client, message, args) {
 

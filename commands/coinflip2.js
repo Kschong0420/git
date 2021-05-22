@@ -1,6 +1,7 @@
 const { MessageEmbed } = require("discord.js");
 module.exports = {
     name: "coinflip2",
+    cooldown: 5,
     description: "flips a coin!",
     async execute(client, message, args) {
         const choices= ["heads", "tails"];

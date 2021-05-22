@@ -2,6 +2,7 @@ const Discord = require('discord.js')
 
 module.exports = {
   name: 'modhelp',
+  cooldown: 0,
   description: 'Mod Command List',
   execute (client, message, args) {
     if (message.member.hasPermission('MANAGE_MESSAGES')) {

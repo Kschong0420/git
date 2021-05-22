@@ -2,6 +2,7 @@
 
 module.exports = {
     name: "rt",
+    cooldown: 5,
     description: "Reverses the given text",
     async execute(client, message, args) {
         const text = args.join(" ")

@@ -3,6 +3,7 @@ const Discord = require("discord.js")
 module.exports = {
   name : "worldclock",
   description : "this is e",
+  cooldown: 10,
 
   async execute(client , message , args , Discord) {
     var gmt = new Date().toLocaleString('en-US', { timeZone: 'Europe/London' });

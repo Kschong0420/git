@@ -2,6 +2,7 @@ const { get } = require("request-promise-native");
 const { MessageEmbed } = require("discord.js")
 module.exports = {
   name: "pokemon",
+  cooldown: 5,
   description: "Get any pokemon description",
   category: "info",
   usage: "pokemon <name>",

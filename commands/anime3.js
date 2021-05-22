@@ -3,6 +3,7 @@ const malScraper = require('mal-scraper');
 
 module.exports = {
     name: "anime3",
+    cooldown: 10,
     async execute(client, message, args) {
         //command
         const search = `${args}`;

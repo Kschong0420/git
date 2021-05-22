@@ -5,6 +5,7 @@ const ReactionPages = recon.ReactionPages;
 module.exports = {
     name: 'nsfwhelp',
     aliases: ["nsfwlist", "nsfw"],
+    cooldown: 20,
     async execute(client, message, args, Discord) {
         if(!message.channel.nsfw){ message.channel.send("This command can only be used in channels marked nsfw."); return; }
         const embed1 = new Discord.MessageEmbed()

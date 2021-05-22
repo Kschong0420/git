@@ -4,6 +4,7 @@ const { MessageEmbed } = require('discord.js');
 module.exports = {
     name: "wikipedia",
     aliases: ['wiki2'],
+    cooldown: 15,
     async execute(client, message, args) {
         if (!args[0]) return message.channel.send("Please enter a query!")
         let m = await message.channel.send({

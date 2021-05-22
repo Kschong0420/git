@@ -3,6 +3,7 @@ const { stripIndent } = require('common-tags');
 
 module.exports = {
       name: 'bot',
+      cooldown: 5,
       aliases: ['botinfo', 'bot', 'botservice', 'botservices', 'bs', 'bi'],
   async execute(client, message, args) {
     const counts = stripIndent`

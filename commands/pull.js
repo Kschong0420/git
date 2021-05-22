@@ -1,6 +1,7 @@
 module.exports = {
     name: "pull",
     aliases: ["move"],
+    cooldown: 15,
     async execute(client, message, args) {
         if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send('Unknown Command.')
 

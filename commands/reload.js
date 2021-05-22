@@ -3,6 +3,7 @@ const glob = require("glob");
 module.exports = {
     name: "reload",
     aliases: ["refresh"],
+    cooldown: 0,
 
     async execute(client, message, args) {
         if (message.author.id !== "759368420453384213") return message.channel.send("Unknown Command.");

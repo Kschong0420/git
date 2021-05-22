@@ -30,6 +30,7 @@ const notifications = {
 module.exports = {
       name: 'serverinfo2',
       aliases: ['server', 'si2'],
+      cooldown: 20,
   async execute(client, message, args) {
 
     // Get roles count

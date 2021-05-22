@@ -3,6 +3,7 @@ const Discord = require("discord.js")
 module.exports = {
   name : "google",
   description : ":flushed:",
+  cooldown: 5,
 
   async execute(client , message , args , Discord) {
     const sentence = args.join("+")

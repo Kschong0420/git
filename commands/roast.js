@@ -4,6 +4,7 @@ const Discord = require('discord.js');
 module.exports = {
   name: 'roast',
   description: 'send a roast command from an api!',
+  cooldown: 30,
   async execute (client, message, args) {
     if (!args[0]) return message.channel.send('Invalid Command Format: \`v roast @user\`');
     const mentionedMember = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(r => r.user.username.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.guild.members.cache.find(r => r.displayName.toLowerCase() === args.join(' ').toLocaleLowerCase())

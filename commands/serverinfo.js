@@ -8,6 +8,8 @@ module.exports = {
 
     category: "extra",
 
+    cooldown: 20,
+
     async execute(client, message, args) {
 
         let region;

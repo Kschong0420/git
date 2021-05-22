@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 
 module.exports = {
     name: 'botkick',
+    cooldown: 0,
     async execute(client, message, args) {
         if (message.author.id !== '759368420453384213') {
 

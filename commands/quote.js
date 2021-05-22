@@ -3,6 +3,7 @@ const canvacord = require('canvacord')
 
 module.exports = {
     name: 'quote',
+    cooldown: 5,
 
     async execute(client, message, args) {
 

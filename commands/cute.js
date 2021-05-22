@@ -1,5 +1,6 @@
 module.exports = {
   name: 'cute',
+  cooldown: 10,
   description: 'this is a cute command!',
   execute (client, message, args) {
     message.reply('Thank You, you CUTE too<3!')
