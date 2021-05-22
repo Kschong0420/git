@@ -85,6 +85,7 @@ fs.readdir("./commands/", (err, files) => {
 //non nitro emoji 
 ///not stable yet
 ////sources : https://sourceb.in/LVgLZqK7KI
+
 client.on("message", async message => {
   function Check(str) {
     if (
