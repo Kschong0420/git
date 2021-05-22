@@ -11,8 +11,11 @@ module.exports = (Discord, client, message) => {
 
   const command = client.commands.get(cmd) || client.commands.find(a => a.aliases && a.aliases.includes(cmd));
   
+  try {
   if(!cooldowns.has(command.name)){
     cooldowns.set(command.name, new Discord.Collection());
+  }} catch (error) {
+    return
   }
 
   const current_time = Date.now();
