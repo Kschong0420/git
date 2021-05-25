@@ -84,18 +84,15 @@ fs.readdir("./commands/", (err, files) => {
 //  };
 //});
 
-//non nitro emoji 
-///not stable yet
-////sources : https://sourceb.in/LVgLZqK7KI
-
-const MyStickyChannelID = '845747234074656818';
+//sticky channel
+const MyStickyChannel = 'sticky-channel';
 let cacheMsgs = [];
 
 client.on('ready', async () => {
   /**
    * Get channel, if found then send the message to that channel and cache it
    */
-  const stickyChannel = client.channels.cache.get(MyStickyChannelID);
+  const stickyChannel = client.channels.cache.find(ch => ch.name === "sticky-channel")
   if (stickyChannel) {
     const m = await stickyChannel.send("I will be the last one forever!");
     cacheMsgs.push(m.id);
@@ -113,7 +110,7 @@ client.on('message', async message => {
   }
 
   // check channel is the sticky channel
-  if (message.channel.id === MyStickyChannelID) {
+  if (message.channel.name === MyStickyChannel) {
     // if length is more or 2 but not 0 then queue delete all and return without a message
     if (cacheMsgs.length >= 2 && cacheMsgs.length !== 0) return cacheMsgs.forEach(async id => remove(id));
 
@@ -126,6 +123,9 @@ client.on('message', async message => {
   }
 });
 
+//non nitro emoji 
+///not stable yet
+////sources : https://sourceb.in/LVgLZqK7KI
 client.on("message", async message => {
   function Check(str) {
     if (
