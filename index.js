@@ -13,6 +13,7 @@ client.distube = new DisTube(client, { searchSongs: true, emitNewSongOnly: true,
 client.emotes = config.emoji
 client.aliases = new Discord.Collection()
 client.snipes = new Discord.Collection()
+client.esnipes = new Discord.Collection()
 client.commands = new Discord.Collection()
 client.events = new Discord.Collection()
 
@@ -225,6 +226,19 @@ client.snipes = new Map();
 client.on('messageDelete', function(message, channel) {
       if (message.author.bot) return;
       client.snipes.set(message.channel.id, {
+         content: message.content,
+         profilephoto: message.author.displayAvatarURL({ dynamic : true }),
+         author: message.author.tag,
+         date: message.createdTimestamp,
+         image: message.attachments.first() ? message.attachments.first().proxyURL : null
+      }) 
+})
+
+//edit snipe core
+client.esnipes = new Map();
+client.on('messageUpdate', function(message, channel) {
+      if (message.author.bot) return;
+      client.esnipes.set(message.channel.id, {
          content: message.content,
          profilephoto: message.author.displayAvatarURL({ dynamic : true }),
          author: message.author.tag,
