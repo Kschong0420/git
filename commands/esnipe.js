@@ -11,7 +11,7 @@ module.exports = {
 
         const embed = new MessageEmbed()
         .setAuthor(msg.author, msg.profilephoto)
-        .setDescription(msg.content)
+        .setDescription(`**Message Before Edited :**\n${msg.content}`)
         .setColor('RANDOM')
         .setTimestamp(msg.date)
         .setFooter('Get sniped lol')
