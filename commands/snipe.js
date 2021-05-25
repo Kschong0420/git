@@ -2,7 +2,7 @@ const { MessageEmbed } = require('discord.js')
 
 module.exports = {
     name: 'snipe',
-    cooldown: 0,
+    cooldown: 2,
     async execute(client, message, args) {
         const msg = client.snipes.get(message.channel.id)
         if (!msg) {
