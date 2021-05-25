@@ -57,6 +57,7 @@ module.exports = {
                 { name: 'ed', value: 'check all the nekopara ending songs' },
                 { name: 'emoji', value: 'check server emoji' },
                 { name: 'emojify <text>', value: 'emojify your text' },
+                { name: 'esnipe', value: 'snipe an edited message' },
                 { name: 'fact', value: 'get a fact about something' },
             )
 
@@ -184,7 +185,7 @@ module.exports = {
                 { name: 'spotify <username>', value: 'check someone spotify information if they are playing spotify music in computer' },
                 { name: 'stats', value: 'show the client and server stats' },
                 { name: 'status <username>', value: 'show someone status detail' },
-                { name: 'tabbleflip', value: 'animated table flip' },
+                { name: 'tableflip', value: 'animated table flip' },
             )
 
         const embed11 = new Discord.MessageEmbed()
