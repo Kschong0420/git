@@ -1,6 +1,7 @@
 const Discord = require('discord.js')
 const DisTube = require("distube")
 require('dotenv').config()
+const inlinereply = require('discord-reply')
 const client = new Discord.Client()
 const fs = require("fs")
 const fetch = require("node-fetch")
