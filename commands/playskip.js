@@ -9,6 +9,9 @@ module.exports = {
         if (!queue) return message.channel.send(`${client.emotes.error} | There is nothing playing!`)
         const string = args.join(" ")
         if (!string) return message.channel.send(`${client.emotes.error} | Please enter a song url or query to search.`)
+        if(message.guild.me.voice.channel) {
+            if(message.guild.me.voice.channel.id !== message.member.voice.channel.id) return message.channel.send(`${client.emotes.error} You must be in my voice channel`)
+          }
         try {
             client.distube.playSkip(message, string)
         } catch (e) {

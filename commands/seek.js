@@ -10,6 +10,9 @@ module.exports = {
         try {
             if (!message.member.voice.channel) return message.channel.send(`${client.emotes.error} | You must be in a voice channel!`)
             if (!client.distube.isPlaying(message)) return message.channel.send(`${client.emotes.error} | There is nothing playing right now!`)
+            if(message.guild.me.voice.channel) {
+                if(message.guild.me.voice.channel.id !== message.member.voice.channel.id) return message.channel.send(`${client.emotes.error} You must be in my voice channel`)
+              }
             if (!args[0]) return message.channel.send("Please tell me how many seconds to jump. Example: 0:40")
             const queue = client.distube.getQueue(message)
             const song = queue.songs[0]

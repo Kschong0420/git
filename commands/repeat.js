@@ -7,6 +7,9 @@ module.exports = {
         if (!message.member.voice.channel) return message.channel.send(`${client.emotes.error} | You must be in a voice channel!`)
         const queue = client.distube.getQueue(message)
         if (!queue) return message.channel.send(`${client.emotes.error} | There is nothing playing!`)
+        if(message.guild.me.voice.channel) {
+            if(message.guild.me.voice.channel.id !== message.member.voice.channel.id) return message.channel.send(`${client.emotes.error} You must be in my voice channel`)
+          }
         let mode = null
         switch (args[0]) {
             case "off":
