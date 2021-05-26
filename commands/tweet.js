@@ -17,7 +17,7 @@ module.exports = {
         }
 
         if(!text){
-            return message.channel.send("Please enter a text!");
+            return message.lineReply("Please enter a text!");
         }
 
         try {
@@ -28,11 +28,11 @@ module.exports = {
                     .setTitle("A new tweet has been published!!")
                     .setImage(data.message)
                     .setTimestamp()
-                message.channel.send(embed)
+                message.lineReplyNoMention(embed)
             })
 
         } catch(err) {
-            return message.channel.send('An error occured.')
+            return message.lineReplyNoMention('An error occured.')
         }
     }
 }

@@ -9,7 +9,7 @@ module.exports = {
 
           const sexyrate = Math.floor(Math.random() * 100)
           const embed = new Discord.MessageEmbed()
-               .addField(":heart_decoration: Sexy Rate :heart_decoration: ", `I rate ${user} a ${sexyrate} out of 100 on the gay scale`)
+               .addField(":heart_decoration: Sexy Rate :heart_decoration: ", `I rate ${user} a ${sexyrate} out of 100 on the gay scale.`)
                .setThumbnail(message.author.displayAvatarURL)
-          message.channel.send({ embed })
+          message.lineReplyNoMention({ embed })
      }}

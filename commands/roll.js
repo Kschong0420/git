@@ -9,13 +9,13 @@ module.exports = {
         if (!limit) limit = 6;
         const n = Math.floor(Math.random() * limit + 1);
         if (!n || limit <= 0)
-            return message.channel.send('Please provide a valid number of dice sides');
+            return message.lineReply('Please provide a valid number of dice sides');
         const embed = new MessageEmbed()
             .setTitle('🎲  Dice Roll  🎲')
             .setDescription(`${message.member}, you rolled a **${n}**!`)
             .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
             .setTimestamp()
             .setColor(message.guild.me.displayHexColor);
-        message.channel.send(embed);
+        message.lineReplyNoMention(embed);
     }
 };

@@ -6,8 +6,8 @@ module.exports = {
     aliases: ['wiki2'],
     cooldown: 15,
     async execute(client, message, args) {
-        if (!args[0]) return message.channel.send("Please enter a query!")
-        let m = await message.channel.send({
+        if (!args[0]) return message.lineReply("Please enter a query!")
+        let m = await message.lineReplyNoMention({
             embed: {
                 color: "GREEN",
                 title: `Searching Wikipedia just for you ⌛`,
@@ -52,7 +52,7 @@ module.exports = {
                     .setColor("GREEN")
                     .setDescription(description.slice(2048, 4096))
                 m.edit('', ThirdEmbed)
-                message.channel.send('', FourthEmbed)
+                message.lineReplyNoMention('', FourthEmbed)
             } if (description.length > 4096 && description.length < 6144) {
                 const FifthEmbed = new MessageEmbed()
                     .setAuthor(result.raw.title)
@@ -65,8 +65,8 @@ module.exports = {
                     .setColor("GREEN")
                     .setDescription(description.slice(4096, description.length))
                 await m.edit('', FifthEmbed)
-                message.channel.send(SixthEmbed)
-                message.channel.send(SeventhEmbed)
+                message.lineReplyNoMention(SixthEmbed)
+                message.lineReplyNoMention(SeventhEmbed)
             } if (description.length > 6144 && description.length < 8192) {
                 const EightEmbed = new MessageEmbed()
                     .setColor('GREEN')
@@ -81,9 +81,9 @@ module.exports = {
                     .setColor("GREEN")
                     .setDescription(description.slice(6144, description.length))
                 await m.edit('', EightEmbed);
-                message.channel.send(NinthEmbed);
-                message.channel.send(TenthEmbed);
-                message.channel.send(EleventhEmbed);
+                message.lineReplyNoMention(NinthEmbed);
+                message.lineReplyNoMention(TenthEmbed);
+                message.lineReplyNoMention(EleventhEmbed);
             }
         } catch (e) {
             return m.edit("Not Available!")
