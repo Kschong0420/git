@@ -16,6 +16,6 @@ module.exports = {
 
         let wasted = new Discord.MessageAttachment(image, "wasted.png")
 
-        message.channel.send(wasted);
+        message.lineReplyNoMention(wasted);
     }
 }

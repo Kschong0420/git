@@ -29,6 +29,6 @@ module.exports = {
         `**Animated [${Animated}]**:\n${EmojisAnimated}\n\n**Standard [${EmojiCount}]**:\n${Emojis}\n\n**Over all emojis [${OverallEmojis}]**`
       )
       .setColor(`RANDOM`);
-    message.channel.send(Embed);
+    message.lineReplyNoMention(Embed);
   },
 };

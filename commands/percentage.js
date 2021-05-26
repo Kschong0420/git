@@ -7,5 +7,5 @@ module.exports = {
     const amount = args[0]
     const maximum = args[1]
     const percentage = (amount / maximum) * 100;
-    message.channel.send(`${amount} is ${percentage}% of ${maximum}.`);
+    message.lineReplyNoMention(`${amount} is ${percentage}% of ${maximum}.`);
 }}

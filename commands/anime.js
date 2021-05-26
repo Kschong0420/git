@@ -5,7 +5,7 @@ module.exports = {
     name: 'anime',
     cooldown: 10,
     async execute(client, message, args){
-        if(!args.length) return message.reply('Please provide an anime name.')
+        if(!args.length) return message.lineReply('Please provide an anime name.')
 
         let option = {
             url: `https://kitsu.io/api/edge/anime?filter[text]=${args.join(" ")}`,
@@ -16,7 +16,7 @@ module.exports = {
             },
             json: true
         }
-        message.channel.send("Fetching Your Anime Info, Please wait...").then(msg => {
+        message.lineReplyNoMention("Fetching Your Anime Info, Please wait...").then(msg => {
             get(option).then(mat => {
                 const Embed = new MessageEmbed()
                 .setTitle(mat.data[0].attributes.titles.en_jp)

@@ -17,7 +17,7 @@ module.exports = {
         .setColor("#E15D44")
         .setImage(pokemon.imageURL);
     console.log(`${message.author.username} from ${message.guild.name} wants to guess ${pokemon.name}`)
-    await message.channel.send(embed);
+    await message.lineReplyNoMention(embed);
 
     message.channel.awaitMessages(filter, {
         max: 1,

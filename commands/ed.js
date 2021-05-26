@@ -21,6 +21,6 @@ module.exports = {
       )
       .setImage('https://cdn.discordapp.com/attachments/814445307764670495/814473765039767592/anime-nekopara-azuki-nekopara-coconut-nekopara-wallpaper-preview.jpg')
 
-    message.channel.send(newEmbed)
+    message.lineReplyNoMention(newEmbed)
   }
 }

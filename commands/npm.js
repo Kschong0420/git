@@ -4,9 +4,9 @@ module.exports = {
 	cooldown: 0,
 	async execute(client, message, args) {
 		const query = args[0];
-		if(!query) return message.channel.send(`Please specify a query!`)
+		if(!query) return message.lineReplyNoMention(`Please specify a query!`)
 		axios.get('http://registry.npmjs.com/'+query).then(({data}) => {
-			if(!data) return message.channel.send(`That NPM does not exist!`)
+			if(!data) return message.lineReplyNoMention(`That NPM does not exist!`)
 			const name = data.name;
 			const description = data.description;
 			const license = data.license;
@@ -17,7 +17,7 @@ module.exports = {
 			.addField("License", license)
 			.addField('Author(s)', maintainers)
 
-			message.channel.send(embed);
+			message.lineReplyNoMention(embed);
 		})
 	}
 }

@@ -9,7 +9,7 @@ module.exports = {
         figlet.text(args.join(" "), {
             font: "",
         }, async (err, data) => {
-            message.channel.send(`\`\`\`${data}\`\`\``);
+            message.lineReplyNoMention(`\`\`\`${data}\`\`\``);
         });
     }
 }

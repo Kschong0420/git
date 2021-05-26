@@ -7,7 +7,7 @@ module.exports = {
     aliases: ["nsfwlist", "nsfw"],
     cooldown: 20,
     async execute(client, message, args, Discord) {
-        if(!message.channel.nsfw){ message.channel.send("This command can only be used in channels marked nsfw."); return; }
+        if(!message.channel.nsfw){ message.lineReplyNoMention("This command can only be used in channels marked nsfw."); return; }
         const embed1 = new Discord.MessageEmbed()
             .setColor('RED')
             .setTitle('Nsfw command list Page 1')

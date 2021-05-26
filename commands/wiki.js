@@ -11,9 +11,9 @@ module.exports = {
         args.join(" ")
       )}`
     ).then(res => res.json().catch(() => {}));
-    if (!body) return message.channel.send("Page not found :x:");
+    if (!body) return message.lineReplyNoMention("Page not found :x:");
     if (body.title && body.title === "Not found.")
-      return message.channel.send("Error! Page Not Found... :x:");
+      return message.lineReplyNoMention("Error! Page Not Found... :x:");
 
     const embed = new Discord.MessageEmbed()
       .setTitle(`🌐 ${body.title}`)
@@ -25,6 +25,6 @@ module.exports = {
       .setDescription(`** ${body.extract} **`)
       .setColor("GREEN");
     if (body.thumbnail) embed.setThumbnail(body.thumbnail.source);
-    message.channel.send(embed);
+    message.lineReplyNoMention(embed);
   }
 }; 

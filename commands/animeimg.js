@@ -7,39 +7,39 @@ module.exports = {
     async execute(client, message, args) {
 
         const type = args.join(' ')
-        if (!type) return message.channel.send('Please enter a type of anime image!')
+        if (!type) return message.lineReply('Please enter a type of anime image!')
 
         if (type === 'cry') {
             let data = await random.getAnimeImgURL("cry")
-            message.channel.send(data)
+            message.lineReplyNoMention(data)
         } 
         if (type === 'waifu') {
             let data = await random.getAnimeImgURL("waifu")
-            message.channel.send(data)
+            message.lineReplyNoMention(data)
         }
         if (type === 'pat') {
             let data = await random.getAnimeImgURL("pat")
-            message.channel.send(data)
+            message.lineReplyNoMention(data)
         }
         if (type === 'hug') {
             let data = await random.getAnimeImgURL("hug")
-            message.channel.send(data)
+            message.lineReplyNoMention(data)
         }
         if (type === 'kiss') {
             let data = await random.getAnimeImgURL("kiss")
-            message.channel.send(data)
+            message.lineReplyNoMention(data)
         }
         if (type === 'slap') {
             let data = await random.getAnimeImgURL("slap")
-            message.channel.send(data)
+            message.lineReplyNoMention(data)
         }
         if (type === 'smug') {
             let data = await random.getAnimeImgURL("smug")
-            message.channel.send(data)
+            message.lineReplyNoMention(data)
         }
         if (type === 'punch') {
             let data = await random.getAnimeImgURL("punch")
-            message.channel.send(data)
+            message.lineReplyNoMention(data)
         }
     }
 }

@@ -10,6 +10,6 @@ module.exports = {
         .setTitle("Avatar")
         .setImage(avatar)
         .setTimestamp()
-        message.channel.send(embed)
+        message.lineReplyNoMention(embed)
     }
 }

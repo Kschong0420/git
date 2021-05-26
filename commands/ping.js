@@ -6,7 +6,7 @@ module.exports = {
   description: "Returns Latency and API Ping",
   timeout: 10000,
     async execute(client, message, args) {
-      const msg = await message.channel.send("Pinging...");
+      const msg = await message.lineReplyNoMention("Pinging...");
       const Embed = new MessageEmbed()
         .setTitle("Pong!")
         .setAuthor(`${message.author.username}` , message.author.displayAvatarURL())

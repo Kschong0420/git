@@ -60,9 +60,9 @@ module.exports = {
             "`": ","
         }
         const text = args.join(' ');
-        if (!text) return message.reply('Please write down the text you want to flip.');
+        if (!text) return message.lineReply('Please write down the text you want to flip.');
         message.delete()
         const converted = letterTrans(text, dictionary);
-        message.channel.send(converted);
+        message.lineReplyNoMention(converted);
     }
 }

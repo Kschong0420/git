@@ -11,18 +11,18 @@ module.exports = {
         let text = args.join(" ");
 
         if(!text){
-            return message.channel.send("Please write something on Kanna's paper.");
+            return message.lineReply("Please write something on Kanna's paper.");
         }
 
-        if (text.length > 48) return message.channel.send("You write too many text until Kanna cannot write all in her paper.")
+        if (text.length > 48) return message.lineReply("You write too many text until Kanna cannot write all in her paper.")
 
         try {
             let res = await fetch(encodeURI(`https://nekobot.xyz/api/imagegen?type=kannagen&text=${text}`));
             let json = await res.json();
 
-           message.channel.send(json.message);
+           message.lineReplyNoMention(json.message);
            } catch (err) {
-               return message.channel.send('An error occured.')
+               return message.lineReplyNoMention('An error occured.')
            }
        }
 };

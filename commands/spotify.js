@@ -17,7 +17,7 @@ module.exports = {
             const nostatus = new Discord.MessageEmbed()
             .setColor('GREEN')
             .setDescription("The user you mentioned didnt't using spotify now!")
-            return message.channel.send(nostatus);
+            return message.lineReplyNoMention(nostatus);
         }
     
         if (status !== null && status.type === "LISTENING" && status.name === "Spotify" && status.assets !== null) {
@@ -43,7 +43,7 @@ module.exports = {
             .addField("Artist:", artist, true)
             .addField("Duration:", time, false)
             .addField("Now Listening:", `[\`${artist} - ${name}\`](${url})`, false)
-            return message.channel.send(information)
+            return message.lineReplyNoMention(information)
             }
         }
     }

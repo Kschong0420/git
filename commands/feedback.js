@@ -24,7 +24,7 @@ module.exports = {
             .setTimestamp()
             .setFooter("New Feedback Found")
 
-        message.reply("**❤️ Your Feedback has been reported in the official server. Thanks for the valuable feedback thanks for supporting us.**")
+        message.lineReply("**❤️ Your Feedback has been reported in the official server. Thanks for the valuable feedback thanks for supporting us.**")
         channel.send(embed).then(i => i.react("💖"))
 
 

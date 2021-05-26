@@ -8,7 +8,7 @@ module.exports = {
 
   async execute (client, message, args) {
     const character = args.join(' ')
-    if (!character) return message.channel.send('Please enter an character name!')
+    if (!character) return message.lineReplyNoMention('Please enter an character name!')
 
     if (character === 'azuki') {
         const azuki1 = new MessageEmbed()

@@ -10,10 +10,10 @@ module.exports = {
     
         weather.find({search: args.join(" "), degreeType: 'C'}, function (error, result){
         // 'C' can be changed to 'F' for farneheit results
-        if(error) return message.channel.send(error);
-        if(!args[0]) return message.channel.send('Please specify a location')
+        if(error) return message.lineReplyNoMention(error);
+        if(!args[0]) return message.lineReplyNoMention('Please specify a location')
         
-        if(result === undefined || result.length === 0) return message.channel.send('**Invalid** location');
+        if(result === undefined || result.length === 0) return message.lineReplyNoMention('**Invalid** location');
 
         var current = result[0].current;
         var location = result[0].location;
@@ -33,7 +33,7 @@ module.exports = {
         .addField('Observation Point', current.observationpoint, true)
 
 
-        message.channel.send(weatherinfo)
+        message.lineReplyNoMention(weatherinfo)
         })        
     }
 }

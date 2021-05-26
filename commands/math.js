@@ -13,71 +13,71 @@ module.exports = {
       let ans
   
       if (!op) {
-        message.reply("You need to enter the operation and operands next to the command as follow: \`v math <add/subtract/multiply/divide/mod/power/root> <FirstNumber> <SecondNumber>\`")
+        message.lineReply("You need to enter the operation and operands next to the command as follow: \`v math <add/subtract/multiply/divide/mod/power/root> <FirstNumber> <SecondNumber>\`")
       }
   
       else {
         if (op === "add") {
           if (!args[1] || !args[2]) {
-            message.reply("You need to enter the operation and operands next to the command as follow: \`v math add <FirstNumber> <SecondNumber>\`")
+            message.lineReply("You need to enter the operation and operands next to the command as follow: \`v math add <FirstNumber> <SecondNumber>\`")
           }
           else {
             ans = parseNo1 + parseNo2
-            message.channel.send("You answer is " + ans)
+            message.lineReplyNoMention("You answer is " + ans)
           }
         }
         else if (op === "subtract") {
         if (!args[1] || !args[2]) {
-            message.reply("You need to enter the operation and operands next to the command as follow: \`v math subtract <FirstNumber> <SecondNumber>\`")
+            message.lineReply("You need to enter the operation and operands next to the command as follow: \`v math subtract <FirstNumber> <SecondNumber>\`")
           }
           else {
             ans = parseNo1 - parseNo2
-            message.channel.send("You answer is " + ans)
+            message.lineReplyNoMention("You answer is " + ans)
           }
         }
         else if (op === "multiply") {
           if (!args[1] || !args[2]) {
-            message.reply("You need to enter the operation and operands next to the command as follow: \`v math multiply <FirstNumber> <SecondNumber>\`")
+            message.lineReply("You need to enter the operation and operands next to the command as follow: \`v math multiply <FirstNumber> <SecondNumber>\`")
           }
           else {
             ans = parseNo1 * parseNo2
-            message.channel.send("You answer is " + ans)
+            message.lineReplyNoMention("You answer is " + ans)
           }
         }
         else if (op === "divide") {
           if (!args[1] || !args[2]) {
-            message.reply("You need to enter the operation and operands next to the command as follow: \`v math divide <FirstNumber> <SecondNumber>\`")
+            message.lineReply("You need to enter the operation and operands next to the command as follow: \`v math divide <FirstNumber> <SecondNumber>\`")
           }
           else {
             ans = parseNo1 / parseNo2
-            message.channel.send("You answer is " + ans)
+            message.lineReplyNoMention("You answer is " + ans)
           }
         }
         else if (op === "mod") {
           if (!args[1] || !args[2]) {
-            message.reply("You need to enter the operation and operands next to the command as follow: \`v math mod <FirstNumber> <SecondNumber>\`")
+            message.lineReply("You need to enter the operation and operands next to the command as follow: \`v math mod <FirstNumber> <SecondNumber>\`")
           }
           else {
             ans = parseNo1 % parseNo2
-            message.channel.send("You answer is " + ans)
+            message.lineReplyNoMention("You answer is " + ans)
           }
         }
         else if (op === "power") {
           if (!args[1] || !args[2]) {
-            message.reply("You need to enter the operation and operands next to the command as follow: \`v math power <FirstNumber> <SecondNumber>\`")
+            message.lineReply("You need to enter the operation and operands next to the command as follow: \`v math power <FirstNumber> <SecondNumber>\`")
           }
           else {
             ans = Math.pow(parseNo1, parseNo2)
-            message.channel.send("You answer is " + ans)
+            message.lineReplyNoMention("You answer is " + ans)
           }
         }
         else if (op === "root") {
           if (!args[1] || !args[2]) {
-            message.reply("You need to enter the operation and operands next to the command as follow: \`v math root <FirstNumber> <SecondNumber>\`")
+            message.lineReply("You need to enter the operation and operands next to the command as follow: \`v math root <FirstNumber> <SecondNumber>\`")
           }
           else {
             ans = Math.pow(parseNo1, 1/parseNo2)
-            message.channel.send("You answer is " + ans)
+            message.lineReplyNoMention("You answer is " + ans)
           }
         }
       }

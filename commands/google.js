@@ -10,7 +10,7 @@ module.exports = {
        let sntnce = message.content.split(' ');
     sntnce.shift();
     sntnce = sntnce.join(' ');
-    if (!sentence) return message.reply('Please specify a search query.');
+    if (!sentence) return message.lineReply('Please specify a search query.');
      let embed = new Discord.MessageEmbed()
       .setTitle('You Searched Google')
       .setDescription(
@@ -18,7 +18,7 @@ module.exports = {
       )
       .setColor('GREEN')
       .setFooter(' ');
-    message.channel.send(embed);
+    message.lineReplyNoMention(embed);
   }
 
 }

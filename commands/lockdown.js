@@ -13,11 +13,11 @@ module.exports = {
     category: "moderation",
 
 
-    cooldown: 60,
+    cooldown: 5,
 
 
     async execute(client, message, args) {
-        if(!message.member.permissions.has("ADMINISTRATOR")) return message.channel.send('Unknown Command.');
+        if(!message.member.permissions.has("ADMINISTRATOR")) return message.lineReplyNoMention('Unknown Command.');
 
 
         const channels = message.guild.channels.cache.filter(ch => ch.type !== 'category');
@@ -47,7 +47,7 @@ module.exports = {
             })
 
 
-            return message.channel.send('locked all channels');
+            return message.lineReplyNoMention('locked all channels');
 
 
         } else if (args[0] === 'off') {
@@ -77,7 +77,7 @@ module.exports = {
             })
 
 
-            return message.channel.send('unlocked all channels')
+            return message.lineReplyNoMention('unlocked all channels')
 
 
         }

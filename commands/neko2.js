@@ -9,6 +9,6 @@ module.exports = {
        const embed = new Discord.MessageEmbed()
        .setColor(0x00A2E8)
        .setImage(body.neko)
-       message.channel.send(embed)
+       message.lineReplyNoMention(embed)
  }}
    

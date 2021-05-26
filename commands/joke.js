@@ -13,7 +13,7 @@ module.exports = {
 
                 const answer = res.data.punchline;
 
-                message.channel.send(new Discord.MessageEmbed()
+                message.lineReplyNoMention(new Discord.MessageEmbed()
                     .setTitle(`Here is a joke!`)
                     .setDescription(`${joke}\n\n||${answer}||`)
                     .setColor('RANDOM')

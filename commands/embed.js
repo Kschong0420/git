@@ -5,7 +5,7 @@ module.exports = {
   cooldown: 30,
 
   async execute(client, message, args) {
-    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Unknown Command.")
+    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.lineReplyNoMention("Unknown Command.")
 
     let questions = {
         firstQuestion: "What do you want to be the embed's title? Type the title into the chat now!",
@@ -13,7 +13,7 @@ module.exports = {
         thirdQuestion: "Type the color you want to be on the embed! It can be a color like red or a hex code.",
         fourthQuestion: "What do you want its footer to be?",
     }
-        message.channel.send('This will continue in DMs.')
+        message.lineReplyNoMention('This will continue in DMs.')
         message.author.send(questions.firstQuestion).then(msg => {
             const filter1 = m => m.author.id === message.author.id
             msg.channel.awaitMessages(filter1, {
@@ -48,7 +48,7 @@ module.exports = {
                                         if(msg4.toLowerCase() === "cancel") return message.author.send("Process cancelled.")
                                         message.author.send("Embed created.")
                                             
-                                                    message.channel.send(
+                                                    message.lineReplyNoMention(
                                                         new discord.MessageEmbed()
                                                             .setTitle(msg1)
                                                             .setDescription(msg2)

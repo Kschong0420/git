@@ -7,16 +7,16 @@ module.exports = {
     cooldown: 10,
     async execute(client, message, args) {
 
-        if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send('Unknown Command.');
+        if (!message.member.hasPermission("ADMINISTRATOR")) return message.lineReplyNoMention('Unknown Command.');
         let channel = message.mentions.channels.first();
         let channel_find = message.guild.channels.cache.find(ch => ch.id == channel);
         const prefix = process.env.PREFIX 
-        if (!channel) return message.channel.send(`Syntax Error! Use ${prefix} hide \`<MentionChannel>\``)
-        if (!channel_find) return message.channel.send('Channel not found!');
+        if (!channel) return message.lineReply(`Syntax Error! Use ${prefix} hide \`<MentionChannel>\``)
+        if (!channel_find) return message.lineReplyNoMention('Channel not found!');
         channel_find.updateOverwrite(message.guild.id, {
             VIEW_CHANNEL: false
         });
-        message.channel.send('Channel has been hide!');
+        message.lineReplyNoMention('Channel has been hide!');
 
     },
 };

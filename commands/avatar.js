@@ -11,19 +11,19 @@ module.exports = {
       .setTitle(`${user.username}'s Avatar`)
       .setImage(user.displayAvatarURL({ dynamic: true, size: 4096}))
       .setURL(user.displayAvatarURL())
-      message.channel.send(selfembed)
+      message.lineReplyNoMention(selfembed)
     }
 
     const avatar_list = message.mentions.users.map(user => {
       return `**${user.username}'s Avatar: ** ${user.displayAvatarURL({ dynamic: true , size: 4096})}`
     })
 
-    message.channel.send(avatar_list)
+    message.lineReplyNoMention(avatar_list)
   }
 }
 
 // if (!message.mentions.users.size) {
-//    return message.channel.send(`**Your Avatar: ** ${message.author.displayAvatarURL({ dynamic: true })}`);
+//    return message.lineReplyNoMention(`**Your Avatar: ** ${message.author.displayAvatarURL({ dynamic: true })}`);
 // }
 //
 // const avatar_list = message.mentions.users.map(user => {

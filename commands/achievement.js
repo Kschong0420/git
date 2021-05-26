@@ -8,8 +8,8 @@ module.exports = {
         try {
             const icon = Math.floor(Math.random() * 39)
             const text = args.join(" ");
-            if (!text) return message.channel.send("You need to provide text for the achievement");
-            if (text.length > 25) return message.reply('text must be under 25 characters.');
+            if (!text) return message.lineReply("You need to provide text for the achievement.");
+            if (text.length > 25) return message.lineReply('Text must be under 25 characters.');
             const superagent = require('superagent')
             const { body } = await superagent
                 .get('https://www.minecraftskinstealer.com/achievement/a.php')
@@ -18,7 +18,7 @@ module.exports = {
                     h: 'Achievement Get!',
                     t: text
                 });
-            message.channel.send({
+            message.lineReplyNoMention({
                 files: [{ attachment: body, name: 'achievement.png' }]
             });
         } catch (err) {

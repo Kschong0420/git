@@ -31,9 +31,9 @@ module.exports = {
         )
         .setImage('https://i.imgur.com/FdqTuMJ.jpg')
 
-      message.channel.send(newEmbed)
+      message.lineReplyNoMention(newEmbed)
     } else {
-      message.reply('Unknown Command.')
+      message.lineReply('Unknown Command.')
     }
   }
 }

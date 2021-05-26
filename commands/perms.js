@@ -73,5 +73,5 @@ module.exports = {
               };
             })
         });
-        message.channel.send(embed)
+        message.lineReplyNoMention(embed)
       }}

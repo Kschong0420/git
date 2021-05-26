@@ -10,6 +10,6 @@ module.exports = {
             .setThumbnail('https://cdn.discordapp.com/emojis/821318335794905098.gif?v=1')
             .setImage('https://cdn.discordapp.com/emojis/821318335794905098.gif?v=1')
 
-        message.channel.send(embed)
+        message.lineReplyNoMention(embed)
     }
 }

@@ -13,15 +13,15 @@ module.exports = {
         let alias5 = args[3]
 
         if (!language)
-            return message.reply("What language am I suppose to translate to?");
+            return message.lineReply("What language am I suppose to translate to?");
         if (!language.length == 2)
             if (!language.length == 5)
-                return message.reply(
+                return message.lineReply(
                     "All Language must be 2 letter alias. E.g `English > en`, except Simplified Chinese is `zh-cn` and Traditional Chinese is `zh-tw`."
                 );
 
 
-        if (!text) return message.reply("What am I suppose to translate?");
+        if (!text) return message.lineReply("What am I suppose to translate?");
 
         const result = await translate(text, { to: language });
 
@@ -32,6 +32,6 @@ module.exports = {
             .setFooter(message.author.username)
             .setColor("RED");
 
-        message.channel.send(embed)
+        message.lineReplyNoMention(embed)
     }
 };  

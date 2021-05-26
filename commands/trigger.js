@@ -16,6 +16,6 @@ module.exports = {
 
         let triggered = new Discord.MessageAttachment(image, "triggered.gif")
 
-        message.channel.send(triggered);
+        message.lineReplyNoMention(triggered);
     }
 }

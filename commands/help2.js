@@ -9,6 +9,6 @@ module.exports = {
             .setTitle("Commands")
             .setDescription(client.commands.map(cmd => `\`${cmd.name}\``).join(", "))
             .setTimestamp()
-        message.channel.send(embed)
+        message.lineReplyNoMention(embed)
     }
 }

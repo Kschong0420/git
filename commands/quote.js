@@ -26,7 +26,7 @@ module.exports = {
         }
         const img = await canvacord.Canvas.quote({ username: `${user.user.username}`, color: `${upperCase(user.displayHexColor)}`, message: `${msg}`, image: e })
         let attachment = new Discord.MessageAttachment(img, "quote.png");
-        return message.channel.send(attachment);
+        return message.lineReplyNoMention(attachment);
     }
 }
 

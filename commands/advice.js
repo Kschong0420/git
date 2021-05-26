@@ -7,7 +7,7 @@ module.exports = {
     async execute(client, message, args) {
       
         let data = await random.getAdvice()
-    message.channel.send(data)
+    message.lineReplyNoMention(data)
     }
   }
   

@@ -16,6 +16,6 @@ module.exports = {
 
         let hitler = new Discord.MessageAttachment(image, "hitler.png")
 
-        message.channel.send(hitler);
+        message.lineReplyNoMention(hitler);
     }
 }

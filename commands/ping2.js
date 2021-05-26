@@ -8,7 +8,7 @@ module.exports = {
             red: ":red_circle:"
         }
         
-        const msg = await message.channel.send(new Discord.MessageEmbed()
+        const msg = await message.lineReplyNoMention(new Discord.MessageEmbed()
         .setColor("RED") //you can change this
         .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
         .addField("Websocket", 

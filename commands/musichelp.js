@@ -30,5 +30,5 @@ module.exports = {
         .setImage('https://i.pinimg.com/564x/0b/e0/fb/0be0fbd076cc1e70da1add4c55e12149.jpg')
         .setFooter('You need to join a voice channel only you can use these commands.')
 
-      message.channel.send(newEmbed)
+      message.lineReplyNoMention(newEmbed)
     }}

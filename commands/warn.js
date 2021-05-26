@@ -4,13 +4,13 @@ module.exports = {
     name: 'warn',
     cooldown: 0,
     async execute(client, message, args) {
-    if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send('Unknown Command.');
+    if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.lineReplyNoMention('Unknown Command.');
 
     var user = message.mentions.users.first();
-    if(!user) return message.reply('You didn\'t mention anyone!');
+    if(!user) return message.lineReply('You didn\'t mention anyone!');
 
     if(user.id === message.author.id) {
-        return message.reply("You cannot warn yourself!")
+        return message.lineReply("You cannot warn yourself!")
     }
 
     var member;
@@ -21,10 +21,10 @@ module.exports = {
         member = null;
     }
 
-    if(!member) return message.reply('They aren\'t in the server!');
+    if(!member) return message.lineReply('They aren\'t in the server!');
 
     var reason = args.splice(1).join(' ');
-    if(!reason) return message.reply('You need to give a reason!');
+    if(!reason) return message.lineReply('You need to give a reason!');
 
     var channel = message.guild.channels.cache.find(c => c.name === 'warnlog');
 
@@ -45,6 +45,6 @@ module.exports = {
         console.warn(err);
     }
 
-    message.channel.send(`**${user}** has been warned by **${message.author}**!`);
+    message.lineReplyNoMention(`**${user}** has been warned by **${message.author}**!`);
 }
 }

@@ -101,7 +101,7 @@ module.exports = {
                 { name: "Roles", value: `${roles}` }
             )
             .setColor(`BLUE`);
-        message.channel.send(embed);
+        message.lineReplyNoMention(embed);
     }
 
 };

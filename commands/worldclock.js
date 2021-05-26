@@ -46,6 +46,6 @@ module.exports = {
       .addField(':flag_in: India (IST)', `${ist}\n(GMT+05:30)`, true)
       .addField('\u200B', '\u200B', true)
       .setColor('BLUE');
-    message.channel.send(worldClock);
+    message.lineReplyNoMention(worldClock);
   }
 }

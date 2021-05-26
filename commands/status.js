@@ -17,7 +17,7 @@ module.exports = {
                 .addField("**No Status**", 'This user does not have any custom status!')
                 .setFooter(user.displayName, user.user.displayAvatarURL({ dynamic: true }))
                 .setTimestamp()
-            message.channel.send(sembed)
+            message.lineReplyNoMention(sembed)
             return undefined;
         }
 
@@ -31,7 +31,7 @@ module.exports = {
                     .setThumbnail(user.user.displayAvatarURL({ dynamic: true }))
                     .setFooter(user.displayName, user.user.displayAvatarURL({ dynamic: true }))
                     .setTimestamp()
-                message.channel.send(embed)
+                message.lineReplyNoMention(embed)
             }
             else if (activity.type === 'PLAYING') {
                 let name1 = activity.name
@@ -47,7 +47,7 @@ module.exports = {
                     .addField("**App**", `${name1}`)
                     .addField("**Details**", `${details1 || "No Details"}`)
                     .addField("**Working on**", `${state1 || "No Details"}`)
-                message.channel.send(sembed);
+                message.lineReplyNoMention(sembed);
             }
             else if (activity.type === 'LISTENING' && activity.name === 'Spotify' && activity.assets !== null) {
 
@@ -70,7 +70,7 @@ module.exports = {
                     .addField('Listen to Track', `${trackURL}`, false)
                     .setFooter(user.displayName, user.user.displayAvatarURL({ dynamic: true }))
                     .setTimestamp()
-                message.channel.send(embed);
+                message.lineReplyNoMention(embed);
             }
         })
     }

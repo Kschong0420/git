@@ -10,7 +10,7 @@ module.exports = {
 		.setDescription("React to play!")
         .setFooter(message.author.username)
 		.setTimestamp()
-		let msg = await message.channel.send(embed)
+		let msg = await message.lineReplyNoMention(embed)
 		await msg.react("🗻")
 		await msg.react("✂")
 		await msg.react("📰")
@@ -34,15 +34,15 @@ module.exports = {
         		if ((me === "🗻" && reaction.emoji.name === "✂") ||
                 (me === "📰" && reaction.emoji.name === "🗻") ||
                 (me === "✂" && reaction.emoji.name === "📰")) {
-                    message.reply("You lose!");
+                    message.lineReply("You lose!");
             } else if (me === reaction.emoji.name) {
-                return message.reply("It's a tie!");
+                return message.lineReply("It's a tie!");
             } else {
-                return message.reply("You won!");
+                return message.lineReply("You won!");
             }
         })
         .catch(collected => {
-                message.reply('Process has been cancelled since you did not respond in time!');
+                message.lineReply('Process has been cancelled since you did not respond in time!');
             })
 }
 }

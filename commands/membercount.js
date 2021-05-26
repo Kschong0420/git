@@ -9,6 +9,6 @@ module.exports = {
     const memberEmbed = new Discord.MessageEmbed()
       .setTitle(`${message.guild.name} has ${membersInServer} members in the server!`)
 
-    message.channel.send(memberEmbed)
+    message.lineReplyNoMention(memberEmbed)
   }
 }

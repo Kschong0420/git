@@ -9,7 +9,7 @@ module.exports = {
 
           const gayrate = Math.floor(Math.random() * 100)
           const embed = new Discord.MessageEmbed()
-               .addField(":rainbow_flag:  Gay Rate :rainbow_flag:  ", `I rate ${user} a ${gayrate} out of 100 on the gay scale`)
+               .addField(":rainbow_flag:  Gay Rate :rainbow_flag:  ", `I rate ${user} a ${gayrate} out of 100 on the gay scale.`)
                .setThumbnail(user.displayAvatarURL)
-          message.channel.send({ embed })
+          message.lineReplyNoMention({ embed })
      }}

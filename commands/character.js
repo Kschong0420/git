@@ -23,6 +23,6 @@ module.exports = {
       )
       .setImage('https://images5.alphacoders.com/653/thumb-1920-653610.jpg')
 
-    message.channel.send(newEmbed)
+    message.lineReplyNoMention(newEmbed)
   }
 }

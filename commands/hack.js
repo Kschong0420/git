@@ -12,10 +12,10 @@ module.exports = {
 
         const taggedUser = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(r => r.user.username.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.guild.members.cache.find(r => r.displayName.toLowerCase() === args.join(' ').toLocaleLowerCase()) 
         if (!taggedUser) {
-            return message.channel.send('Please mention somebody to hack!');
+            return message.lineReplyNoMention('Please mention somebody to hack!');
         }
-        message.channel.send(`Hacking  ${taggedUser}...`);
-        message.channel.send('Status: ■□□□□□□□□□□ 0%')
+        message.lineReplyNoMention(`Hacking  ${taggedUser}...`);
+        message.lineReplyNoMention('Status: ■□□□□□□□□□□ 0%')
         .then(msg => {
             wait(93);
             msg.edit('Status: ■■□□□□□□□□□ 7%');
@@ -67,7 +67,7 @@ module.exports = {
             msg.edit('Status: ■■■■■■■■■■□ 97%');
             wait(90);
             msg.edit('Status: ■■■■■■■■■■■ 100%').then(() => {
-                message.channel.send(`Succesfuly hacked ${taggedUser}!`)
+                message.lineReplyNoMention(`Succesfuly hacked ${taggedUser}!`)
             })
         })
     }

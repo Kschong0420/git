@@ -16,6 +16,6 @@ module.exports = {
 
         let wanted = new Discord.MessageAttachment(image, "wanted.png")
 
-        message.channel.send(wanted);
+        message.lineReplyNoMention(wanted);
     }
 }

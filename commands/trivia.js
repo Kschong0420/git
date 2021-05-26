@@ -32,7 +32,7 @@ class Game {
         if (dif && !cat) {
             let question
             if (dif.toLowerCase() == 'any') return this.get_data()
-            if (dif.toLowerCase() != 'easy' && dif.toLowerCase() != 'medium' && dif.toLowerCase() != 'hard') return this.message.channel.send('Please enter a valid Difficulty\nUse .trivia categories to view a list of categories and difficulties');
+            if (dif.toLowerCase() != 'easy' && dif.toLowerCase() != 'medium' && dif.toLowerCase() != 'hard') return this.message.lineReplyNoMention('Please enter a valid Difficulty\nUse .trivia categories to view a list of categories and difficulties');
             await fetch('https://opentdb.com/api.php?amount=1&difficulty=' + dif.toLowerCase() + '&encode=base64')
             .then(response => response.json())
             .then(data => question = data);
@@ -46,8 +46,8 @@ class Game {
                     this.question_id = id_list[i].id
                 }
             }
-            if (dif.toLowerCase() != 'easy' && dif.toLowerCase() != 'medium' && dif.toLowerCase() != 'hard' && dif.toLowerCase() != 'any') return this.message.channel.send('Please enter a valid Difficulty\nUse .trivia categories to view a list of categories and difficulties');
-            if (!this.question_id) return this.message.channel.send('Please enter a valid Category\nUse .trivia categories to view a list of categories and difficulties');
+            if (dif.toLowerCase() != 'easy' && dif.toLowerCase() != 'medium' && dif.toLowerCase() != 'hard' && dif.toLowerCase() != 'any') return this.message.lineReplyNoMention('Please enter a valid Difficulty\nUse .trivia categories to view a list of categories and difficulties');
+            if (!this.question_id) return this.message.lineReplyNoMention('Please enter a valid Category\nUse .trivia categories to view a list of categories and difficulties');
             if (dif.toLowerCase() == 'any') {
                 await fetch('https://opentdb.com/api.php?amount=1&category=' + this.question_id + '&encode=base64')
                 .then(response => response.json())
@@ -122,7 +122,7 @@ class Game {
             .setDescription(this.answer_array)
             .setFooter('Category - ' + atob(this.question.results[0].category) + ', Difficulty - ' + atob(this.question.results[0].difficulty))
         }
-        this.question_message = await this.message.channel.send(this.question_embed)
+        this.question_message = await this.message.lineReplyNoMention(this.question_embed)
         let step = -1
         while (step < this.question_length) {
             step++

@@ -6,7 +6,7 @@ module.exports = {
     cooldown: 0,
 
     async execute(client, message, args) {
-        if (message.author.id !== "759368420453384213") return message.channel.send("Unknown Command.");
+        if (message.author.id !== "759368420453384213") return message.lineReplyNoMention("Unknown Command.");
         client.commands.sweep(() => true)
         glob(`${__dirname}/**/*.js`, async (err, filePaths) => {
             filePaths.forEach((file) => {
@@ -23,7 +23,7 @@ module.exports = {
                     });
                 }
             });
-            message.channel.send('Reloaded commands!')
+            message.lineReplyNoMention('Reloaded commands!')
         });
     },
 };

@@ -24,7 +24,7 @@ module.exports = {
             .addField("|---|----|---|", `|${slotseven}|${sloteight}|${slotnine}|`)
             .setFooter("Wow! " + message.author.username + " Congratulations!")
             .setThumbnail(message.author.displayAvatarURL({ dynamic: true }))
-        message.channel.send(won)
+        message.lineReplyNoMention(won)
     } else {
         const lost = new Discord.MessageEmbed()
             .setColor("#7289DA")
@@ -33,6 +33,6 @@ module.exports = {
             .addField("|---|----|---|", `|${slotseven}|${sloteight}|${slotnine}|`)
             .setFooter("Awww " + message.author.username + " better luck next time. Try again!")
             .setThumbnail(message.author.displayAvatarURL({ dynamic: true }))
-        message.channel.send(lost)
+        message.lineReplyNoMention(lost)
     }
 }}

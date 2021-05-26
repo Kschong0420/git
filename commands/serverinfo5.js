@@ -6,7 +6,7 @@ module.exports = {
   cooldown: 20,
  
   async execute(client, message, args) {
-    if (!message.guild) return message.channel.send("this command is only meant to be used in servers.")
+    if (!message.guild) return message.lineReplyNoMention("this command is only meant to be used in servers.")
         function checkDays(date) {
         let now = new Date();
         let diff = now.getTime() - date.getTime();
@@ -68,7 +68,7 @@ const verificationLevels = {
         .addField("Creation Date", `${message.channel.guild.createdAt.toUTCString().substr(0, 16)} (${checkDays(message.channel.guild.createdAt)})`, true)
         .setColor("#d4c5a2")
         .setThumbnail(message.guild.iconURL({ dynamic: true }))
-    message.channel.send(embed);
+    message.lineReplyNoMention(embed);
  
   }
 }

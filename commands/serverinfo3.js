@@ -33,6 +33,6 @@ module.exports = { // Your Command Handler
         .addField('Server Stats:-', `${guild.channels.cache.filter(channel => channel.type == 'text').size} ⌨️(Text Channel)\n${guild.channels.cache.filter(channel => channel.type == 'voice').size} 🔈(Voice Channel)\n${guild.channels.cache.filter(channel => channel.type == 'news').size} 📢(Announcement Channel)\n${guild.channels.cache.filter(channel => channel.type == 'category').size} 📁(Categories)`, true)
         .setTimestamp()
         .setFooter('Server Info', icon)
-        message.channel.send(embed)
+        message.lineReplyNoMention(embed)
     }
 }

@@ -11,7 +11,7 @@ module.exports = {
     aliases: ["tbf"],
     cooldown: 10,
     async execute(client, message, args) {
-    const msg = await message.channel.send('(\\\\°□°)\\\\  ┬─┬');
+    const msg = await message.lineReplyNoMention('(\\\\°□°)\\\\  ┬─┬');
     for (const frame of frames) {
         setTimeout(() => {}, 4000);
         await msg.edit(frame);

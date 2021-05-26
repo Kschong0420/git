@@ -210,7 +210,7 @@ module.exports = {
 
             )
 
-        await message.channel.send(embed)
+        await message.lineReplyNoMention(embed)
 
     }
 

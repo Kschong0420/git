@@ -8,8 +8,8 @@ module.exports = {
         const { body } = await snekfetch
             .get('https://nekos.life/api/lewd/neko')
        
-        if (!message.channel.nsfw) return message.channel.send("This command can only be used in channels marked nsfw.")
+        if (!message.channel.nsfw) return message.lineReplyNoMention("This command can only be used in channels marked nsfw.")
         const embed = new Discord.MessageEmbed()
         .setImage(body.neko)
-        message.channel.send(embed)
+        message.lineReplyNoMention(embed)
   }}

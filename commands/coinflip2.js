@@ -9,6 +9,6 @@ module.exports = {
         let embed = new MessageEmbed()
         .setTitle("Coinflip!")
         .setDescription(`You flipped a **${choice}**!`)
-        message.channel.send(embed)
+        message.lineReplyNoMention(embed)
     }
 }

@@ -8,7 +8,7 @@ module.exports = {
         //command
         const search = `${args}`;
         if (!search)
-            return message.reply('Please add a search query!');
+            return message.lineReply('Please add a search query!');
 
         malScraper.getInfoFromName(search)
             .then((data) => {
@@ -38,14 +38,14 @@ module.exports = {
                     .addField('Status', `\`${data.status}\``, true)
                     .addField('Identifier', `\`${data.id}\``, true)
                     .addField('Link', data.url, true)
-                message.channel.send(malEmbed)
+                message.lineReplyNoMention(malEmbed)
 
                 const sypEmbed = new Discord.MessageEmbed()
                     .setColor('RANDOM')
                     .addField('Synopsis', `${data.synopsis}`)
                     .setTimestamp()
                     .setFooter(`Requested by ${message.member.displayName}`, message.author.displayAvatarURL({ dynamic: true }))
-                message.channel.send(sypEmbed)
+                message.lineReplyNoMention(sypEmbed)
             })
     }
 };

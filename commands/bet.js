@@ -6,13 +6,13 @@ module.exports = {
     cooldown: 10,
 	async execute(client, message, args) {
         const bet = args.join(' ')
-        if (!bet) return message.reply('Please place a bet.')
+        if (!bet) return message.lineReply('Please place a bet.')
 		let embed = new discord.MessageEmbed()
 		.setTitle("Bet")
 		.addField('Betting:', `${bet}`)
         .setFooter(message.author.username)
 		.setTimestamp()
-		let msg = await message.channel.send(embed)
+		let msg = await message.lineReplyNoMention(embed)
 		await msg.react("👍")
 		await msg.react("✌")
 
@@ -35,13 +35,13 @@ module.exports = {
 			await msg.edit(result)
         		if ((me === "👍" && reaction.emoji.name === "✌") ||
                 (me === "✌" && reaction.emoji.name === "👍")) {
-                    message.reply("You lose!");
+                    message.lineReply("You lose!");
             } else if (me === reaction.emoji.name) {
-                return message.reply("You won!");
+                return message.lineReply("You won!");
             } 
         })
         .catch(collected => {
-                message.reply('Process has been cancelled since you did not respond in time!');
+                message.lineReply('Process has been cancelled since you did not respond in time!');
             })
 }
 }

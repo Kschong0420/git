@@ -7,7 +7,7 @@ module.exports = {
     async execute(client, message, args) {
         const msg = client.esnipes.get(message.channel.id)
         if (!msg) {
-            return message.channel.send('There is nothing to snipe.')
+            return message.lineReplyNoMention('There is nothing to snipe.')
         }
 
         const embed = new MessageEmbed()
@@ -18,6 +18,6 @@ module.exports = {
         .setFooter('Get sniped lol')
         if (msg.image) embed.setImage(msg.image)
 
-        message.channel.send(embed)
+        message.lineReplyNoMention(embed)
     } //that should be it, now lets test it !
 }

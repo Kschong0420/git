@@ -8,7 +8,7 @@ module.exports = {
   
   async execute(client, message, args) {
     const query = args.join(" ");
-    if (!query) return message.channel.send("Please type a name of an anime!");
+    if (!query) return message.lineReply("Please type a name of an anime!");
     const anime = await searchAnime(query, 1).then((res) => {
       return res[0];
     });
@@ -50,6 +50,6 @@ module.exports = {
       .setThumbnail(anime.posterImage.original)
       .setTimestamp();
 
-    message.channel.send(embed);
+    message.lineReplyNoMention(embed);
   },
 };

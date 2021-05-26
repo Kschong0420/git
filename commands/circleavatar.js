@@ -16,6 +16,6 @@ module.exports = {
 
         let circle = new Discord.MessageAttachment(image, "circle.png")
 
-        message.channel.send(circle);
+        message.lineReplyNoMention(circle);
     }
 }

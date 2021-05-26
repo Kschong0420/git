@@ -100,6 +100,6 @@ module.exports = {
       .setColor(message.guild.me.displayHexColor);
     if (message.guild.description) embed.setDescription(message.guild.description);
     if (message.guild.bannerURL) embed.setImage(message.guild.bannerURL({ dynamic: true }));
-    message.channel.send(embed);
+    message.lineReplyNoMention(embed);
   }
 };

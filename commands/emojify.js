@@ -4,7 +4,7 @@ module.exports = {
   name: 'emojify',
   cooldown: 3,
   execute (client, message, args) {
-    if (!args.length) return message.reply('Please specify a text to emojify.')
+    if (!args.length) return message.lineReply('Please specify a text to emojify.')
     const specialCodes = {
       0: ':zero:',
       1: ':one:',
@@ -31,6 +31,6 @@ module.exports = {
       return letter
     }).join('')
 
-    message.channel.send(text)
+    message.lineReplyNoMention(text)
   }
 }

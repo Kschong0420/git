@@ -13,7 +13,7 @@ module.exports = {
             const searchString = querystring.stringify({ term: args.slice(1).join(' ') })
 
             if (!args.slice(1).join(' ')) {
-                return message.channel.send(new Discord.MessageEmbed()
+                return message.lineReplyNoMention(new Discord.MessageEmbed()
                     .setColor('BLUE')
                     .setDescription('You need to specify something you want to search the urban dictionary.')
                 )
@@ -35,10 +35,10 @@ module.exports = {
                         { name: 'Example', value: trim(answer.example, 1024) },
                         { name: 'Rating', value: `${answer.thumbs_up} 👍. ${answer.thumbs_down} 👎.` }
                     )
-                message.channel.send(embed)
+                message.lineReplyNoMention(embed)
             } catch (error) {
                 console.log(error)
-                return message.channel.send(new Discord.MessageEmbed()
+                return message.lineReplyNoMention(new Discord.MessageEmbed()
                     .setColor('BLUE')
                     .setDescription(`No results were found for **${args.slice(1).join(' ')}**`)
                 )

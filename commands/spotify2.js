@@ -16,7 +16,7 @@ if (user.presence.activities.length === 1) status = user.presence.activities[0];
 else if (user.presence.activities.length > 1) status = user.presence.activities[1];
 
 if (user.presence.activities.length === 0 || status.name !== "Spotify" && status.type !== "LISTENING") {
-  return message.channel.send("This user is not listening music");
+  return message.lineReplyNoMention("This user is not listening music");
 }
 
 if (status !== null && status.type === "LISTENING" && status.name === "Spotify" && status.assets !== null) {
@@ -38,7 +38,7 @@ card.build()
       canvacord.write(buffer, "spotify.png");
 
       let attachment = new Discord.MessageAttachment(buffer, "spotify.png");
-      return message.channel.send(attachment);
+      return message.lineReplyNoMention(attachment);
        })}
 }
     }

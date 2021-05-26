@@ -6,7 +6,7 @@ module.exports = {
     async execute(client, message, args) {
       
         let data = await random.getFact()
-    message.channel.send(data)
+    message.lineReplyNoMention(data)
     }
   }
   

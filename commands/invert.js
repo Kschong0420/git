@@ -16,6 +16,6 @@ module.exports = {
 
         let invert = new Discord.MessageAttachment(image, "invert.png")
 
-        message.channel.send(invert);
+        message.lineReplyNoMention(invert);
     }
 }

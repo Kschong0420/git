@@ -9,7 +9,7 @@ module.exports = {
   async execute(client, message, args) {
 
     const question = args.join(' ')
-    if (!question) return message.reply('Please specify a question.')
+    if (!question) return message.lineReply('Please specify a question.')
 
     const answers = [
 
@@ -20,7 +20,7 @@ module.exports = {
     ];
     const a = answers[Math.floor(Math.random() * answers.length)];
 
-    return message.channel.send(
+    return message.lineReplyNoMention(
       new MessageEmbed()
         .setAuthor('8ball')
         .setDescription(

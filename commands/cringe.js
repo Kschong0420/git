@@ -16,7 +16,7 @@ module.exports = {
         { name: 'when renai circulation meet CRINGE!!!', value: 'https://youtu.be/FyYSaA2o-2o' },
         { name: '4K 60FPS remastered cringe video', value: 'https://youtu.be/o-YBDTqX_ZU' }
       )
-    message.channel.send(embed)
+    message.lineReplyNoMention(embed)
   }
 }
 

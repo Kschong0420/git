@@ -7,14 +7,14 @@ module.exports = {
     cooldown: 5,
     async execute(client, message, args) {
         const query = args.join(" ");
-        if (!query) return message.reply("Please provide a search query.");
+        if (!query) return message.lineReply("Please provide a search query.");
 
         const res = await ytsr(query).catch(e => {
-            return message.reply("No results were found.");
+            return message.lineReply("No results were found.");
         });
 
         const video = res.items.filter(i => i.type === "video")[0];
-        if (!video) return message.channel.send("No results were found.");
+        if (!video) return message.lineReplyNoMention("No results were found.");
 
         const embed = new MessageEmbed()
         .setTitle(video.title)
@@ -25,6 +25,6 @@ module.exports = {
         .addField("Views", video.views.toLocaleString(), true)
         .addField("Duration", video.duration, true)
 
-        return message.channel.send(await embed);
+        return message.lineReplyNoMention(await embed);
     }
 }

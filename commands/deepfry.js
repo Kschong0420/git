@@ -15,7 +15,7 @@ module.exports = {
             .setTitle("Deepfried!")
             .setImage(data.message)
             .setTimestamp()
-            message.channel.send(embed)
+            message.lineReplyNoMention(embed)
         })
     }
 }

@@ -7,11 +7,11 @@ module.exports = {
     aliases: ['nneko', 'hneko', 'nsfwneko1', 'nneko1', 'hneko1'],
     cooldown: 0,
     async execute(cilent, message, args, Discord) {
-        if(!message.channel.nsfw){ message.channel.send("This command can only be used in channels marked nsfw."); return; }
+        if(!message.channel.nsfw){ message.lineReplyNoMention("This command can only be used in channels marked nsfw."); return; }
         const embed = new Discord.MessageEmbed()
 
         .setImage(hmtai.nsfw.nsfwNeko())
-        message.channel.send(embed)
+        message.lineReplyNoMention(embed)
     }
 }
 

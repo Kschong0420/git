@@ -4,7 +4,7 @@ module.exports = {
     name: 'fight',
     cooldown: 0,
     async execute(client, message, args) {
-        if (!message.mentions.users.first()) return message.reply('Ping someone to fight')
+        if (!message.mentions.users.first()) return message.lineReply('Ping someone to fight.')
         const x = new fight({
             client: client,
             message: message,

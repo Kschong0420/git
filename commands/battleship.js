@@ -6,7 +6,7 @@ module.exports = {
     async execute(client, message, args) {
         let user = message.mentions.members.first();
         if (!user || user.id === message.member.id || user.user.bot)
-            return message.channel.send(
+            return message.lineReplyNoMention(
                 "Please include a user or include a user which isn't you or a bot."
             );
 

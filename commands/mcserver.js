@@ -5,8 +5,8 @@ module.exports = {
   cooldown: 7,
   description: 'get information about a minecraft server',
   execute (client, message, args, Discord) {
-    if (!args[0]) return message.channel.send('Please enter a minecraft server ip!')
-    if (!args[1]) return message.channel.send('Please enter a minecraft server port!')
+    if (!args[0]) return message.lineReply('Please enter a minecraft server ip!')
+    if (!args[1]) return message.lineReply('Please enter a minecraft server port!')
 
     util.status(args[0], { port: parseInt(args[1]) }).then((response) => {
       const embed = new Discord.MessageEmbed()
@@ -20,10 +20,10 @@ module.exports = {
         )
         .setFooter('Mc server util by Vanilla')
 
-      message.channel.send(embed)
+      message.lineReplyNoMention(embed)
     })
       .catch((error) => {
-        message.channel.send('there was an error finding this server')
+        message.lineReplyNoMention('there was an error finding this server')
         throw error
       })
   }
