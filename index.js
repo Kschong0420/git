@@ -85,45 +85,6 @@ fs.readdir("./commands/", (err, files) => {
 //  };
 //});
 
-//sticky channel
-const MyStickyChannel = 'sticky-channel';
-let cacheMsgs = [];
-
-client.on('ready', async () => {
-  /**
-   * Get channel, if found then send the message to that channel and cache it
-   */
-  const stickyChannel = client.channels.cache.find(ch => ch.name === "sticky-channel")
-  if (stickyChannel) {
-    const m = await stickyChannel.send("I will be the last one forever!");
-    cacheMsgs.push(m.id);
-  }
-});
-
-client.on('message', async message => {
-  if (message.author.bot) return;
-
-  // Remove a message and remove form cache
-  async function remove(id) {
-    const msg = message.channel.messages.cache.get(id);
-    cacheMsgs.shift();
-    if (msg) await msg.delete().catch(_e => {});
-  }
-
-  // check channel is the sticky channel
-  if (message.channel.name === MyStickyChannel) {
-    // if length is more or 2 but not 0 then queue delete all and return without a message
-    if (cacheMsgs.length >= 2 && cacheMsgs.length !== 0) return cacheMsgs.forEach(async id => remove(id));
-
-    // if cache is more then 0 then queue delete all AND send a message
-    if (cacheMsgs.length > 0) cacheMsgs.forEach(async id => await remove(id));
-
-    // Send message and add to cache
-    const m = await message.channel.send('I will be the last one forever!');
-    cacheMsgs.push(m.id);
-  }
-});
-
 //non nitro emoji 
 ///not stable yet
 ////sources : https://sourceb.in/LVgLZqK7KI
