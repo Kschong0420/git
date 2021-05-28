@@ -3,7 +3,7 @@ const { MessageEmbed } = require('discord.js')
 module.exports = {
     name: 'esnipe',
     aliases: ['editsnipe'],
-    cooldown: 2,
+    cooldown: 5,
     async execute(client, message, args) {
         const msg = client.esnipes.get(message.channel.id)
         if (!msg) {
