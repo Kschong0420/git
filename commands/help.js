@@ -17,6 +17,7 @@ module.exports = {
                 { name: 'a_userinfo <username>', value: 'check someone info with more clearly detail' },
                 { name: 'advice', value: 'get some advice' },
                 { name: 'afk <reason>', value: 'set you to afk list' },
+                { name: 'akinator', value: 'let akinator guess something' },
                 { name: 'anime <anime name>', value: 'check anime you want' },
                 { name: 'animeimg <pat/hug/waifu/cry/kiss/slap/smug/punch>', value: 'get a anime image or gif according to the type you want' },
                 { name: 'avatar <one or more than one username>', value: 'check their avater' },
@@ -37,9 +38,8 @@ module.exports = {
                 { name: 'butter', value: 'fly~' },
                 { name: 'cal <add/subtract/multiply/divide> <first number> <second number>', value: 'do operation between first number to second number' },
                 { name: 'channel <channel name>', value: 'check the channel info' },
-                //{ name: 'character', value: 'get nekopara character detail and will cause story spoil' },
+                { name: 'character', value: 'get nekopara character detail and will cause story spoil' },
                 { name: 'cavatar <avatar>', value: 'check someone avatar in circle form' },
-                { name: 'coinflip', value: 'choose head or tail and see the result' },
             )
 
         const embed3 = new Discord.MessageEmbed()
@@ -48,6 +48,7 @@ module.exports = {
             .setDescription('Type v <command> or V <command> to use me!')
             .setFooter('Type number in chat can flip the help list to that number of page quickly!')
             .addFields(
+                { name: 'coinflip', value: 'choose head or tail and see the result' },
                 { name: 'coinflip2', value: 'bot flip the coin and show the result' },
                 { name: 'congrats', value: 'congrats someone' },
                 { name: 'cringe', value: 'what things fxxking cringe?' },
@@ -57,8 +58,6 @@ module.exports = {
                 { name: 'ed', value: 'check all the nekopara ending songs' },
                 { name: 'emoji', value: 'check server emoji' },
                 { name: 'emojify <text>', value: 'emojify your text' },
-                { name: 'esnipe', value: 'snipe an edited message' },
-                { name: 'fact', value: 'get a fact about something' },
             )
 
         const embed4 = new Discord.MessageEmbed()
@@ -67,16 +66,18 @@ module.exports = {
             .setDescription('Type v <command> or V <command> to use me!')
             .setFooter('Type number in chat can flip the help list to that number of page quickly!')
             .addFields(
+                { name: 'esnipe', value: 'snipe an edited message' },
+                { name: 'fact', value: 'get a fact about something' },
                 { name: 'fasttype', value: 'play a fasttype game yourself' },
                 { name: 'feedback <query>', value: 'feedback your opinion about this bot' },
                 { name: 'fight <username>', value: 'fight someone' },
                 { name: 'fire <username>', value: 'generate a fire meme for the user you mentioned' },
                 { name: 'game <ttt/connectfour/hangman/snakegame/fasttyper/guessnumber/rps>', value: 'play the game with others, ttt is tictactoe and rps is rock paper scissors'},
                 { name: 'gayrate', value: 'check your gay rate' },
+                { name: 'github <github username>', value: 'check a github user profile' },
                 { name: 'google', value: 'search a things and give you link' },
                 { name: 'guess', value: 'guess a shuffle word' },
-                { name: 'hack <username>', value: 'hack someone' },
-                { name: 'help', value: 'check most of command of this bot with clearly detail' },
+                { name: 'guesspokemon', value: 'guess a pokemon according to the picture given' },
             )
 
         const embed5 = new Discord.MessageEmbed()
@@ -85,6 +86,8 @@ module.exports = {
             .setDescription('Type v <command> or V <command> to use me!')
             .setFooter('Type number in chat can flip the help list to that number of page quickly!')
             .addFields(
+                { name: 'hack <username>', value: 'hack someone' },
+                { name: 'help', value: 'check most of command of this bot with clearly detail' },
                 { name: 'hentai', value: 'who is hentai? report him!' },
                 { name: 'hitler <username>', value: 'generate a hitler meme for the user you mentioned' },
                 { name: 'image <content or link>', value: 'search and send the image you want in channel' },
@@ -93,8 +96,6 @@ module.exports = {
                 { name: 'jail <username>', value: 'generate a jail meme for the user you mentioned' },
                 { name: 'joke', value: 'get a funny joke?' },
                 { name: 'joke2', value: 'get a funny joke?' },
-                { name: 'jumble', value: 'guess a harder shuffle word'},
-                { name: 'kannapaper <text>', value: 'generate a kannapaper meme with the text given' },
             )
 
         const embed6 = new Discord.MessageEmbed()
@@ -103,6 +104,8 @@ module.exports = {
             .setDescription('Type v <command> or V <command> to use me!')
             .setFooter('Type number in chat can flip the help list to that number of page quickly!')
             .addFields(
+                { name: 'jumble', value: 'guess a harder shuffle word'},
+                { name: 'kannapaper <text>', value: 'generate a kannapaper meme with the text given' },
                 { name: 'love <first username> <second username>', value: 'generate a meme between first person and second person' },
                 { name: 'lyric <artist>', value: 'after typing this command type the song you want search without prefix to search the song you want' },
                 { name: 'mania <osu username>', value: 'check the detail for that username in mania mode' },
@@ -112,7 +115,6 @@ module.exports = {
                 { name: 'membercount', value: 'show the server got how many member include bot' },
                 { name: 'meme', value: 'get a meme' },
                 { name: 'mh', value: 'get music command list' },
-                { name: 'mjl', value: 'check member joined position' },
             )
 
         const embed7 = new Discord.MessageEmbed()
@@ -121,6 +123,7 @@ module.exports = {
             .setDescription('Type v <command> or V <command> to use me!')
             .setFooter('Type number in chat can flip the help list to that number of page quickly!')
             .addFields(
+                { name: 'mjl', value: 'check member joined position' },
                 { name: 'movie <query>', value: 'search movie' },
                 { name: 'neko', value: 'get a neko picture' },
                 //{ name: 'neko2', value: 'get a neko picture' },
@@ -131,7 +134,6 @@ module.exports = {
                 { name: 'osu <osu username>', value: 'check the detail for that username in circle mode' },
                 { name: 'people <query>', value: 'check a people detail in real life' },
                 { name: 'percentage <amount> <maximum>', value: 'calculate the percentage according to query given' },
-                { name: 'perms <username>', value: 'check someone permissions in current server' },
             )
 
         const embed8 = new Discord.MessageEmbed()
@@ -140,6 +142,7 @@ module.exports = {
             .setDescription('Type v <command> or V <command> to use me!')
             .setFooter('Type number in chat can flip the help list to that number of page quickly!')
             .addFields(
+                { name: 'perms <username>', value: 'check someone permissions in current server' },
                 { name: 'phcomment <username> <text>', value: 'help someone give some comment in a place' },
                 { name: 'ping', value: 'check the bot latency and api ping' },
                 { name: 'playlist', value: 'check the music playlist' },
@@ -149,7 +152,6 @@ module.exports = {
                 { name: 'rainbow <username>', value: 'let someone avatar become rainbow' },
                 { name: 'reminder <time in ms> <query>', value: 'send a message to you when timer off' },
                 { name: 'report <bug>', value: 'report bug to owner of this bot' },
-                { name: 'rip <username>', value: 'generate a rip meme for the user you mentioned' },
             )
 
         const embed9 = new Discord.MessageEmbed()
@@ -158,6 +160,7 @@ module.exports = {
             .setDescription('Type v <command> or V <command> to use me!')
             .setFooter('Type number in chat can flip the help list to that number of page quickly!')
             .addFields(
+                { name: 'rip <username>', value: 'generate a rip meme for the user you mentioned' },
                 { name: 'roast <username>', value: 'insult someone' },
                 { name: 'roblox <username>', value: 'Check a roblox user detail' },
                 { name: 'rolemember <role>', value: 'Check the member contain in the role you mentioned' },
@@ -167,7 +170,6 @@ module.exports = {
                 { name: 'rt <text>', value: 'reverse text' },
                 { name: 'say <text>', value: 'let bot help you say something' },
                 { name: 'serveravatar', value: 'get server avatar' },
-                { name: 'serverinfo', value: 'get info for this server' },
             )
 
         const embed10 = new Discord.MessageEmbed()
@@ -176,6 +178,7 @@ module.exports = {
             .setDescription('Type v <command> or V <command> to use me!')
             .setFooter('Type number in chat can flip the help list to that number of page quickly!')
             .addFields(
+                { name: 'serverinfo', value: 'get info for this server' },
                 { name: 'sexyrate', value: 'check your sexy rate' },
                 { name: 'ship <first username> <second username>', value: 'combine the two name together' },
                 { name: 'silence', value: 'who too noisy? tell him to shut up' },
@@ -185,7 +188,6 @@ module.exports = {
                 { name: 'spotify <username>', value: 'check someone spotify information if they are playing spotify music in computer' },
                 { name: 'stats', value: 'show the client and server stats' },
                 { name: 'status <username>', value: 'show someone status detail' },
-                { name: 'tableflip', value: 'animated table flip' },
             )
 
         const embed11 = new Discord.MessageEmbed()
@@ -194,6 +196,7 @@ module.exports = {
             .setDescription('Type v <command> or V <command> to use me!')
             .setFooter('Type number in chat can flip the help list to that number of page quickly!')
             .addFields(
+                { name: 'tableflip', value: 'animated table flip' },
                 { name: 'taiko <osu username>', value: 'check the detail for that username in taiko mode' },
                 { name: 'text <text>', value: 'text your text into some funny shape' },
                 { name: 'textflip <text>', value: 'flip your text' },
@@ -203,7 +206,6 @@ module.exports = {
                 { name: 'translate <language> <text>', value: 'translate text to language you want' },
                 { name: 'trash <username>', value: 'generate a trash meme for the user you mentioned' },
                 { name: 'trigger <username>', value: 'generate a trigger gif for the user you mentioned' },
-                { name: 'trivia', value: 'answer some trivia' },
             )
 
             const embed12 = new Discord.MessageEmbed()
@@ -212,6 +214,7 @@ module.exports = {
             .setDescription('Type v <command> or V <command> to use me!')
             .setFooter('Type number in chat can flip the help list to that number of page quickly!')
             .addFields(
+                { name: 'trivia', value: 'answer some trivia' },
                 { name: 'tweet <username> <text>', value: 'generate a tweet picture that contain the text you given' },
                 { name: 'uptime', value: 'Show the running time of the bot' },
                 { name: 'userinfo <username>', value: 'check someone info' },
