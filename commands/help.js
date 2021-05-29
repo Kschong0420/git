@@ -108,6 +108,7 @@ module.exports = {
                 { name: 'kannapaper <text>', value: 'generate a kannapaper meme with the text given' },
                 { name: 'love <first username> <second username>', value: 'generate a meme between first person and second person' },
                 { name: 'lyric <artist>', value: 'after typing this command type the song you want search without prefix to search the song you want' },
+                { name: 'manga <query>', value: 'search a manga or if no query given will recommend a random manga to you' },
                 { name: 'mania <osu username>', value: 'check the detail for that username in mania mode' },
                 { name: 'math <power/root> <first number> <second number>', value: 'calculate harder operation between first number and second number' },
                 //{ name: 'maw', value: 'get a mobile phone anime wallpaper' },
