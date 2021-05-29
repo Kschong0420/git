@@ -19,6 +19,7 @@ module.exports = {
           { name: 'lock', value: 'lock the channel where you use this command'},//require administrator perms
           { name: 'lockdown <on/off>', value: 'lock down the whole server' },//require administrator perms
          // { name: 'mute <username>', value: 'mute someone' },//require manage messages perms
+          { name: 'nick <username> <query/clear>', value: 'put a nickname to a user or clear username'},//require manage nicknames perms
           { name: 'pin <channel> <message ID>', value: 'pin a message'},//require manage messages perms
           { name: 'poll <text>', value: 'make a poll'},//require manage guild perms
           { name: 'pull <username>', value: 'pull someone to your current voice channel that you stay'},//require manage messages perms
