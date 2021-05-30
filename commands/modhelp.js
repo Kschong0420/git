@@ -26,7 +26,9 @@ module.exports = {
           { name: 'purge <2 ~ 500>', value: 'clear the amount of message' },//require manage messages perms
           { name: 'slowmode <second> <reason>', value: 'let the channel in slow mode' },//require administrator perms
           { name: 'show <channel>', value: 'show the channel that you mentioned'},//require administrator perms
+          { name: 'tempban <username> <time>', value: 'ban someone for temporary time' },//require ban members perms
          // { name: 'tempmute <username> <time(ms)>', value: 'mute someone for temporary time in unit ms' },//require manage messages perms
+          { name: 'unban <userID>', value: 'unban a people that already banned before'},//require administrator perms
           { name: 'unlock', value: 'unlock the channel'},//require administrator perms
           { name: 'unpin', value: 'unpin the message'},//require manage messages perms
           //{ name: 'unmute <username>', value: 'unmute someone' },//require manage messages perms
