@@ -1,6 +1,6 @@
 module.exports = {
     name: "playskip",
-    aliases: ["ps", "playSkip"],
+    aliases: ["playSkip"],
     cooldown: 0,
     inVoiceChannel: true,
     async execute(client, message, args) {
