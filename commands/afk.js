@@ -15,7 +15,7 @@ module.exports = {
         };
 
         client.afk.set(message.author.id, construct);
-        return message.lineReply(`you have been set to afk for reason: ${reason}`).then(msg => msg.delete(5000));
+        return message.lineReply(`You have been set to afk for reason: ${reason}`).then(msg => msg.delete(5000));
     }
 
 }};
