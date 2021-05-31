@@ -8,7 +8,7 @@ module.exports = {
 
     async execute(client, message, args) {
 
-        const user = message.mentions.members.first() || message.guild.members.cache.get(args[0]) 
+        const user = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.author 
 
         let avatar = user.user.displayAvatarURL({dynamic: false, format: "png"});
 
