@@ -6,8 +6,8 @@ module.exports = {
     cooldown: 10,
     description: 'Make anyone say anything!',
     async execute (client, message, args) {
-      if (!message.member.hasPermission("MANAGE_WEBHOOKS")) return message.lineReply("You need the `MANAGE_WEBHOOKS` permission to use this comamnd");
-      if (!message.guild.me.hasPermission("MANAGE_WEBHOOKS")) return message.lineReplyNoMention("I need the `MANAGE_WEBHOOKS` permission to use this comamnd");
+      if (!message.member.hasPermission("MANAGE_WEBHOOKS")) return message.lineReply("You need the `MANAGE_WEBHOOKS` permission to use this command.");
+      if (!message.guild.me.hasPermission("MANAGE_WEBHOOKS")) return message.lineReplyNoMention("I need the `MANAGE_WEBHOOKS` permission to use this command.");
         if (!args[0]) return message.lineReply('Please mention someone!')
         const member = message.mentions.members.first() || message.guild.members.cache.get(args[0])
         if (!member) return message.lineReply(`Couldn't find this user! Please enter a valid user else it's not gonna works.`)
