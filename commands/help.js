@@ -72,7 +72,7 @@ module.exports = {
                 { name: 'feedback <query>', value: 'feedback your opinion about this bot' },
                 { name: 'fight <username>', value: 'fight someone' },
                 { name: 'fire <username>', value: 'generate a fire meme for the user you mentioned' },
-                { name: 'game <ttt/connectfour/hangman/snakegame/fasttyper/guessnumber/rps>', value: 'play the game with others, ttt is tictactoe and rps is rock paper scissors'},
+                //{ name: 'game <ttt/connectfour/hangman/snakegame/fasttyper/guessnumber/rps>', value: 'play the game with others, ttt is tictactoe and rps is rock paper scissors'},
                 { name: 'gayrate', value: 'check your gay rate' },
                 { name: 'github <github username>', value: 'check a github user profile' },
                 { name: 'google', value: 'search a things and give you link' },
