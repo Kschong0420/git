@@ -198,12 +198,12 @@ module.exports = {
                 { name: 'slot', value: 'open a slot and test your luck' },
                 { name: 'snipe', value: 'show the previous deleted message' },
                 { name: 'spotify <username>', value: 'check someone spotify information if they are playing spotify music in computer' },
+                { name: 'ss <URL>', value: 'screenshot a webpage and insert into width 1920 form' },
                 { name: 'stats', value: 'show the client and server stats' },
                 { name: 'status <username>', value: 'show someone status detail' },
-                { name: 'sudo', value: 'help other poeple say something' },
+                { name: 'sudo <user> <query>', value: 'help other poeple say something' },
                 { name: 'tableflip', value: 'animated table flip' },
                 { name: 'taiko <osu username>', value: 'check the detail for that username in taiko mode' },
-                { name: 'text <text>', value: 'text your text into some funny shape' },
             )
 
             const embed12 = new Discord.MessageEmbed()
@@ -212,6 +212,7 @@ module.exports = {
             .setDescription('Type v <command> or V <command> to use me!')
             .setFooter('Type number in chat can flip the help list to that number of page quickly!')
             .addFields(
+                { name: 'text <text>', value: 'text your text into some funny shape' },
                 { name: 'textflip <text>', value: 'flip your text' },
                 { name: 'tictactoe <username>', value: 'play tictactoe with the person you want' },
                 { name: 'tbc <username>', value: 'generate a to be continued meme for the user you mentioned' },
@@ -221,7 +222,6 @@ module.exports = {
                 { name: 'trigger <username>', value: 'generate a trigger gif for the user you mentioned' },
                 { name: 'trivia', value: 'answer some trivia' },
                 { name: 'tweet <username> <text>', value: 'generate a tweet picture that contain the text you given' },
-                { name: 'uptime', value: 'Show the running time of the bot' },
             )
 
             const embed13 = new Discord.MessageEmbed()
@@ -230,6 +230,7 @@ module.exports = {
             .setDescription('Type v <command> or V <command> to use me!')
             .setFooter('Type number in chat can flip the help list to that number of page quickly!')
             .addFields(
+                { name: 'uptime', value: 'Show the running time of the bot' },
                 { name: 'userinfo <username>', value: 'check someone info' },
                 { name: 'wanted <username>', value: 'generate a wanted meme for the user you mentioned' },
                 { name: 'wasted <username>', value: 'generate a wasted meme for the user you mentioned' },
