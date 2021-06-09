@@ -1,10 +1,13 @@
 const Discord = require('discord.js')
 
 module.exports = {
-  name: 'modhelp',
+  name: 'mod-command',
+  aliases: ["modcommand", 'modcmd', "modlist"],
   cooldown: 0,
-  description: 'Mod Command List',
-  execute (client, message, args) {
+  description: 'Mod Command List(havent update)',
+  usage: 'mod-command',
+  category: 'Moderator',
+  async execute (client, message, args) {
     if (message.member.hasPermission('MANAGE_MESSAGES')) {
       const newEmbed = new Discord.MessageEmbed()
         .setColor('#BE0F34')

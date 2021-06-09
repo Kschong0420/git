@@ -2,8 +2,10 @@ const discord = require('discord.js')
 
 module.exports = {
 	name: "bet",
-	description: "bet",
-    cooldown: 10,
+	description: "Bet something",
+    cooldown: 5,
+    usage: 'bet <text>',
+    category: 'Fun',
 	async execute(client, message, args) {
         const bet = args.join(' ')
         if (!bet) return message.lineReply('Please place a bet.')

@@ -15,6 +15,12 @@ module.exports = {
     
     cooldown: 5,
 
+    description: 'Show absolutely completely cleary detail user info.',
+
+    usage: 'userinfo [username]',
+
+    category: 'Info',
+
     async execute(client, message, args) {
 
         const trimArray = (arr, maxLen = 30) => {

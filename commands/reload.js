@@ -4,6 +4,9 @@ module.exports = {
     name: "reload",
     aliases: ["refresh"],
     cooldown: 0,
+    description: 'You can\'t use it for Vanilla bot.',
+    usage: 'reload',
+    category: 'Owner',
 
     async execute(client, message, args) {
         if (message.author.id !== "759368420453384213") return message.lineReplyNoMention("Unknown Command.");

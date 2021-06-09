@@ -6,6 +6,9 @@ module.exports = {
     name: 'nsfwhelp',
     aliases: ["nsfwlist", "nsfw"],
     cooldown: 20,
+    description: 'Havent update yet.',
+    usage: 'nsfwhelp',
+    category: 'NSFW',
     async execute(client, message, args, Discord) {
         if(!message.channel.nsfw){ message.lineReplyNoMention("This command can only be used in channels marked nsfw."); return; }
         const embed1 = new Discord.MessageEmbed()
@@ -20,8 +23,8 @@ module.exports = {
                 { name: 'nsfwahegao', value: 'So happy woman faces :))'},
                 { name: 'nsfwass', value: 'I know you like anime ass~ uwu'},
                 { name: 'nsfwbdsm', value: "If you don't know what it is, search it up"},
-                { name: 'nsfwboobjob', value: 'So soft, round ... gentle ... damn we love it'},
                 { name: 'nsfwblowjob', value: 'Basically an image of a girl sucking on a sharp blade!'},
+                { name: 'nsfwboobjob', value: 'So soft, round ... gentle ... damn we love it'},
                 { name: 'nsfwcreampie', value: 'So hot, sticky, and inside uwu'},
                 { name: 'nsfwcum', value: 'Basically sticky white stuff that is usually milked from sharpies.'},
                 { name: 'nsfwelves', value: "So, it's not Elvis Presley, but i know, you like it :)"},
@@ -31,7 +34,7 @@ module.exports = {
                 { name: 'nsfwgangbang', value: '5 on 1? Uh..'},
                 { name: 'nsfwgif', value: 'Basically an animated image, so yes :3'},
                 { name: 'nsfwglasses', value: 'Girls that wear glasses, uwu~'},
-                { name: 'nsfwhentai', value: 'Sends a random vanilla hentai imageURL~'},
+                { name: 'nsfwhentai', value: 'Sends a random hentai imageURL~'},
                 { name: 'nsfwincest', value: 'I know, you like it. Brother and sister <3 And..mo...omg'},
                 { name: 'nsfwmanga', value: 'Sends a random doujin page imageURL!'},
                 { name: 'nsfwmasturbation', value: 'You like lewd solo?~'},

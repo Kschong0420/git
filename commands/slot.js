@@ -3,7 +3,10 @@ const Discord = require("discord.js");
 module.exports = {
   name: "slot",
   aliases: ["slots", "spin"],
-  cooldown: 5,
+  cooldown: 10,
+  description: 'Test your luck.',
+  usage: 'slot',
+  category: 'Fun',
   async execute(client, message, args) {    
     const slots = [':grapes:', ':cherries:', ':lemon:', ':green_apple:', ':peach:', ':blueberries:', ':coconut:', ':kiwi:', ':tangerine:'];
     const slotOne = slots[Math.floor(Math.random() * slots.length)];

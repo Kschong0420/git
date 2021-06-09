@@ -3,7 +3,9 @@ const util = require('minecraft-server-util')
 module.exports = {
   name: 'mcserver',
   cooldown: 7,
-  description: 'get information about a minecraft server',
+  description: 'Get information about a minecraft server',
+  usage: 'mcserver <ip> <port>',
+  category: 'Info',
   execute (client, message, args, Discord) {
     if (!args[0]) return message.lineReply('Please enter a minecraft server ip!')
     if (!args[1]) return message.lineReply('Please enter a minecraft server port!')

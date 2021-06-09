@@ -2,9 +2,11 @@ const ms = require('ms')
 const { MessageEmbed } = require('discord.js')
 
 module.exports = {
-    name: "tempban", // You Can Keep Any Name
-    description: 'Temp bans A User.',  // Optional
+    name: "tempban",
+    description: 'Temp ban A User.',  
     cooldown: 5,
+    usage: 'tempban <username> <time>',
+    category: 'Moderator',
 
     async execute(client, message, args) {
         if(!message.member.hasPermission("BAN_MEMBERS")) return message.lineReplyNoMention("Unknown Command.")

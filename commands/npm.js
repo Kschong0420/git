@@ -2,6 +2,9 @@ const axios = require('axios');
 module.exports = {
 	name: 'npm',
 	cooldown: 0,
+	description: 'Search a npm.',
+    usage: 'npm <npm name>',
+    category: 'Info',
 	async execute(client, message, args) {
 		const query = args[0];
 		if(!query) return message.lineReplyNoMention(`Please specify a query!`)

@@ -3,6 +3,9 @@ const discord = require("discord.js");
 module.exports = {
   name: 'embed',
   cooldown: 30,
+  description: 'Create an embed according to the dms you given.',
+  usage: 'embed',
+  category: 'Moderator',
 
   async execute(client, message, args) {
     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.lineReplyNoMention("Unknown Command.")

@@ -1,8 +1,10 @@
 module.exports = {
     name: "math",
     cooldown: 3,
-    description: "performs simple math functions",
-    execute(client, message, args) {
+    description: "Performs simple math functions",
+    usage: 'math <add/subtract/multiply/divide/mod/power/root> <number1> <number2>',
+    category: 'Info',
+    async execute(client, message, args) {
       let op = args[0]
       let no1 = args[1]
       let no2 = args[2]

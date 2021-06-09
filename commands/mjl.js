@@ -1,4 +1,4 @@
-//mjs = Member Joined LeaderBoard
+//mjl = Member Joined LeaderBoard
 
 const { ReactionPages } = require('reconlx');
 const { client, Message, MessageEmbed } = require('discord.js');
@@ -6,7 +6,10 @@ const { client, Message, MessageEmbed } = require('discord.js');
 module.exports = {
     name: 'mjl',
     cooldown: 30,
-    execute(client, message, args) {
+    description: 'Show all member position when joined.',
+    usage: 'mjl',
+    category: 'Info',
+    async execute(client, message, args) {
         const members = message.guild.members.cache
             .filter((m) => !m.user.bot)
             .sort((a, b) => a.joinedTimestamp - b.joinedTimestamp);

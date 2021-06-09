@@ -6,9 +6,13 @@ module.exports = {
 
     name: "serverinfo",
 
-    category: "extra",
+    category: "Info",
 
     cooldown: 20,
+
+    description: 'Check the server info.',
+
+    usage: 'serverinfo',
 
     async execute(client, message, args) {
 

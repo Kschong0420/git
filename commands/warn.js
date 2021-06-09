@@ -3,6 +3,9 @@ var Discord = require('discord.js');
 module.exports = {
     name: 'warn',
     cooldown: 0,
+    description: 'Warn someone.',
+    usage: 'warn <username> <reason>',
+    category: 'Moderator',
     async execute(client, message, args) {
     if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.lineReplyNoMention('Unknown Command.');
 

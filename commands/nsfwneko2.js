@@ -4,6 +4,9 @@ module.exports = {
     name: 'nsfwneko2',
     aliases: ['nneko2', 'hneko2'],
     cooldown: 0,
+    description: 'NSFW Neko Girls (Cat Girls)',
+    usage: 'nsfwneko2',
+    category: 'NSFW',
     async execute(client, message, args) {
         const { body } = await snekfetch
             .get('https://nekos.life/api/lewd/neko')

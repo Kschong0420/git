@@ -2,7 +2,10 @@ const { DiscordBattleShip } = require("discord-battleship");
 
 module.exports = {
     name: 'battleship',
-    cooldown: 30,
+    cooldown: 10,
+    description: 'Play a battleship game',
+    usage: 'battleship <username>',
+    category: 'Game',
     async execute(client, message, args) {
         let user = message.mentions.members.first();
         if (!user || user.id === message.member.id || user.user.bot)

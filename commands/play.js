@@ -3,6 +3,9 @@ module.exports = {
     aliases: ["p"],
     cooldown: 0,
     inVoiceChannel: true,
+    description: 'Play a song.',
+    usage: 'play <song name/song url/playlist url> \`then\` <number>',
+    category: 'Music',
     async execute(client, message, args) {
         if(!message.member.voice.channel) return message.channel.send(`${client.emotes.error} You must be in voice channel first`)
         const string = args.join(" ")

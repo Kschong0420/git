@@ -4,13 +4,14 @@ const { Aki } = require("aki-api");
 const { Client, MessageEmbed } = require("discord.js");
 module.exports = {
     name: 'akinator',
-    description: "The Akinator Game",
-    usage: "Think Of A Person and start the game using f-akinator",
+    description: "Think a person and let Akinator think.",
+    usage: "akinator",
     aliases: ["aki"],
     cooldown: 10,
+    category: 'Game',
     async execute(client, message, args, Discord) {
         if (isPlaying.has(message.author.id)) {
-            return message.channel.send(":x: | The game already started..");
+            return message.lineReplyNoMention("The game already started.");
         }
 
         isPlaying.add(message.author.id);

@@ -3,7 +3,9 @@ const random = require("something-random-on-discord").Random
 module.exports = {
     name: "advice",
     cooldown: 5,
-    description: 'this is a Advice command!',
+    description: 'Get some advice from bot.',
+    usage: 'advice',
+    category: 'Fun',
     async execute(client, message, args) {
       
         let data = await random.getAdvice()

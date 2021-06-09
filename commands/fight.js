@@ -2,7 +2,10 @@ const { fight } = require('weky')
 
 module.exports = {
     name: 'fight',
-    cooldown: 0,
+    cooldown: 10,
+    description: 'Fight a people.',
+    usage: 'fight <username>',
+    category: 'Fun',
     async execute(client, message, args) {
         if (!message.mentions.users.first()) return message.lineReply('Ping someone to fight.')
         const x = new fight({

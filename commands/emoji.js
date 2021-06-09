@@ -1,9 +1,10 @@
 const { MessageEmbed } = require("discord.js");
 module.exports = {
   name: "emoji",
-  cooldown: 30,
-  description: "View all emojis in the guild",
-  category: "utility",
+  cooldown: 10,
+  description: "View all emojis in the guild.",
+  category: "Info",
+  usage: 'emoji',
   async execute(client, message, args) {
     let Emojis = "";
     let EmojisAnimated = "";

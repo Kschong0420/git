@@ -4,14 +4,16 @@ const Discord = require('discord.js')
 module.exports = {
     name: "rainbow",
     aliases: ["gay"],
-    cooldown: 10,
-    description: "rainbow gif",
+    cooldown: 7,
+    description: "Let someone avatar become rainbow",
+    usage: 'rainbow <username>',
+    category: 'Image',
 
     async execute(client, message, args) {
 
-        const user = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.author 
+        const user = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.yauthor 
 
-        let avatar = user.user.displayAvatarURL({dynamic: false, format: "png", size: 4096});
+        let avatar = user.displayAvatarURL({dynamic: false, format: "png", size: 4096});
 
         let image = await canvacord.Canvas.rainbow(avatar);
 

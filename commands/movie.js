@@ -4,6 +4,9 @@ const superagent = require('superagent');
 module.exports = {
     name: 'movie',
 	cooldown: 10,
+	description: 'Search a movie.',
+    usage: 'movie <movie name>',
+    category: 'Info',
     async execute(client, message, args) {
 	//const pronouns = ['silly', 'mommy', 'dad', 'mom', 'master', 'nii-san', 'onee-san', 'love', 'ma\'am', 'sir', 'friend', 'b-baka', 'honey'];
 	//const randompronoun = pronouns[Math.floor(Math.random() * (pronouns.length - 1 + 1) + 1)];

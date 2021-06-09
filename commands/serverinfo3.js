@@ -1,11 +1,13 @@
 const { MessageEmbed } = require("discord.js")
 
-module.exports = { // Your Command Handler
+module.exports = { 
     name: "serverinfo3",
-    description: 'Gives Info About A Server',
+    description: 'Check the server info.',
     cooldown: 20,
+    usage: 'serverinfo3',
+    category: 'Info',
 
-    async execute(client, message, args) { // Your Command Handler
+    async execute(client, message, args) { 
 
         const { guild } = message
         const icon = message.guild.iconURL({ dynamic: true }) // Icon Of Server
@@ -27,10 +29,10 @@ module.exports = { // Your Command Handler
         .addField('Highest Role:-', `${guild.roles.highest}`, true)
         .addField('Member Count:-', `${members.size}(Total)\n${members.filter(member => !member.user.bot).size}(Human)\n${members.filter(member => member.user.bot).size}(BOT)`, true)
         .addField('Member Stats:-', `${guild.members.cache.filter(member => member.presence.status == 'online').size} Online\n${guild.members.cache.filter(member => member.presence.status == 'idle').size} Idle\n${guild.members.cache.filter(member => member.presence.status == 'dnd').size} DND\n${guild.members.cache.filter(member => member.presence.status == 'offline').size} Offline`, true)
-        // .addField('Roles:-', `${roles}`, true) // <true> Means All Roles Will Come In Line
         .addField('Emoji Count:-', `${emojicount.size}(Total)\n${emojicount.filter(emoji => !emoji.animated).size}(Non Animated)\n${emojicount.filter(emoji => emoji.animated).size}(Animated)`, true)
-        // .addField('Emojis:-', `${emojis}`, true) // <true> Means All Emojis Will Come In Line // This Will All Emojis Of Server
+        //.addField('Emojis:-', `${emojis}`, true) // <true> Means All Emojis Will Come In Line // This Will All Emojis Of Server
         .addField('Server Stats:-', `${guild.channels.cache.filter(channel => channel.type == 'text').size} ⌨️(Text Channel)\n${guild.channels.cache.filter(channel => channel.type == 'voice').size} 🔈(Voice Channel)\n${guild.channels.cache.filter(channel => channel.type == 'news').size} 📢(Announcement Channel)\n${guild.channels.cache.filter(channel => channel.type == 'category').size} 📁(Categories)`, true)
+        //.addField('Roles:-', `${roles}`) // <true> Means All Roles Will Come In Line
         .setTimestamp()
         .setFooter('Server Info', icon)
         message.lineReplyNoMention(embed)

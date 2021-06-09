@@ -3,6 +3,9 @@ module.exports = {
     aliases: ["playSkip"],
     cooldown: 0,
     inVoiceChannel: true,
+    description: 'Skip the current song and insert a song you want.',
+    usage: 'playskip <song> \`then\` <number>',
+    category: 'Music',
     async execute(client, message, args) {
         if (!message.member.voice.channel) return message.channel.send(`${client.emotes.error} | You must be in a voice channel!`)
         const queue = client.distube.getQueue(message)

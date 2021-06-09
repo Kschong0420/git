@@ -3,7 +3,9 @@ module.exports = {
     name: "blackjack",
     aliases: ['bj'],
     cooldown: 10,
-    usage: '..blackjack (amount)',
+    usage: 'blackjack',
+    description: 'Play a backjack with bot.',
+    category: 'Game',
     async execute(client, message, args) {
     const userId = message.author
 

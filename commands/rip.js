@@ -5,6 +5,9 @@ module.exports = {
     name: "rip",
     description: "rip gif",
     cooldown: 10,
+    description: 'RIP.',
+    usage: 'rip <username>',
+    category: 'Image',
 
     async execute(client, message, args) {
 

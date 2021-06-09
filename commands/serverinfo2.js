@@ -31,6 +31,9 @@ module.exports = {
       name: 'serverinfo2',
       aliases: ['server', 'si2'],
       cooldown: 20,
+      description: 'Check the server info.',
+      usage: 'serverinfo2',
+      category: 'Info',
   async execute(client, message, args) {
 
     // Get roles count

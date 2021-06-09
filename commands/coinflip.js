@@ -3,7 +3,9 @@ const discord = require('discord.js')
 module.exports = {
 	name: "coinflip",
 	cooldown: 5,
-	description: "coinflip",
+	description: 'Play coinflip with bot.',
+    usage: 'coinflip',
+    category: 'Fun',
 	async execute(client, message, args) {
 		let embed = new discord.MessageEmbed()
 		.setTitle("Coinflip")

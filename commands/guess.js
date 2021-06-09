@@ -5,6 +5,9 @@ module.exports = {
     name: "guess",
     aliases: ["shuffle-guess", "word-guess"],
     cooldown: 5,
+    description: 'Guess a word.',
+    usage: 'guess',
+    category: 'Game',
     async execute(client, message, args) {
         const word = randomWords()
         const res = await (await (fetch(`https://api.monkedev.com/fun/shuffle?content=${word}&key=WKTXwCVoosGtQNCNfIymRmx1t`))).json();

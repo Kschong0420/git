@@ -2,8 +2,10 @@ const { MessageEmbed } = require("discord.js")
 
 module.exports = {
     name: "unban",
-    description: 'Unbans A User Using Its ID',  // Optional
+    description: 'Unban a user using its ID',  // Optional
     cooldown: 5,
+    usage: 'unban <userID>',
+    category: 'Moderator',
     async execute(client, message, args) {
         if(!message.member.hasPermission("BAN_MEMBERS")) return message.lineReplyNoMention("Unknown Command.")
 

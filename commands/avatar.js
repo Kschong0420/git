@@ -2,9 +2,10 @@ module.exports = {
   name: 'avatar',
   aliases: ['icon', 'pfp', 'profilepic'],
   cooldown: 5,
-  description: 'Return a user(s) avatar picture!',
-  // Use your own execute parameters
-  execute (client, message, args, Discord) {
+  description: 'Return a user(s) avatar picture.',
+  usage: 'avatar [username or more than 1 username]',
+  category: 'Info',
+  async execute (client, message, args, Discord) {
     if (!message.mentions.users.size) {
       const user = message.author
       const selfembed = new Discord.MessageEmbed()

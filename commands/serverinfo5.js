@@ -4,9 +4,12 @@ module.exports = {
   name: 'serverinfo5',
   aliases: ['si5'],
   cooldown: 20,
+  description: 'Check the server info.',
+  usage: 'serverinfo5',
+  category: 'Info',
  
   async execute(client, message, args) {
-    if (!message.guild) return message.lineReplyNoMention("this command is only meant to be used in servers.")
+    if (!message.guild) return message.lineReplyNoMention("This command is only meant to be used in servers.")
         function checkDays(date) {
         let now = new Date();
         let diff = now.getTime() - date.getTime();

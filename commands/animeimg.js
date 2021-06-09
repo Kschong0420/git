@@ -4,6 +4,9 @@ module.exports = {
     name: "animeimg",
     aliases: ["ai"],
     cooldown: 10,
+    description: 'Get an anime image or gif according to the type you want.',
+    usage: 'animeimg <pat/hug/waifu/cry/kiss/slap/smug/punch>',
+    category: 'Image',
     async execute(client, message, args) {
 
         const type = args.join(' ')

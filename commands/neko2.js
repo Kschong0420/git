@@ -3,6 +3,9 @@ const superagent = require('superagent');
 module.exports = {
     name: "neko2",
     cooldown: 10,
+    description: 'Send a neko picture.',
+    usage: 'neko2',
+    category: 'Image',
     async execute(client, message, args) {
     const { body } = await superagent
        .get('https://nekos.life/api/neko');

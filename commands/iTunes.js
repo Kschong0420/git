@@ -4,6 +4,9 @@ module.exports = {
     name: 'itunes',
     aliases: ["itune", "iTunes", "iTune"],
     cooldown: 5,
+    description: 'Check a song that iTunes contain.',
+    usage: 'iTune <song name>',
+    category: 'Music',
 
     async execute(client, message, args) {
 

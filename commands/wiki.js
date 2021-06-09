@@ -5,6 +5,9 @@ module.exports = {
   name: "wiki",
   aliases: ["wikipedia2"],
   cooldown: 5,
+  description: 'Return a little bit searching info and link.',
+  usage: 'wiki <text>',
+  category: 'Info',
   async execute(client, message, args) {
   const body = await fetch(
       `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(

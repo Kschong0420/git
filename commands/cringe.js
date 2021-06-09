@@ -4,6 +4,8 @@ module.exports = {
   name: 'cringe',
   cooldown: 5,
   description: 'CRINGE!',
+  usage: 'cringe',
+  category: 'Fun',
   execute(client, message, args) {
     const embed = new MessageEmbed()
       .setTitle('This guy is fxxking CRINGE!!!')

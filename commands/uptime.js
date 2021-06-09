@@ -5,6 +5,9 @@ module.exports = {
     name: 'uptime',
     aliases: ['runtime'],
     cooldown: 5,
+    description: 'Check Vanilla bot\'s uptime.',
+    usage: 'uptime',
+    category: 'Util',
     async execute(client, message, args) {
         const d = moment.duration(message.client.uptime);
         const days = (d.days() == 1) ? `${d.days()} day` : `${d.days()} days`;

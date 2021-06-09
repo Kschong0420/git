@@ -3,8 +3,9 @@ module.exports = {
   name: "ping",
   aliases: ["ms"],
   cooldown: 5,
-  description: "Returns Latency and API Ping",
-  timeout: 10000,
+  description: "Returns Vanilla\'s latency and API ping.",
+  usage: 'ping',
+  category: 'Util',
     async execute(client, message, args) {
       const msg = await message.lineReplyNoMention("Pinging...");
       const Embed = new MessageEmbed()

@@ -3,6 +3,9 @@ const Jumble = require('jumble-words');
 module.exports = {
   name: 'jumble',
   cooldown: 5,
+  description: 'Guess a shuffle word.',
+  usage: 'jumble',
+  category: 'Game',
 
 async execute(client, message, args) {
     const jumble = new Jumble();

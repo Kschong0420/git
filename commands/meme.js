@@ -2,11 +2,13 @@ const random = require("something-random-on-discord").Random
 module.exports = {
     name: "meme",
     cooldown: 5,
-    description: 'this is a meme command!',
+    description: 'Send a meme to a channel',
+    usage: 'meme',
+    category: 'Fun',
     async execute(client, message, args) {
       
         let data = await random.getMeme()
-    message.channel.send(data)
+    message.lineReplyNoMention(data)
     }
   }
   

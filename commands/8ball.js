@@ -2,10 +2,11 @@ const { MessageEmbed } = require('discord.js');
 
 module.exports = {
   name: '8ball',
-  category: 'fun',
-  aliases: ['yes or not', 'yes or no', 'yon'],
+  category: 'Fun',
+  aliases: ['yes-or-not', 'yes-or-no', 'yon'],
   cooldown: 5,
-  description: 'this is a butterfly command!',
+  description: 'Let the bot help you to answer your question.',
+  usage: "8ball <query>",
   async execute(client, message, args) {
 
     const question = args.join(' ')

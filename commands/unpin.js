@@ -1,9 +1,10 @@
 module.exports = {
     name: 'unpin',
-    description: "Unpins a message",
+    description: "Unpin a message.",
     aliases: ["unpins"],
     cooldown: 2,
-    //usage: '[#Channel] [Message ID]',
+    usage: '<channel> <message ID>',
+    category: "Moderator",
     async execute(client, message, args) {
       if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.lineReplyNoMention(`Unknown Command.`)
       if(!message.guild.me.hasPermission("MANAGE_MESSAGES")) return message.lineReply(`I can't unpin a message`)

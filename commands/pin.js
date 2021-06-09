@@ -1,9 +1,10 @@
 module.exports = {
     name: 'pin',
-    description: "Pins a message",
+    description: "Pin a message.",
     aliases: ["pins"],
     cooldown: 2,
-    //usage: '[#Channel] [Message ID]',
+    usage: 'pin <channel> <Message ID>',
+    category: 'Moderator',
     async execute(client, message, args) {
       if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.lineReplyNoMention(`Unknown Command.`)
       if(!message.guild.me.hasPermission("MANAGE_MESSAGES")) return message.lineReply(`I can't pin a message`)

@@ -6,6 +6,10 @@ module.exports = {
 
     category: "owner",
 
+    description: 'Close the bot.',
+
+    usage: 'shutdown',
+
     async execute(client, message, args) {
 
         if (message.author.id !== '759368420453384213') {

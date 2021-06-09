@@ -8,10 +8,10 @@ const fetch = require("node-fetch");
 module.exports = {
   name: "ss",
   aliases: ["screenshot"],
-  //category: "info",
-  description: "Takes a screenshot of any webpage.",
+  category: "Image",
+  description: "Take a screenshot of any webpage.",
   cooldown: 10,
-  //usage: "screenshot <URL>",
+  usage: "ss <URL>",
   async execute(client, message, args) {
     const user = message.author
     const urls = args[0];

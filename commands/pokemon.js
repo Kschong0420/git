@@ -3,8 +3,8 @@ const { MessageEmbed } = require("discord.js")
 module.exports = {
   name: "pokemon",
   cooldown: 5,
-  description: "Get any pokemon description",
-  category: "info",
+  description: "Get any pokemon description.",
+  category: "Info",
   usage: "pokemon <name>",
   async execute(client, message, args) {
 

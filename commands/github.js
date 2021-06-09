@@ -4,6 +4,9 @@ const fetch = require("node-fetch")
 module.exports = {
     name: 'github',
     cooldown: 5,
+    description: 'Check a github user profile.',
+    usage: 'github <github username>',
+    category: 'Info',
     async execute(client, message, args) {
       const user = args.join('+')
           if(!user) return message.lineReply('Please provide a valid user to search.') 

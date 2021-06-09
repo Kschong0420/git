@@ -5,6 +5,9 @@ module.exports = {
       name: 'bot',
       cooldown: 5,
       aliases: ['botinfo', 'bot', 'botservice', 'botservices', 'bs', 'bi'],
+      usage: 'bot',
+      description: 'Check Vanilla\'s info.',
+      category: 'Info',
   async execute(client, message, args) {
     const counts = stripIndent`
       Servers :: ${message.client.guilds.cache.size}

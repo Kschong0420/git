@@ -5,7 +5,9 @@ module.exports = {
   name: "guesspokemon",
   aliases: ["gp", "pokemonguess"],
   cooldown: 5,
-  description: "Guess the pokemon!",
+  description: "Guess a pokemon according picture given",
+  usage: 'guesspokemon',
+  category: 'Game',
   async execute(client, message, args) {
 
     const pokemon = await Spawn().catch(e => {});

@@ -5,6 +5,9 @@ module.exports = {
     name: "wikipedia",
     aliases: ['wiki2'],
     cooldown: 15,
+    description: 'Return whole info from query given.',
+    usage: 'wikipedia <text>',
+    category: 'Info',
     async execute(client, message, args) {
         if (!args[0]) return message.lineReply("Please enter a query!")
         let m = await message.lineReplyNoMention({

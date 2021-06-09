@@ -2,11 +2,12 @@ const Discord = require('discord.js')
 
 module.exports = {
   name: "mcskin",
-  aliases: ["mc","skin"],
+  aliases: ["minecraftskin"],
   usage: "mcskin",
   cooldown: 5,
-  description: "Minecraft skin",
-  async execute(client, message, args) { // update to ur command handler
+  description: "Search for a minecraft skin",
+  catrgory: "Info",
+  async execute(client, message, args) { 
     const username = args[0];
     if(!args[0]) return message.lineReply(`Please enter a minecraft user!`)
     const embed = new Discord.MessageEmbed()

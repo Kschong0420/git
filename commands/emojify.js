@@ -2,7 +2,10 @@ const { Client, Message, MessageEmbed } = require('discord.js')
 
 module.exports = {
   name: 'emojify',
-  cooldown: 3,
+  cooldown: 5,
+  description: 'Emojify your message.',
+  usage: 'emojify <text>',
+  category: 'Fun',
   execute (client, message, args) {
     if (!args.length) return message.lineReply('Please specify a text to emojify.')
     const specialCodes = {

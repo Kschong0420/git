@@ -3,7 +3,9 @@ const discord = require('discord.js')
 module.exports = {
 	name: "rps",
     cooldown: 5,
-	description: "play a game of rock, paper and scissors",
+	description: "Play a game of rock, paper and scissors with Vanilla\'s bot.",
+    usage: 'rps',
+    category: 'Fun',
 	async execute(client, message, args) {
 		let embed = new discord.MessageEmbed()
 		.setTitle("Rock Paper Scissors")

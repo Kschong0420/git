@@ -4,7 +4,9 @@ module.exports = {
     name: 'feedback',
     aliases: ['feed-back'],
     cooldown: 30,
-    utilisation: '{prefix}feedback [your report here]. Thanks for your valuable feedback',
+    usage: 'feedback <text>.',
+    category: 'Util',
+    description: 'Give some feedback about Vanilla Bot',
     async execute(client, message, args) {
         let feedback = args.join(" ").slice(0);
         let user = message.author.username;

@@ -2,6 +2,9 @@ module.exports = {
     name: "autoplay",
     aliases: ["auto", "atp", "ap", "at"],
     cooldown: 3,
+    description: 'Enable or disable autoplay, if enable music bot will continue play music after song queue finished.',
+    usage: 'autoplay',
+    category: 'Music',
     async execute(client, message) {
         try {
             if (!message.member.voice.channel) return message.channel.send(`${client.emotes.error} | You must be in a voice channel!`)
@@ -16,5 +19,3 @@ module.exports = {
         }
     }
 }
-
-//brokennnnnnnnnnnnnn

@@ -4,6 +4,9 @@ module.exports = {
     name: "textflip",
     aliases: ["tf", "ft", "fliptext", "textupsidedown"],
     cooldown: 5,
+    description: 'Flip your text.',
+    usage: 'textflip <text>',
+    category: 'Fun',
     async execute(client, message, args) {
         var dictionary = {
             "a": "ɐ",

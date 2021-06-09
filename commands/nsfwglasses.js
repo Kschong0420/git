@@ -6,6 +6,9 @@ module.exports = {
     name: 'nsfwglasses',
     aliases: ['nglasses'],
     cooldown: 0,
+    description: 'Girls that wear glasses, uwu~',
+    usage: 'nsfwglasses',
+    category: 'NSFW',
     async execute(cilent, message, args, Discord) {
         if(!message.channel.nsfw){ message.lineReplyNoMention("This command can only be used in channels marked nsfw."); return; }
         const embed = new Discord.MessageEmbed()

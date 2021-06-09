@@ -3,7 +3,10 @@ const Discord = require("discord.js");
 module.exports = {
     name: 'achievement',
     aliases: ["achieve", "ach"],
-    cooldown: 5,
+    cooldown: 7,
+    description: 'Generate a custom achievement.',
+    usage: 'achievement <text>',
+    category: 'Image',
     async execute(client, message, args) {
         try {
             const icon = Math.floor(Math.random() * 39)

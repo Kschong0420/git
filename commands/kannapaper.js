@@ -5,6 +5,9 @@ module.exports = {
     name: "kannapaper",
     aliases: ["kp"],
     cooldown: 3,
+    description: 'Let Kanna help you write your message in her paper.',
+    usage: 'kannapaper',
+    category: 'Image',
 
      async execute(client, message, args) {
 

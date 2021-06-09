@@ -4,6 +4,9 @@ const { get } = require("request-promise-native")
 module.exports = {
     name: 'anime',
     cooldown: 10,
+    description: 'Search an anime from Kitsu.',
+    usage: 'anime <anime name>',
+    category: 'Info',
     async execute(client, message, args){
         if(!args.length) return message.lineReply('Please provide an anime name.')
 

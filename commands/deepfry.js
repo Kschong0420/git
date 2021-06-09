@@ -3,8 +3,10 @@ const { MessageEmbed, MessageMentions } = require('discord.js')
 
 module.exports = {
     name: "deepfry",
-    description: "Deepfry someone!",
-    cooldown: 10,
+    cooldown: 7,
+    description: 'Deepfry someone avatar.',
+    usage: 'deepfry [username]',
+    category: 'Image',
     async execute(client, message, args) {
         const user = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.author 
         const avatar = user.user.displayAvatarURL({ dynamic: false, size: 4096})

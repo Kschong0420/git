@@ -4,7 +4,9 @@ module.exports = {
   name: 'report',
   description: 'Report bug to owner',
   cooldown: 30,
-  execute (client, message, args, Discord) {
+  usage: 'report <text>',
+  category: 'Util',
+  async execute (client, message, args, Discord) {
     const owner = client.users.cache.get('759368420453384213')
 
     const query = args.join(' ')

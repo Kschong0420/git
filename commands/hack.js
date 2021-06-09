@@ -1,6 +1,9 @@
 module.exports = {
     name: 'hack',
     cooldown: 30,
+    description: 'Hack someone.',
+    usage: 'hack <username>',
+    category: 'Fun',
     async execute(client, message, args) {
         function wait(ms){
             let start = new Date().getTime();

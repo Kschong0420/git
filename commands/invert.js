@@ -5,6 +5,9 @@ module.exports = {
     name: "invert",
     description: "invert gif",
     cooldown: 10,
+    description: 'Invert someone profile picture colour.',
+    usage: 'invert <username>',
+    category: 'Image',
 
     async execute(client, message, args) {
 

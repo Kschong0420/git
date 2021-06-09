@@ -3,8 +3,10 @@ const Discord = require('discord.js')
 
 module.exports = {
     name: "wasted",
-    description: "wasted gif",
+    description: "Someone is wasted.",
     cooldown: 10,
+    usage: 'wasted <username>',
+    category: 'Image',
 
     async execute(client, message, args) {
 

@@ -4,6 +4,9 @@ module.exports = {
         name: "rolemember",
         aliases: ['rm', 'rl', 'rolelist'],
         cooldown: 0,
+        description: 'Check a role have included who.',
+        usage: 'rolemember <role>',
+        category: 'Info',
        
     async execute(client, message, args) {
         if (args.includes("@everyone")) return;

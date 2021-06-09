@@ -5,6 +5,9 @@ module.exports = {
     name: "np",
     aliases: ["now_playing"],
     cooldown: 5,
+    description: 'Show the music playing currently by Vanilla.',
+    usage: 'np',
+    category: 'Music',
     async execute(client, message) {
         const queue = client.distube.getQueue(message)
         if (!queue) return message.channel.send(`${client.emotes.error} | There is nothing in the queue right now!`)

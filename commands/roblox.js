@@ -4,6 +4,9 @@ const snekfetch = require('snekfetch')
 module.exports = {
     name: "roblox",
     cooldown: 5,
+    description: 'Search a roblox user profile.',
+    usage: 'roblox <roblox username>',
+    category: 'Info',
     async execute(client, message, args) {
         let saybot = args.join('_');
         const url = `https://api.roblox.com/users/get-by-username?username=${saybot}`;

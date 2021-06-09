@@ -5,6 +5,9 @@ const Discord = require('discord.js')
 module.exports = {
     name: 'urban',
     cooldown: 5,
+    description: 'Search something from urban dictionary.',
+    usage: 'urban <text>',
+    category: 'Info',
     async execute(client, message) {
         const prefix = process.env.PREFIX
         const args = message.content.substring(prefix.length).split(' ')

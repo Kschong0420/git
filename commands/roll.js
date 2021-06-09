@@ -4,6 +4,9 @@ module.exports = {
     name: 'roll',
     aliases: ['dice', 'r'],
     cooldown: 5,
+    description: 'Roll a dice with the number given for the dice sides.',
+    usage: 'roll <dice sides>',
+    category: 'Fun',
     async execute(client, message, args) {
         let limit = args[0];
         if (!limit) limit = 6;

@@ -2,6 +2,9 @@ const axios = require('axios');
 module.exports = {
     name: 'binary',
     cooldown: 5,
+    description: 'Encode a word to code or decode a code to word.',
+    usage: `encode <word> \`or\` v decode <code>`,
+    category: 'Info',
 
     async execute(client, message, args, Discord) {
         if (!args[0]) return message.reply('Please specify whether you want to encode or decode');

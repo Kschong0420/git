@@ -1,8 +1,10 @@
 module.exports = {
       name: "nickname",
       aliases: ["nick"],
-      description: 'Assigns a nickname to a member! Use "clear" or leave it blank to remove the nickname!',
+      description: 'Assigns a nickname to a member. Use "clear" to remove the nickname.',
       cooldown: 5,
+      usage: 'nickname <username> <name/clear>',
+      category: 'Moderator',
 
   async execute(client, message, args) {
     if(!message.member.hasPermission("MANAGE_NICKNAMES")) return message.lineReplyNoMention("Unknown Command.")

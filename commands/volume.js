@@ -3,6 +3,9 @@ module.exports = {
     aliases: ["v", "set", "set-volume", "vol"],
     cooldown: 0,
     inVoiceChannel: true,
+    description: 'Set volume value.',
+    usage: 'volume <value>',
+    category: 'Music',
     async execute(client, message, args) {
         if (!message.member.voice.channel) return message.channel.send(`${client.emotes.error} | You must be in a voice channel!`)
         const queue = client.distube.getQueue(message)

@@ -6,6 +6,9 @@ module.exports = {
     name: "nsfwneko3",
     aliases: ['hneko3', "nneko3"],
     cooldown: 0,
+    description: 'NSFW Neko Girls (Cat Girls)',
+    usage: 'nsfwneko3',
+    category: 'NSFW',
     async execute(client, message, args) {
         if (!message.channel.nsfw) return message.lineReplyNoMention("This command can only be used in channels marked nsfw.")
         try {

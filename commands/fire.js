@@ -6,10 +6,13 @@ const AmeAPI = new AmeClient(AME_API)
 module.exports = {
         name: "fire",
         aliases: ['setfire'],
-        cooldown: 15,
+        cooldown: 7,
+        description: 'Setfire to someone pfp.',
+        usage: 'fire <username>',
+        category: 'Image',
     async execute(client, message, args) {
 
-        let user = await message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.author 
+        let user = await message.mentions.members.first() || message.guild.members.cache.get(args[0])
         let buffer = await AmeAPI.generate("fire", { url: user.user.displayAvatarURL({ format: "png", size: 512 }) });
         let attachment = new Discord.MessageAttachment(buffer, "fire.png");
         message.lineReplyNoMention(attachment);

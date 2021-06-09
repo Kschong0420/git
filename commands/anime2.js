@@ -5,6 +5,9 @@ const { searchAnime } = require("@freezegold/anime.js");
 module.exports = {
   name: "anime2",
   cooldown: 10,
+  description: 'Search an anime.',
+    usage: 'anime2 <anime name>',
+    category: 'Info',
   
   async execute(client, message, args) {
     const query = args.join(" ");

@@ -1,7 +1,9 @@
 module.exports = { 
     name: "ban",
     cooldown: 0,
-    description: "ban someone",
+    description: "Ban someone.",
+    usage: 'ban <username> <reason>',
+    category: 'Moderator',
     async execute(client, message, args, Discord) {
     if(!message.member.hasPermission("BAN_MEMBERS")) return message.lineReplyNoMention("Unknown Command.")
         let target = message.mentions.members.first()

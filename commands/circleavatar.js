@@ -4,7 +4,10 @@ const Discord = require('discord.js')
 module.exports = {
     name: "circleavatar",
     aliases: ["ca", "ci", "cicon", "cavatar"],
-    cooldown: 10,
+    cooldown: 7,
+    description: 'Check someone avatar in circle form.',
+    usage: 'circleavatar [username]',
+    category: 'Image',
 
     async execute(client, message, args) {
 

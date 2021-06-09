@@ -4,6 +4,9 @@ module.exports = {
     name: 'esnipe',
     aliases: ['editsnipe'],
     cooldown: 5,
+    description: 'snipe an edited message.',
+    usage: 'esnipe',
+    category: 'Util',
     async execute(client, message, args) {
         const msg = client.esnipes.get(message.channel.id)
         if (!msg) {

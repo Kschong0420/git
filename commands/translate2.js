@@ -4,6 +4,9 @@ module.exports = {
     name: 'translate2',
     aliases: ['t2', 'tl2'],
     cooldown: 3,
+    description: 'Translate a sentence.',
+    usage: 'translate2 <language> <word>',
+    category: 'Util',
     async execute(client, message, args) {
         try {
             const query = args.slice(1).join(" ");

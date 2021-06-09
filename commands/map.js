@@ -5,7 +5,9 @@ module.exports = {
     name: 'maps',
     cooldown: 7,
     aliases: ["map"],
-
+    description: 'Check a location on google map.',
+    usage: 'map <location>',
+    category: 'Info',
     async execute(client, message, args) {
 
         const sit = args.join("_")

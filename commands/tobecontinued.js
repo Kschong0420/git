@@ -6,7 +6,10 @@ const AmeAPI = new AmeClient(AME_API)
 module.exports = {
         name: "tobecontinued",
         aliases: ['tbc'],
-        cooldown: 10,
+        cooldown: 7,
+        description: 'Just one more sec.',
+        usage: 'tobecontinued <username>',
+        category: 'Image',
     async execute(client, message, args) {
 
         let user = await message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.author 

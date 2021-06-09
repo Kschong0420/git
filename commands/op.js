@@ -2,8 +2,10 @@ const Discord = require('discord.js')
 
 module.exports = {
   name: 'op',
-  description: 'Nekopara Opening Song List',
+  description: 'Nekopara opening song list',
   cooldown: 20,
+  usage: 'op',
+  category: 'Info',
   execute (client, message, args) {
     const newEmbed = new Discord.MessageEmbed()
       .setColor('#FFE666')

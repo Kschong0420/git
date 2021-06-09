@@ -67,7 +67,9 @@ module.exports = {
 
   cooldown: 20,
 
-  usage: "serverinfo ",
+  usage: "serverinfo4",
+
+  category: 'Info',
 
    async execute(client, message, args, Discord) {
 

@@ -3,6 +3,9 @@ module.exports = {
     aliases: ["loop", "rp"],
     cooldown: 0,
     inVoiceChannel: true,
+    description: 'Choose repeat mode from song or queue.',
+    usage: 'repeat',
+    category: 'Music',
     async execute(client, message, args) {
         if (!message.member.voice.channel) return message.channel.send(`${client.emotes.error} | You must be in a voice channel!`)
         const queue = client.distube.getQueue(message)

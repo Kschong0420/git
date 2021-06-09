@@ -5,6 +5,9 @@ module.exports = {
     name: "phcomment",
     aliases: ["phc", "ph"],
     cooldown: 10,
+    description: 'Huh? Someone here comment in there?',
+    usage: 'phcomment <username> <text>',
+    category: 'Image',
 
      async execute(client, message, args) {
 

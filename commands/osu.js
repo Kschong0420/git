@@ -9,6 +9,9 @@ module.exports = {
     name: "osu",
     aliases: ["circle"],
     cooldown: 5,
+    description: 'Checking someone osu game stats in circle mode.',
+    usage: 'osu <osu username>',
+    category: 'Info',
     async execute(client, message, args) {
         try {
             const user = args.join(' ')

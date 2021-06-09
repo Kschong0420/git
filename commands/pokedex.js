@@ -7,6 +7,9 @@ var Pokedex = require("pokedex-promise-v2"),
 module.exports = {
   name: "pokedex",
   cooldown: 5,
+  description: 'Search a pokemon.',
+  usage: 'pokedex <pokemon name>',
+  category: 'Info',
   async execute(client, message, args) {
     const query = args.join(" ").toLocaleLowerCase();
     if (!query) return message.inlineReply("You need to type a pokemon!");

@@ -6,6 +6,9 @@ module.exports = {
     name: 'weather',
     aliases: ['wthr'],
     cooldown: 5,
+    description: 'Check weather info for country given.',
+    usage: 'weather <country/city>',
+    category: 'Info',
     async execute(client, message, args) {
     
         weather.find({search: args.join(" "), degreeType: 'C'}, function (error, result){

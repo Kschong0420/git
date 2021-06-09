@@ -3,8 +3,10 @@ const Discord = require('discord.js')
 
 module.exports = {
     name: "trigger",
-    description: "Trigger gif",
+    description: "Try trigger someone",
     cooldown: 10,
+    usage: 'trigger <username>',
+    category: 'Image',
 
     async execute(client, message, args) {
 

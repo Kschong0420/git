@@ -4,7 +4,9 @@ module.exports = {
     name: 'sudo',
     category: 'fun',
     cooldown: 10,
-    description: 'Make anyone say anything!',
+    description: 'Make anyone say anything.',
+    usage: 'sudo <username> <text>',
+    category: 'Moderator',
     async execute (client, message, args) {
       if (!message.member.hasPermission("MANAGE_WEBHOOKS")) return message.lineReply("You need the `MANAGE_WEBHOOKS` permission to use this command.");
       if (!message.guild.me.hasPermission("MANAGE_WEBHOOKS")) return message.lineReplyNoMention("I need the `MANAGE_WEBHOOKS` permission to use this command.");

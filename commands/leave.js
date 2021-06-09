@@ -3,6 +3,9 @@ module.exports = {
     aliases: ["disconnect", "stop"],
     cooldown: 5,
     inVoiceChannel: true,
+    description: 'Let Vanilla leave a voice channel.',
+    usage: 'leave',
+    category: 'Music',
     async execute(client, message, args) {
         if (!message.member.voice.channel) return message.channel.send(`${client.emotes.error} | You must be in a voice channel!`)
         if(message.guild.me.voice.channel) {

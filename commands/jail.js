@@ -7,6 +7,9 @@ module.exports = {
         name: "jail",
         aliases: ['setjail'],
         cooldown: 10,
+        description: 'Someone need stay inside the jail.',
+        usage: 'jail <username>',
+        category: 'Image',
     async execute(client, message, args) {
 
         let user = await message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.author

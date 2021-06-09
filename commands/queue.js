@@ -2,6 +2,9 @@ module.exports = {
     name: "queue",
     aliases: ["q"],
     cooldown: 5,
+    description: 'Show a list of song that queued for play by Vanilla bot.',
+    usage: 'queue',
+    category: 'Music',
     async execute(client, message, args, Discord) {
         const queue = client.distube.getQueue(message)
         if (!queue) return message.channel.send(`${client.emotes.error} | There is nothing playing!`)

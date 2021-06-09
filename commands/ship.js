@@ -3,6 +3,9 @@ const Discord = require("discord.js")
 module.exports = {
     name: "ship",
     cooldown: 5,
+    description: 'Combine two peoples name.',
+    usage: 'ship <user1> <user2>',
+    category: 'Fun',
     async execute(client, message, args) {
         if (!args[0]) return message.lineReply("Please mention someone!")
         if (!args[1]) return message.lineReply("Please menton someone else!")

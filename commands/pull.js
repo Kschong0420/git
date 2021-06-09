@@ -2,6 +2,9 @@ module.exports = {
     name: "pull",
     aliases: ["move"],
     cooldown: 15,
+    description: 'Move a member from other channel to your current channel.',
+    usage: 'pull <username>',
+    category: 'Moderator',
     async execute(client, message, args) {
         if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send('Unknown Command.')
 

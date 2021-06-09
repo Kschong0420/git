@@ -3,10 +3,11 @@ const fetch = require("node-fetch");
 
 module.exports = {
         name: "love",
-        description: "Shows Image of 2 Lovers, 3 persons!",
+        description: "Shows image of 2 lovers.",
         cooldown: 10,
-        usage: "[mention(1) | ID(1) | name(1) | nickname(1)] [mention(2) | ID(2) | name(2) | nickname(2)]",
+        usage: "love <username1> <username2>",
         accessableby: "everyone",
+        category: 'Image',
 
     async execute(client, message, args) {
         

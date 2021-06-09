@@ -5,9 +5,11 @@ const moment = require("moment");
 
 module.exports = {
   name: 'manga',
-  description: "Searches for an manga on Kitsu.io! If no manga name is given, it gives you a random suggestion!",
+  description: "Searches for an manga on Kitsu.io. If no manga name is given, it gives you a random suggestion.",
   cooldown: 5,
   aliases: ["mg"],
+  usage: 'manga [manga name]',
+  category: 'Info',
   async execute(client, message, args, Discord) {
     try {
       const search = args.join(" ");

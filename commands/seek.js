@@ -3,8 +3,9 @@ module.exports = {
     name: "seek",
     aliases: ["s"],
     cooldown: 0,
-    description: "jump to the second of the song you want",
-    cooldown: "5",
+    description: "Jump to the second of the song you want",
+    usage: 'seek <time>',
+    category: 'Music',
 
     async execute(client, message, args) {
         try {

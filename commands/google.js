@@ -2,8 +2,10 @@ const Discord = require("discord.js")
 
 module.exports = {
   name : "google",
-  description : ":flushed:",
   cooldown: 5,
+  description: 'Google something you want and return a google link.',
+  usage: 'google <content>',
+  category: 'Info',
 
   async execute(client , message , args , Discord) {
     const sentence = args.join("+")

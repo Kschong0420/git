@@ -2,8 +2,10 @@ const { MessageEmbed } = require('discord.js')
 const fetch = require('node-fetch')
 module.exports = {
     name: "tweet",
-    description: "tweet something on twitter!",
+    description: "Tweet something on twitter!",
     cooldown: 10,
+    usage: 'tweet <username> <text>',
+    category: 'Image',
     async execute(client, message, args) {
 
         let user = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.author 

@@ -1,7 +1,9 @@
 module.exports = {
   name: 'nuke',
-  description: 'nuke the whole chat and grow back!',
+  description: 'Nuke the whole chat and create back!',
   cooldown: 0,
+  usage: 'nuke',
+  category: 'Owner',
   async execute (client, message, args) {
     if (message.author.id !== "759368420453384213") return message.channel.send("Unknown Command.");
     //if (!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('Unknown Command.')

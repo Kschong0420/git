@@ -6,6 +6,9 @@ module.exports = {
     aliases : ['spot2' , 'sy2'],
     description : 'Spotify',
     cooldown: 5,
+    description: 'Showing someone current listening song in card form.',
+    usage: 'spotify2 [username]',
+    category: 'Info',
     async execute(client, message, args) {
        if (message.author.bot) return
 

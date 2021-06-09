@@ -5,6 +5,9 @@ module.exports = {
     name: 'yt',
     aliases: 'youtube',
     cooldown: 5,
+    description: 'Search a youtube video.',
+    usage: 'yt <video name/video link>',
+    category: 'Info',
     async execute(client, message, args) {
         const query = args.join(" ");
         if (!query) return message.lineReply("Please provide a search query.");

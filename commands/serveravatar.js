@@ -4,7 +4,9 @@ module.exports = {
       name: 'servericon',
       cooldown: 10,
       aliases: ['serveravatar', 'savatar', 'si'],
-
+      description: 'Check server avatar.',
+      usage: 'servericon',
+      category: 'Image',
   async execute(client, message, args) {
     const embed = new MessageEmbed()
       .setTitle(`${message.guild.name}'s Icon`)

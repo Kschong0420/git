@@ -25,6 +25,9 @@ module.exports = {
     name: "numberguess",
     aliases: ["ng", "nbg", "number", "numbguess", "numb", "no.", "no.guess"],
     cooldown: 30,
+    description: 'Guess a number between 1 to 100.',
+    usage: 'numberguess',
+    category: 'Game',
     async execute(client, message, args, Discord) {
         const { member, channel, guild } = message;
 

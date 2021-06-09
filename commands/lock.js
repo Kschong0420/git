@@ -4,6 +4,9 @@ module.exports = {
     name: 'lock',
     aliases: ["lock_on", "lock-on"],
     cooldown: 30,
+    description: 'Lock a channel.',
+    usage: 'lock',
+    category: 'Moderator',
     async execute(client, message, args) {
 
         if (!message.guild.member(message.author).hasPermission("ADMINISTRATOR"))

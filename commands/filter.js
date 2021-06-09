@@ -2,6 +2,9 @@ module.exports = {
     name: "filter",
     aliases: ["filters"],
     cooldown: 10,
+    description: 'Use a filter to the song.',
+    usage: 'filter <off/3d/bassboost/vaporwave/nightcore/phaser/tremolo/reverse/karaoke/flanger/gate/haas/mcompand/surround/earwax>',
+    category: 'Music',
     inVoiceChannel: true,
     async execute(client, message, args) {
         if (!message.member.voice.channel) return message.channel.send(`${client.emotes.error} | You must be in a voice channel!`)

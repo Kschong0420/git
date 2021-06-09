@@ -6,6 +6,8 @@ module.exports = {
     aliases: ["tl"],
     cooldown: 3,
     description: "Translate a sentence.",
+    usage: 'translate <language> <word>',
+    category: 'Util',
     async execute(client, message, args) {
         let language = args[0];
         let text = args.slice(1).join(" ");

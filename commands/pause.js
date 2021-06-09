@@ -10,10 +10,6 @@ module.exports = {
         if(message.guild.me.voice.channel) {
             if(message.guild.me.voice.channel.id !== message.member.voice.channel.id) return message.lineReplyNoMention(`${client.emotes.error} You must be in my voice channel`)
           }
-        if (queue.pause) {
-            client.distube.resume(message)
-            return message.lineReplyNoMention(`${client.emotes.resume} | Song Resumed!`)
-        }
         client.distube.pause(message)
         message.lineReplyNoMention(`${client.emotes.pause} | Song Paused!`)       
     }

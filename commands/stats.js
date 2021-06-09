@@ -7,6 +7,9 @@ module.exports = {
     name: 'stats',
     aliases: ['statistics', 'metrics', 'stat'],
     cooldown: 10,
+    description: 'Show Vanilla bot\'s bot statistics.',
+    usage: 'stats',
+    category: 'Info',
     async execute(client, message, args) {
         const d = moment.duration(message.client.uptime);
         const days = (d.days() == 1) ? `${d.days()} day` : `${d.days()} days`;

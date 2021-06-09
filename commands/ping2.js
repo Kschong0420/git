@@ -1,6 +1,9 @@
 module.exports = {
     name: "ping2",
     cooldown: 5,
+    description: 'Return Vanilla\'s websocket ping and roundtrip ping.',
+    usage: 'ping2',
+    category: 'Util',
     async execute(client, message, args, Discord) {
         let circles = {
             green: ":green_circle:",

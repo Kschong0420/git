@@ -3,8 +3,10 @@ const axios = require('axios')
 
 module.exports = {
     name: 'joke',
-    description: 'Gives you a funny joke?',
+    description: 'Gives you a funny joke.',
     cooldown: 5,
+    usage: 'joke',
+    category: 'Fun',
     async execute(client, message, args) {
         axios.get('https://official-joke-api.appspot.com/random_joke')
             .then(res => {
