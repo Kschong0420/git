@@ -2,7 +2,7 @@ module.exports = {
     name: "kick",
     cooldown: 0,
     description: 'Kick someone.',
-    usage: 'kick <username>',
+    usage: 'kick <username> [reason]',
     category: 'Moderator',
     async execute(client, message, args, Discord) {
 	  if(!message.member.hasPermission("KICK_MEMBERS")) return message.lineReplyNoMention("Unknown Command.")
@@ -22,7 +22,7 @@ module.exports = {
 
         let reason = args.slice(1).join(' ')
 
-        if(!reason) return message.lineReply("Please give a reason!")
+        if (!reason) reason = "No reason given.";
 
         let embed = new Discord.MessageEmbed()
         .setTitle("Member kicked")
