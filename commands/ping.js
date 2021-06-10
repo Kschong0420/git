@@ -18,6 +18,5 @@ module.exports = {
         )
         .setColor('#fb644c');
       msg.edit(Embed);
-      msg.edit("\u200b");
     }
 };
