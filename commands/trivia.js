@@ -49,7 +49,7 @@ module.exports = {
                         }
                     }
                     if (dif.toLowerCase() != 'easy' && dif.toLowerCase() != 'medium' && dif.toLowerCase() != 'hard' && dif.toLowerCase() != 'any') return this.message.lineReplyNoMention('Please enter a valid Difficulty\nUse .trivia categories to view a list of categories and difficulties');
-                    if (!this.question_id) return this.message.lineReplyNoMention('Please enter a valid Category\nUse .trivia categories to view a list of categories and difficulties');
+                    if (!this.question_id) return this.message.channel.send('Please enter a valid Category\nUse .trivia categories to view a list of categories and difficulties');
                     if (dif.toLowerCase() == 'any') {
                         await fetch('https://opentdb.com/api.php?amount=1&category=' + this.question_id + '&encode=base64')
                             .then(response => response.json())
@@ -124,7 +124,7 @@ module.exports = {
                         .setDescription(this.answer_array)
                         .setFooter('Category - ' + atob(this.question.results[0].category) + ', Difficulty - ' + atob(this.question.results[0].difficulty))
                 }
-                this.question_message = await this.message.lineReplyNoMention(this.question_embed)
+                this.question_message = await this.message.channel.send(this.question_embed)
                 let step = -1
                 while (step < this.question_length) {
                     step++
