@@ -11,9 +11,19 @@ module.exports = {
 
     async execute(client, message, args) {
 
-        const user = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.author 
+        //const user = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.author 
 
-        let avatar = user.user.displayAvatarURL({size: 4096, dynamic: true, format: "png"});
+        let user;
+
+        if (message.mentions.users.first()) {
+            user = message.mentions.users.first();
+        } else if (args[0]) {
+            user = message.guild.members.cache.get(args[0]).user;
+        } else {
+            user = message.author;
+        }
+
+        let avatar = user.displayAvatarURL({size: 4096, dynamic: true, format: "png"});
 
         let image = await canvacord.Canvas.circle(avatar);
 

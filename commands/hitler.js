@@ -6,14 +6,24 @@ module.exports = {
     description: "hitler gif",
     cooldown: 7,
     description: 'Let someone become hitler.',
-    usage: 'hitler <username>',
+    usage: 'hitler [username]',
     category: 'Image',
 
     async execute(client, message, args) {
 
-        const user = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.author 
+        //const user = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.author 
 
-        let avatar = user.user.displayAvatarURL({dynamic: false, format: "png", size: 4096});
+        let user;
+
+        if (message.mentions.users.first()) {
+            user = message.mentions.users.first();
+        } else if (args[0]) {
+            user = message.guild.members.cache.get(args[0]).user;
+        } else {
+            user = message.author;
+        }
+
+        let avatar = user.displayAvatarURL({dynamic: false, format: "png", size: 4096});
 
         let image = await canvacord.Canvas.hitler(avatar);
 

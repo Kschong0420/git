@@ -6,14 +6,22 @@ module.exports = {
     description: "trash gif",
     cooldown: 7,
     description: 'Someone should stay in rubbish bin.',
-    usage: 'trash <username>',
+    usage: 'trash [username]',
     category: 'Image',
 
     async execute(client, message, args) {
 
-        const user = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.author 
+        //const user = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.author 
 
-        let avatar = user.user.displayAvatarURL({dynamic: false, format: "png"});
+        if (message.mentions.users.first()) {
+            user = message.mentions.users.first();
+        } else if (args[0]) {
+            user = message.guild.members.cache.get(args[0]).user;
+        } else {
+            user = message.author;
+        }
+
+        let avatar = user.displayAvatarURL({dynamic: false, format: "png"});
 
         let image = await canvacord.Canvas.trash(avatar);
 

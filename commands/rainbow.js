@@ -6,12 +6,20 @@ module.exports = {
     aliases: ["gay"],
     cooldown: 7,
     description: "Let someone avatar become rainbow",
-    usage: 'rainbow <username>',
+    usage: 'rainbow [username]',
     category: 'Image',
 
     async execute(client, message, args) {
 
-        const user = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.yauthor 
+        //const user = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.yauthor 
+
+        if (message.mentions.users.first()) {
+            user = message.mentions.users.first();
+        } else if (args[0]) {
+            user = message.guild.members.cache.get(args[0]).user;
+        } else {
+            user = message.author;
+        }
 
         let avatar = user.displayAvatarURL({dynamic: false, format: "png", size: 4096});
 

@@ -8,12 +8,22 @@ module.exports = {
         aliases: ['setjail'],
         cooldown: 10,
         description: 'Someone need stay inside the jail.',
-        usage: 'jail <username>',
+        usage: 'jail [username]',
         category: 'Image',
     async execute(client, message, args) {
 
-        let user = await message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.author
-        let buffer = await AmeAPI.generate("jail", { url: user.user.displayAvatarURL({ format: "png", size: 512 }) });
+        //let user = await message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.author
+        let user;
+
+        if (message.mentions.users.first()) {
+            user = message.mentions.users.first();
+        } else if (args[0]) {
+            user = message.guild.members.cache.get(args[0]).user;
+        } else {
+            user = message.author;
+        }
+        
+        let buffer = await AmeAPI.generate("jail", { url: user.displayAvatarURL({ format: "png", size: 512 }) });
         let attachment = new Discord.MessageAttachment(buffer, "jail.png");
         message.lineReplyNoMention(attachment);
     }
