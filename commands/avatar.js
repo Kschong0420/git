@@ -1,32 +1,31 @@
+const MessageEmbed = require("discord.js").MessageEmbed;
 module.exports = {
-  name: 'avatar',
-  aliases: ['icon', 'pfp', 'profilepic'],
+  name: "avatar",
+  category: "Info",
+  description: "Return a user avatar picture.",
+  usage: 'avatar [username]',
   cooldown: 5,
-  description: 'Return a user(s) avatar picture.',
-  usage: 'avatar [username or more than 1 username]',
-  category: 'Info',
-  async execute (client, message, args, Discord) {
-    if (!message.mentions.users.size) {
-      const user = message.author
-      const selfembed = new Discord.MessageEmbed()
-      .setTitle(`${user.username}'s Avatar`)
-      .setImage(user.displayAvatarURL({ dynamic: true, size: 4096}))
-      .setURL(user.displayAvatarURL())
-      message.lineReplyNoMention(selfembed)
-    }
-
-    const avatar_list = message.mentions.users.map(user => {
-      return `**${user.username}'s Avatar: ** ${user.displayAvatarURL({ dynamic: true , size: 4096})}`
-    })
-
-    message.lineReplyNoMention(avatar_list)
-  }
-}
-
-// if (!message.mentions.users.size) {
-//    return message.lineReplyNoMention(`**Your Avatar: ** ${message.author.displayAvatarURL({ dynamic: true })}`);
-// }
-//
-// const avatar_list = message.mentions.users.map(user => {
-//    return `**${user.username}'s Avatar: ** ${user.displayAvatarURL({ dynamic: true })}`;
-// });
+  async execute(client, message, args) {
+    const user =
+      message.mentions.members.first() ||
+      message.guild.members.cache.get(args[0]) ||
+      message.guild.members.cache.find((u) =>
+        u.user.username.toLowerCase().includes(
+          args.join(" ") || u.user.tag.toLowerCase() === args.join(" ")
+        )
+      ) ||
+      message.member;
+    const pngFormat = user.user.displayAvatarURL({ format: "png" });
+    const jpgFormat = user.user.displayAvatarURL({ format: "jpg" });
+    const webpFormat = user.user.displayAvatarURL();
+    const avatar = user.user.displayAvatarURL({ dynamic: true, size: 4096});
+    message.channel.send(
+      new MessageEmbed()
+        .setTitle(`${user.user.username}'s avatar`)
+        .setDescription(
+          `[png](${pngFormat}) | [jpg](${jpgFormat}) | [webp](${webpFormat})`
+        )
+        .setImage(avatar)
+    );
+  },
+};
