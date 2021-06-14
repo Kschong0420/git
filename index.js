@@ -5,6 +5,7 @@ const inlinereply = require('discord-reply')
 const client = new Discord.Client()
 const fs = require("fs")
 const fetch = require("node-fetch")
+const { GiveawaysManager } = require("discord-giveaways");
 //const { CanvasSenpai } = require("canvas-senpai")
 //const canva = new CanvasSenpai();
 
@@ -27,6 +28,17 @@ fs.readdir("./commands/", (err, files) => {
     client.commands.set(cmd.name, cmd)
   })
 })
+
+//giveaway core
+client.giveaways = new GiveawaysManager(client, {
+  storage: "./util/Data/giveaways.json",
+  updateCountdownEvery: 1000,
+  default: {
+    botsCanWin: false,
+    embedColor: 'GREEN',
+    reaction: "🎉",
+  },
+});
 
 //welcome card
 //client.on('guildMemberAdd', async member => {
