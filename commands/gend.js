@@ -1,7 +1,7 @@
 const { Client, Message, MessageEmbed } = require("discord.js");
 module.exports = {
     name: "gend",
-    category: "giveaway",
+    category: "Giveaway",
     usage: "gend <Message ID>",
     description: "End a giveaway",
     cooldown: 0,

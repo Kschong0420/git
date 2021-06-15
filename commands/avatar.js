@@ -4,6 +4,7 @@ module.exports = {
   category: "Info",
   description: "Return a user avatar picture.",
   usage: 'avatar [username]',
+  aliases: ['icon', 'pfp', 'profilepic'],
   cooldown: 5,
   async execute(client, message, args) {
     const user =

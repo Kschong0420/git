@@ -156,18 +156,18 @@ client.on("message", async message => {
 
 //chat bot
 client.on('message', async (message) => {
- if (message.author.bot || message.channel.type === 'dm') return;
+  if (message.author.bot || message.channel.type === 'dm') return;
 
-if(message.channel.name === 'vanilla-chat-bot' || message.channel.id === '835218953407299584') { 
+  if (message.channel.name === 'vanilla-chat-bot' || message.channel.id === '835218953407299584') {
 
     fetch(`https://api.monkedev.com/fun/chat?msg=${message.content}&uid=${message.author.id}&key=WKTXwCVoosGtQNCNfIymRmx1t`)
-    .then(response => response.json())
-    .then(data => {
+      .then(response => response.json())
+      .then(data => {
         message.channel.send(data.response)
-    }).catch(() => { message.channel.send('error') })
-    
-    
-}
+      }).catch(() => { message.channel.send('error') })
+
+
+  }
 })
 
 //global chat
@@ -197,35 +197,57 @@ client.on('message', async message => {
 
 //snipe core
 client.snipes = new Map();
-client.on('messageDelete', function(message, channel) {
-      if (message.author.bot) return;
-      client.snipes.set(message.channel.id, {
-         content: message.content,
-         profilephoto: message.author.displayAvatarURL({ dynamic : true }),
-         author: message.author.tag,
-         date: message.createdTimestamp,
-         image: message.attachments.first() ? message.attachments.first().proxyURL : null
-      }) 
+client.on('messageDelete', function (message, channel) {
+  if (message.author.bot) return;
+  client.snipes.set(message.channel.id, {
+    content: message.content,
+    profilephoto: message.author.displayAvatarURL({ dynamic: true }),
+    author: message.author.tag,
+    date: message.createdTimestamp,
+    image: message.attachments.first() ? message.attachments.first().proxyURL : null
+  })
 })
 
 //edit snipe core
 client.esnipes = new Map();
-client.on('messageUpdate', function(message, channel) {
-      if (message.author.bot) return;
-      client.esnipes.set(message.channel.id, {
-         content: message.content,
-         profilephoto: message.author.displayAvatarURL({ dynamic : true }),
-         author: message.author.tag,
-         date: message.createdTimestamp,
-         image: message.attachments.first() ? message.attachments.first().proxyURL : null
-      }) 
+client.on('messageUpdate', function (message, channel) {
+  if (message.author.bot) return;
+  client.esnipes.set(message.channel.id, {
+    content: message.content,
+    profilephoto: message.author.displayAvatarURL({ dynamic: true }),
+    author: message.author.tag,
+    date: message.createdTimestamp,
+    image: message.attachments.first() ? message.attachments.first().proxyURL : null
+  })
 })
 
 //status
-client.once('ready', () => {
-  client.user.setActivity('Chocola', {
-    type: 'WATCHING'
-  })
+//client.once('ready', () => {
+//  client.user.setActivity('Chocola', {
+//    type: 'WATCHING'
+//  })
+//})
+
+client.on('ready', () => {
+  console.log(`${client.user.username} ✅`)
+
+  const arrayOfStatus = [
+    `in ${client.guilds.cache.size} servers`,
+    `in ${client.channels.cache.size} channels`,
+    `with ${client.users.cache.size} members`,
+    `Chocola eating`,
+  ];
+
+  let index = 0;
+  setInterval(() => {
+    if (index === arrayOfStatus.length) index = 0;
+    const status = arrayOfStatus[index];
+    client.user.setActivity(`${status}`, {
+      type: "STREAMING",
+      url: "https://www.youtube.com/watch?v=ZmIqFqnMj60"
+    })
+    index++;
+  }, 10000);
 })
 
 //remind membercount countdown

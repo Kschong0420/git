@@ -5,7 +5,7 @@ module.exports = {
   aliases: ["gstart"],
   description: "Start a giveaway",
   usage: "giveaway <Channel> <Time> <Winners(Number)> <Prize>",
-  category: "giveaway",
+  category: "Giveaway",
   cooldown: 5,
   async execute(client, message, args) {
     if (!message.member.hasPermission("ADMINISTRATOR")) return message.lineReplyNoMention("Unknown Command.")

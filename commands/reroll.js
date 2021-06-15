@@ -5,7 +5,7 @@ module.exports = {
     usage: "reroll <Message ID>",
     description: "Reroll a giveaway",
     cooldown: 3,
-    category: "giveaway",
+    category: "Giveaway",
     async execute(client, message, args) {
         if (!message.member.hasPermission("ADMINISTRATOR")) return message.lineReplyNoMention("Unknown Command.")
         if (!args[0]) return message.lineReply('Please insert a messageID.')
