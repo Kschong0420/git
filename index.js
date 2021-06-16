@@ -241,6 +241,7 @@ client.on('ready', () => {
     `Happy birthday to you~~`,
     `Happy birthday to 1azy~~~`,
     `Happy birthday to you~~~~~`,
+    `Try v 1azy will have surprise.`
   ];
 
   let index = 0;
@@ -248,8 +249,9 @@ client.on('ready', () => {
     if (index === arrayOfStatus.length) index = 0;
     const status = arrayOfStatus[index];
     client.user.setActivity(`${status}`, {
-      type: "STREAMING",
-      url: "https://www.youtube.com/watch?v=ZmIqFqnMj60"
+      //type: "STREAMING",
+      type: "PLAYING",
+      //url: "https://www.youtube.com/watch?v=ZmIqFqnMj60"
     })
     index++;
   }, 10000);
