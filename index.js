@@ -232,10 +232,15 @@ client.on('ready', () => {
   console.log(`${client.user.username} ✅`)
 
   const arrayOfStatus = [
-    `in ${client.guilds.cache.size} servers`,
-    `in ${client.channels.cache.size} channels`,
-    `with ${client.users.cache.size} members`,
-    `Chocola eating`,
+    //`in ${client.guilds.cache.size} servers`,
+    //`in ${client.channels.cache.size} channels`,
+    //`with ${client.users.cache.size} members`,
+    //`Chocola eating`,
+    `Happy Birthday Song`,
+    `Happy birthday to you~`,
+    `Happy birthday to you~~`,
+    `Happy birthday to 1azy~~~`,
+    `Happy birthday to you~~~~~`,
   ];
 
   let index = 0;
