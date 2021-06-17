@@ -232,16 +232,10 @@ client.on('ready', () => {
   console.log(`${client.user.username} ✅`)
 
   const arrayOfStatus = [
-    //`in ${client.guilds.cache.size} servers`,
-    //`in ${client.channels.cache.size} channels`,
-    //`with ${client.users.cache.size} members`,
-    //`Chocola eating`,
-    `Happy Birthday Song`,
-    `Happy birthday to you~`,
-    `Happy birthday to you~~`,
-    `Happy birthday to 1azy~~~`,
-    `Happy birthday to you~~~~~`,
-    `Try v 1azy will have surprise.`
+    `in ${client.guilds.cache.size} servers`,
+    `in ${client.channels.cache.size} channels`,
+    `with ${client.users.cache.size} members`,
+    `Chocola eating`,
   ];
 
   let index = 0;
@@ -249,9 +243,8 @@ client.on('ready', () => {
     if (index === arrayOfStatus.length) index = 0;
     const status = arrayOfStatus[index];
     client.user.setActivity(`${status}`, {
-      //type: "STREAMING",
-      type: "PLAYING",
-      //url: "https://www.youtube.com/watch?v=ZmIqFqnMj60"
+      type: "STREAMING",
+      url: "https://www.youtube.com/watch?v=ZmIqFqnMj60"
     })
     index++;
   }, 10000);

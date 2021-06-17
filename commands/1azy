@@ -3,7 +3,7 @@ const Discord = require('discord.js')
 module.exports = {
   name: '1azy',
   description: 'Easter egg',
-  cooldown: 2147483,
+  cooldown: 2021,
   usage: '1azy',
   category: '1azy',
   aliases: ["misai", "niveaman", "rotten_flesh", "rf"],
@@ -14,3 +14,7 @@ module.exports = {
     
   }
 }
+
+//Vanilla bot contributor - 1azy
+//birthday in 0617
+
