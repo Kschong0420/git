@@ -4,7 +4,7 @@ module.exports = {
     name: 'globalban',
     description: 'Globally ban a user from your server.',
     cooldown: 5,
-    usage: '<userID> <reason>',
+    usage: '<userID> [reason]',
     category: 'Moderator',
    
     async execute(client, message, args) {

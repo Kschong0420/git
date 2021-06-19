@@ -20,7 +20,7 @@ module.exports = {
     const jpgFormat = user.user.displayAvatarURL({ format: "jpg" });
     const webpFormat = user.user.displayAvatarURL();
     const avatar = user.user.displayAvatarURL({ dynamic: true, size: 4096});
-    message.channel.send(
+    message.lineReplyNoMention(
       new MessageEmbed()
         .setTitle(`${user.user.username}'s avatar`)
         .setDescription(
