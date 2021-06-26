@@ -11,7 +11,6 @@ module.exports = {
         if(message.guild.me.voice.channel) {
             if(message.guild.me.voice.channel.id !== message.member.voice.channel.id) return message.channel.send(`${client.emotes.error} You must be in my voice channel`)
           }
-        const queue = client.distube.getQueue(message)
         client.distube.stop(message)
         message.channel.send(`${client.emotes.success} | Stopped!`)
     }

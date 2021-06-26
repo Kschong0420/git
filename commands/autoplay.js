@@ -8,7 +8,8 @@ module.exports = {
     async execute(client, message) {
         try {
             if (!message.member.voice.channel) return message.channel.send(`${client.emotes.error} | You must be in a voice channel!`)
-            if (!client.distube.isPlaying(message)) return message.channel.send(`${client.emotes.error} | There is nothing in the queue right now!`)
+            const queue = client.distube.getQueue(message)
+            if (!queue) return message.channel.send(`${client.emotes.error} | There is nothing in the queue right now!`)
             if(message.guild.me.voice.channel) {
                 if(message.guild.me.voice.channel.id !== message.member.voice.channel.id) return message.channel.send(`${client.emotes.error} You must be in my voice channel`)
               }

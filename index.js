@@ -1,5 +1,6 @@
 const Discord = require('discord.js')
 const DisTube = require("distube")
+const SpotifyPlugin = require("@distube/spotify")
 require('dotenv').config()
 const inlinereply = require('discord-reply')
 const client = new Discord.Client()
@@ -11,7 +12,7 @@ const { GiveawaysManager } = require("discord-giveaways");
 
 const memberCounter = require('./counters/member-counter')
 const config = require("./config.json")
-client.distube = new DisTube(client, { searchSongs: true, emitNewSongOnly: true, leaveOnFinish: false })
+client.distube = new DisTube(client, { searchSongs: 15, emitNewSongOnly: true, leaveOnFinish: false, leaveOnEmpty: false, emptyCooldown: 60000, plugins: [new SpotifyPlugin({ parallel: true})]})
 client.emotes = config.emoji
 client.aliases = new Discord.Collection()
 client.snipes = new Discord.Collection()
@@ -379,43 +380,42 @@ client.on("message", async message => {
 
 const status = queue => `Volume: \`${queue.volume}%\` | Filter: \`${queue.filter || "Off"}\` | Loop: \`${queue.repeatMode ? queue.repeatMode === 2 ? "All Queue" : "This Song" : "Off"}\` | Autoplay: \`${queue.autoplay ? "On" : "Off"}\``
 client.distube
-  .on("playSong", (message, queue, song) => {//message.channel.send( //{
+  .on("playSong", (queue, song) => {//message.channel.send( //{
     //`${client.emotes.play} | Playing \`${song.name}\` - \`${song.formattedDuration}\`\nRequested by: ${song.user}\n${status(queue)}`
     //))
-    const user = song.user
 
     const PlayEmbed = new Discord.MessageEmbed()
       .setColor('RANDOM')
       .setTitle(`${song.name}`)
       .setURL(`${song.url}`)
-      .addField(`Duration: `, `${song.formattedDuration}`, true)
-      .addField(`Requested by: `, `${user}`, true)
-      .addField('\u200B', '\u200B', true)
       .addField(`Views: `, `${song.views}`, true)
       .addField(`Likes: `, `${song.likes}`, true)
       .addField(`Dislikes: `, `${song.dislikes}`, true)
+      .addField(`Uploader `, `${song.uploader.name}`, true)
+      .addField(`Requested by: `, `${song.user}`, true)
+      .addField(`Duration: `, `${song.formattedDuration}`, true)
       .addField(`Settings：`, `${status(queue)}`)
       .setThumbnail(`${song.thumbnail}`)
-    message.channel.send(PlayEmbed)
+    queue.textChannel.send(PlayEmbed)
   })
 
-  .on("addSong", (message, queue, song) => {
+  .on("addSong", (queue, song) => {
     const estimate = queue.duration - queue.currentTime / 1000 - song.duration
     const hours = Math.floor(estimate / 60 / 60);
     const minutes = Math.floor(estimate / 60) - (hours * 60);
     const seconds = Math.floor(estimate % 60);
     var formatted = hours.toString().padStart(2, '0') + ':' + minutes.toString().padStart(2, '0') + ':' + seconds.toString().padStart(2, '0');
 
-    message.channel.send(
+    queue.textChannel.send(
       `${client.emotes.success} | Added \`${song.name}\` - \`${song.formattedDuration}\` to the queue by ${song.user}\nEstimated time: \`${formatted}\``
     )
   })
 
-  .on("playList", (message, queue, playlist, song) => message.channel.send(
-    `${client.emotes.play} | Play \`${playlist.title}\` playlist (${playlist.total_items} songs).\nRequested by: ${song.user}\nNow playing \`${song.name}\` - \`${song.formattedDuration}\`\n${status(queue)}`
-  ))
-  .on("addList", (message, queue, playlist) => message.channel.send(
-    `${client.emotes.success} | Added \`${playlist.title}\` playlist (${playlist.total_items} songs) to queue\n${status(queue)}`
+  //.on("playList", (message, queue, playlist, song) => message.channel.send(
+  //  `${client.emotes.play} | Play \`${playlist.title}\` playlist (${playlist.total_items} songs).\nRequested by: ${song.user}\nNow playing \`${song.name}\` - \`${song.formattedDuration}\`\n${status(queue)}`
+  //))
+  .on("addList", (queue, playlist) => queue.textChannel.send(
+    `${client.emotes.success} | Added \`${playlist.name}\` playlist (${playlist.songs.length} songs) to queue\n${status(queue)}`
   ))
   // DisTubeOptions.searchSongs = true
   .on("searchResult", (message, result) => {
@@ -426,9 +426,13 @@ client.distube
       .setFooter('Enter anything else or wait 60 seconds to cancel')
     message.channel.send(SearchEmbed)
   })
+  .on("initQueue", queue => {
+    queue.autoplay = true;
+    queue.volume = 50;
+  })
   // DisTubeOptions.searchSongs = true
   .on("searchCancel", message => message.channel.send(`${client.emotes.error} | Searching canceled`))
-  .on("error", (message, err) => message.channel.send(`${client.emotes.error} | An error encountered: ${err}`))
+  .on("error", (channel, error) => channel.send(`${client.emotes.error} | An error encountered: ${error}`))
 
 
 client.login(process.env.DISCORD_TOKEN)

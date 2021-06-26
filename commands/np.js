@@ -8,10 +8,10 @@ module.exports = {
     description: 'Show the music playing currently by Vanilla.',
     usage: 'np',
     category: 'Music',
-    async execute(client, message) {
+    async execute(client, message, args) {
         const queue = client.distube.getQueue(message)
         if (!queue) return message.channel.send(`${client.emotes.error} | There is nothing in the queue right now!`)
-        if (!queue && !client.distube.isPlaying(message)) return message.channel.send(`${client.emotes.error} | There is nothing playing right now!`)
+        //if (!queue && !client.distube.isPlaying(message)) return message.channel.send(`${client.emotes.error} | There is nothing playing right now!`)
         const song = queue.songs[0]
         const name = song.name
         const user = song.user.tag
@@ -28,7 +28,7 @@ module.exports = {
                 .setTitle(name)
                 .setURL(`${link}`)
                 .setDescription(`${createBar(time === 0 ? currenttime : time, currenttime, 10)[0]} \`[${queue.formattedCurrentTime}/${song.formattedDuration}]\`\n` +
-                `${client.distube.isPaused(message) === true ? ":pause_button:" : ":arrow_forward:"} ${time === 0 ? "" : `| Time Remaining: \`${toColonNotation(remaining)}\``}`)
+                `${":pause_button:"} ${time === 0 ? "" : `| Time Remaining: \`${toColonNotation(remaining)}\``}`)
                 .setThumbnail(`${tn}`)
             message.channel.send(embed)
         } catch (e) {

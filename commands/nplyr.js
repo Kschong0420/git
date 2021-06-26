@@ -14,7 +14,6 @@ module.exports = {
         if (!message.member.voice.channel) return message.channel.send(`${client.emotes.error} | You must be in a voice channel!`)
         const queue = client.distube.getQueue(message)
         if (!queue) return message.channel.send(`${client.emotes.error} | There is nothing in the queue right now!`)
-        if (!queue && !client.distube.isPlaying(message)) return message.channel.send(`${client.emotes.error} | There is nothing playing right now!`)
         const song = queue.songs[0]
         const name = song.name
 
