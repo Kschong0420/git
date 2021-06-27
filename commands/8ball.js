@@ -15,7 +15,8 @@ module.exports = {
     const answers = [
 
       'Yes', 'No', 'Maybe', 'Never', 'For sure!', 'Ask again', 'Ask again later', 'Definitely', 'Absolutely', 'Literaly No', 'Of Course',
-      'Sadly No', 'Not today' 
+      'Sadly No', 'Not today', 'Totally', 'Totally No', 'I refuse to answer.', 'Unlikely', 'Certainly', 'Without a doubt', 'Possibly', 'Impossible',
+      'Perhaps', 'Hmm it seems your question was too dumb for me.'
 
 
     ];

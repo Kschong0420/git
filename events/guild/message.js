@@ -29,7 +29,7 @@ module.exports = (Discord, client, message) => {
       const time_left = (expiration_time - current_time) / 1000;
 
       return message.lineReply(`Please wait ${time_left.toFixed(1)} more seconds before using ${command.name} command.`)
-      .then(m => m.delete({ timeout: time_left * 1000 }).catch(e => {}));
+      .then(m => m.delete({ timeout: time_left.toFixed(1) * 1000 }).catch(e => {}));
     }
   }
 
