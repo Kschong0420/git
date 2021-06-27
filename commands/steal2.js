@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 module.exports = {
     name: 'a_steal',
     aliases: 'steal2',
-    category: 'Info',
+    category: 'Moderator',
     cooldown: 3,
     usage: 'steal2 <emoji/link/image> <name>',
     description: 'Steal emoji from other server or link given.',
