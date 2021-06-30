@@ -1,7 +1,7 @@
 const Discord = require("discord.js")
 module.exports = {
     name: "colorify",
-    aliases: ['colour', 'color', 'colourify'],
+    aliases: ['colourify'],
     cooldown: 7,
     category: 'Image',
     description: 'Colour someone avatar.',

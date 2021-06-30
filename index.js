@@ -98,6 +98,14 @@ client.giveaways = new GiveawaysManager(client, {
 //  };
 //});
 
+//invisible typing detect
+client.on('typingStart', (ch, user) => {
+  if(user.presence.status === 'offline') {
+    if(ch.type == 'dm') return;
+      ch.send(`Detect ${user.tag} opening invisible mode!`).then(m => m.delete({timeout: 10000}));  
+  }
+})
+
 //non nitro emoji 
 ///not stable yet
 ////sources : https://sourceb.in/LVgLZqK7KI
@@ -257,6 +265,34 @@ client.once('ready', () => {
   memberCounter(client)
 })
 
+//updated messages log
+client.on('messageUpdate', message => {
+  if (message.author.id === client.user.id) return;
+  if(message.content.toLowerCase().startsWith('https://')) return;
+  if (message.author.bot) return
+  if (!message.partial) {
+      const channel = message.guild.channels.cache.find(channel => channel.name === "logchannel")
+      if (!channel) return
+      const editedInChannel = client.channels.cache.get(message.channel.id)
+      if (channel) {
+          const embed29 = new Discord.MessageEmbed()
+              .setTitle(`Edited Message`)
+              //.setURL(message.url)
+              .setThumbnail(message.author.displayAvatarURL({ dynamic: true }))
+              .addField('Author', `${message.author.tag}`)
+              .addField(`Before`, `${message}`)
+              .addField(`After`, `${editedInChannel.messages.cache.get(message.id)}`)
+              .addField(`Channel`, `<#${message.channel.id}>`)
+              .setDescription(`[Jump to Message](${message.url})`)
+              .setColor('#0352fc')
+              .setFooter(`User ID: ${message.author.id}`, message.author.displayAvatarURL({ dynamic: true }))
+              .setTimestamp()
+          channel.send(embed29)
+      } else return
+  }
+})
+
+
 //deleted message log
 client.on('messageDelete', async message => {
   const logchannel = message.guild.channels.cache.find(ch => ch.name === 'logchannel')
@@ -268,30 +304,11 @@ client.on('messageDelete', async message => {
     .addFields(
       { name: 'Author', value: `${message.author.tag}` },
       { name: 'Deleted Message', value: `${message.content}` },
-      { name: 'Channel', value: `${message.channel.name}` }
+      { name: 'Channel', value: `<#${message.channel.id}>` }
     )
     .setThumbnail(message.author.displayAvatarURL({ dynamic: true }))
     .setTimestamp()
-    .setFooter(`User ID: ${message.author.id}`)
-  logchannel.send(embed)
-})
-
-//updated message log
-client.on('messageUpdate', async message => {
-  const logchannel = message.guild.channels.cache.find(ch => ch.name === 'logchannel')
-  if (!logchannel) return
-  if (message.author.bot) return
-  const embed = new Discord.MessageEmbed()
-    .setColor('#fca503')
-    .setTitle('Edited Message')
-    .addFields(
-      { name: 'Author', value: `${message.author.tag}` },
-      { name: 'Message Before Edited', value: `${message.content}` },
-      { name: 'Channel', value: `${message.channel.name}` }
-    )
-    .setThumbnail(message.author.displayAvatarURL({ dynamic: true }))
-    .setTimestamp()
-    .setFooter(`User ID: ${message.author.id}`)
+    .setFooter(`User ID: ${message.author.id}`, message.author.displayAvatarURL({ dynamic: true }))
   logchannel.send(embed)
 })
 
@@ -378,7 +395,7 @@ client.on("message", async message => {
   }
 })
 
-const status = queue => `Volume: \`${queue.volume}%\` | Filter: \`${queue.filter || "Off"}\` | Loop: \`${queue.repeatMode ? queue.repeatMode === 2 ? "All Queue" : "This Song" : "Off"}\` | Autoplay: \`${queue.autoplay ? "On" : "Off"}\``
+const status = queue => `Volume: \`${queue.volume}%\` | Filter: \`${queue.filter || "Off"}\` | Loop: \`${queue.repeatMode ? queue.repeatMode === 2 ? "Queue" : "Song" : "Off"}\` | Autoplay: \`${queue.autoplay ? "On" : "Off"}\``
 client.distube
   .on("playSong", (queue, song) => {//message.channel.send( //{
     //`${client.emotes.play} | Playing \`${song.name}\` - \`${song.formattedDuration}\`\nRequested by: ${song.user}\n${status(queue)}`
