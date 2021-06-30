@@ -284,7 +284,7 @@ client.on('messageUpdate', message => {
               .addField(`After`, `${editedInChannel.messages.cache.get(message.id)}`)
               .addField(`Channel`, `<#${message.channel.id}>`)
               .setDescription(`[Jump to Message](${message.url})`)
-              .setColor('#0352fc')
+              .setColor('#fca503')
               .setFooter(`User ID: ${message.author.id}`, message.author.displayAvatarURL({ dynamic: true }))
               .setTimestamp()
           channel.send(embed29)
