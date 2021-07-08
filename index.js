@@ -3,7 +3,12 @@ const DisTube = require("distube")
 const SpotifyPlugin = require("@distube/spotify")
 require('dotenv').config()
 const inlinereply = require('discord-reply')
-const client = new Discord.Client()
+const client = new Discord.Client({
+  disableMention: 'everyone',
+  shards: 'auto',
+  restTimeOffset: 0
+});
+
 const fs = require("fs")
 const fetch = require("node-fetch")
 const { GiveawaysManager } = require("discord-giveaways");
@@ -33,7 +38,7 @@ fs.readdir("./commands/", (err, files) => {
 //giveaway core
 client.giveaways = new GiveawaysManager(client, {
   storage: "./util/Data/giveaways.json",
-  updateCountdownEvery: 1000,
+  updateCountdownEvery: 5000,
   default: {
     botsCanWin: false,
     embedColor: 'GREEN',
@@ -205,16 +210,30 @@ client.on('message', async message => {
 })
 
 //snipe core
-client.snipes = new Map();
-client.on('messageDelete', function (message, channel) {
+//client.snipes = new Map();
+//client.on('messageDelete', function (message, channel) {
+//  if (message.author.bot) return;
+//  client.snipes.set(message.channel.id, {
+//    content: message.content,
+//   profilephoto: message.author.displayAvatarURL({ dynamic: true }),
+//    author: message.author.tag,
+//    date: message.createdTimestamp,
+//    image: message.attachments.first() ? message.attachments.first().proxyURL : null
+//  })
+//})
+
+//recon snipe
+client.on('messageDelete', (message) => {
   if (message.author.bot) return;
-  client.snipes.set(message.channel.id, {
-    content: message.content,
-    profilephoto: message.author.displayAvatarURL({ dynamic: true }),
-    author: message.author.tag,
+  let snipes = client.snipes.get(message.channel.id) || [];
+  if (snipes.length > 5) snipes = snipes.slice(0, 4);
+  snipes.unshift({
+    msg: message,
     date: message.createdTimestamp,
-    image: message.attachments.first() ? message.attachments.first().proxyURL : null
+    image: message.attachments.first() ? message.attachments.first().proxyURL : null,
+    time: Date.now()
   })
+  client.snipes.set(message.channel.id, snipes)
 })
 
 //edit snipe core

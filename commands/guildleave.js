@@ -10,7 +10,7 @@ module.exports = {
 
         if (!guild)
             return message.lineReplyNoMention(
-                "No guild ID was specified. Please specify a guild ID"
+                "No guild ID was specified. Please specify a guild ID."
             );
 
         await guild.leave();

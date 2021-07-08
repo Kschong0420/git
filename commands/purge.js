@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 module.exports = {
-    name: "purge2",
+    name: "purge",
     aliases: ['clear', 'delete', 'prune'],
     cooldown: 0,
     category: "Moderator",
