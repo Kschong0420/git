@@ -2,8 +2,8 @@ module.exports = {
   name: 'cal',
   cooldown: 5,
   description: 'Calculate simple equation.',
-  usage: 'v <add/subtract/multiply/divide> <number1> <number2>',
-  category: 'info',
+  usage: '<add/subtract/multiply/divide> <number1> <number2>',
+  category: 'Util',
   async execute (client, message, args) {
     const method = args[0]
     const firstNumber = Number(args[1])

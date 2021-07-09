@@ -1,0 +1,11 @@
+module.exports = {
+    name: 'test',
+    aliases: 'none',
+    category: 'Owner',
+    description: "test",
+    usage: 'test',
+    cooldown: 5,
+    async execute(client, message, args, Discord) {
+        message.channel.send("<:osu_a:825285333293858817>")
+    }
+}

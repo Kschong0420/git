@@ -24,15 +24,13 @@ client.snipes = new Discord.Collection()
 client.esnipes = new Discord.Collection()
 client.commands = new Discord.Collection()
 client.events = new Discord.Collection()
+client.categories = fs.readdirSync("./commands/");
+["command_handler"].forEach(handler => {
+    require(`./handlers/${handler}`)(client);
+}); 
 
-fs.readdir("./commands/", (err, files) => {
-  if (err) return console.log("Could not find any commands!")
-  const jsFiles = files.filter(f => f.split(".").pop() === "js")
-  if (jsFiles.length <= 0) return console.log("Could not find any commands!")
-  jsFiles.forEach(file => {
-    const cmd = require(`./commands/${file}`)
-    client.commands.set(cmd.name, cmd)
-  })
+['command_handler', 'event_handler'].forEach(handler => {
+  require(`./handlers/${handler}`)(client, Discord)
 })
 
 //giveaway core
@@ -385,10 +383,6 @@ client.on("message", async message => {
   let cmd = client.commands.get(command.slice(prefix.length));
   if (cmd) cmd.run(client, message, args);
 });
-
-['command_handler', 'event_handler'].forEach(handler => {
-  require(`./handlers/${handler}`)(client, Discord)
-})
 
 //remind music bot ready
 client.on("ready", () => {

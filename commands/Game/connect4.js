@@ -4,7 +4,7 @@ module.exports = {
   aliases: ["c4", "connectfour"],
   usage: "connect4 <username>",
   description: "Play a connect 4 game with a user",
-  category: "Fun",
+  category: "Game",
   async execute(client, message, args) {
     const challenger = message.member;
     const oppenent = message.mentions.members.first();

@@ -7,7 +7,7 @@ module.exports = {
    aliases: ["shown", "unhide", "show-channel", "shown-channel"],
    description: 'Show a hidden channel.',
    usage: 'show <channel>',
-   category: '',
+   category: 'Moderator',
    async execute(client, message, args) {
 
 

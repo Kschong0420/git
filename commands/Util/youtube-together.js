@@ -5,7 +5,7 @@ module.exports = {
     cooldown: 15,
     description: 'Watch youtube with other member in a voice channel.',
     usage: 'youtube-together',
-    category: 'Fun',
+    category: 'Util',
     async execute(client, message, args){
         if(!message.member.voice.channel) return message.channel.send('You need to join a voice channel to use this command.')
         if(message.member.voice.channel) {

@@ -1,6 +1,7 @@
 module.exports = {
     name: "pause",
     aliases: ["pause", "hold"],
+    category: "Music",
     cooldown: 0,
     inVoiceChannel: true,
     async execute(client, message, args) {
