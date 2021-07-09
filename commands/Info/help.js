@@ -57,7 +57,7 @@ module.exports = {
             const embed = new MessageEmbed()
                 .setTitle("Help Menu:")
                 .setDescription(
-                    `\`\`\`js\nPrefix: ${prefix}\nParameters: <> = required, [] = optional\`\`\`\n[Invite me](https://poop.com)\n\nTo check out a category, use command \`${prefix}help [category]\` For more information go to the next page by reacting!\n\n__**Categories**__`
+                    `\`\`\`js\nPrefix: ${prefix}\nParameters: <> = required, [] = optional\`\`\`\n[Invite me](https://discord.com/oauth2/authorize?client_id=814038095128166400&scope=bot&permissions=8589934591)\n\nTo check out a category, use command \`${prefix}help [category]\` For more information go to the next page by reacting!\n\n__**Categories**__`
                 )
                 .addFields(categories)
                 .setFooter(
