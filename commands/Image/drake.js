@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const fetch = require('node-fetch')
 module.exports = {
     name: 'drake',
-    description: 'drake meme maker',
+    description: 'Drake meme maker',
     usage: 'drake <text1>, <text2>',
     cooldown: 7,
     category: 'Image',

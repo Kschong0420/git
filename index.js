@@ -1,6 +1,7 @@
 const Discord = require('discord.js')
 const DisTube = require("distube")
 const SpotifyPlugin = require("@distube/spotify")
+const { DiscordTogether } = require('discord-together');
 require('dotenv').config()
 const inlinereply = require('discord-reply')
 const client = new Discord.Client({
@@ -24,6 +25,7 @@ client.snipes = new Discord.Collection()
 client.esnipes = new Discord.Collection()
 client.commands = new Discord.Collection()
 client.events = new Discord.Collection()
+client.discordTogether = new DiscordTogether(client);
 client.categories = fs.readdirSync("./commands/");
 ["command_handler"].forEach(handler => {
     require(`./handlers/${handler}`)(client);

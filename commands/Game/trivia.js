@@ -1,10 +1,7 @@
 module.exports = {
     name: 'trivia',
     description: 'Answer trivia questions',
-    cooldown: 5,
-    usage: 'trivia',
-    category: 'Game',
-    async execute(client, message, args) {
+    async execute (client, message, args) {
         const discord = require('discord.js')
         const fetch = require("node-fetch");
         const atob = require('atob')
@@ -34,7 +31,7 @@ module.exports = {
                 if (dif && !cat) {
                     let question
                     if (dif.toLowerCase() == 'any') return this.get_data()
-                    if (dif.toLowerCase() != 'easy' && dif.toLowerCase() != 'medium' && dif.toLowerCase() != 'hard') return this.message.lineReplyNoMention('Please enter a valid Difficulty\nUse .trivia categories to view a list of categories and difficulties');
+                    if (dif.toLowerCase() != 'easy' && dif.toLowerCase() != 'medium' && dif.toLowerCase() != 'hard') return this.message.channel.send('Please enter a valid Difficulty\nUse .trivia categories to view a list of categories and difficulties');
                     await fetch('https://opentdb.com/api.php?amount=1&difficulty=' + dif.toLowerCase() + '&encode=base64')
                         .then(response => response.json())
                         .then(data => question = data);
@@ -48,7 +45,7 @@ module.exports = {
                             this.question_id = id_list[i].id
                         }
                     }
-                    if (dif.toLowerCase() != 'easy' && dif.toLowerCase() != 'medium' && dif.toLowerCase() != 'hard' && dif.toLowerCase() != 'any') return this.message.lineReplyNoMention('Please enter a valid Difficulty\nUse .trivia categories to view a list of categories and difficulties');
+                    if (dif.toLowerCase() != 'easy' && dif.toLowerCase() != 'medium' && dif.toLowerCase() != 'hard' && dif.toLowerCase() != 'any') return this.message.channel.send('Please enter a valid Difficulty\nUse .trivia categories to view a list of categories and difficulties');
                     if (!this.question_id) return this.message.channel.send('Please enter a valid Category\nUse .trivia categories to view a list of categories and difficulties');
                     if (dif.toLowerCase() == 'any') {
                         await fetch('https://opentdb.com/api.php?amount=1&category=' + this.question_id + '&encode=base64')
@@ -148,7 +145,7 @@ module.exports = {
                                 .setDescription(this.answer_array)
                                 .setFooter('Category - ' + atob(this.question.results[0].category) + ', Difficulty - ' + atob(this.question.results[0].difficulty))
                             this.question_message.edit(this.question_embed)
-                            this.question_message.edit('You got it correct! :smile:')
+                            this.question_message.channel.send('You got it correct! :smile:')
                             this.end_game()
                         }
                         else {
@@ -159,11 +156,11 @@ module.exports = {
                                 .setDescription(this.answer_array)
                                 .setFooter('Category - ' + atob(this.question.results[0].category) + ', Difficulty - ' + atob(this.question.results[0].difficulty))
                             this.question_message.edit(this.question_embed)
-                            this.question_message.edit('You got it wrong. The correct answer was ' + this.reactions[this.correct_answer - 1])
+                            this.question_message.channel.send('You got it wrong. The correct answer was ' + this.reactions[this.correct_answer - 1])
                             this.end_game()
                         }
                     }).catch(() => {
-                        this.question_message.edit('You took to long to answer! Game has timed out. The answer was ' + this.reactions[this.correct_answer - 1])
+                        this.question_message.channel.send('You took to long to answer! Game has timed out. The answer was ' + this.reactions[this.correct_answer - 1])
                         this.end_game()
                     })
             }

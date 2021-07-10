@@ -4,7 +4,7 @@ module.exports = {
     name: 'snipe',
     cooldown: 5,
     description: 'Snipe a deleted message.',
-    usage: 'snipe',
+    usage: 'snipe [value]',
     category: 'Util',
     async execute(client, message, args, Discord) {
         const snipes = client.snipes.get(message.channel.id)
