@@ -1,6 +1,10 @@
 module.exports = {
     name: 'trivia',
     description: 'Answer trivia questions',
+    usage: "trivia",
+    cooldown: 3,
+    category: 'Game',
+
     async execute (client, message, args) {
         const discord = require('discord.js')
         const fetch = require("node-fetch");
@@ -31,7 +35,7 @@ module.exports = {
                 if (dif && !cat) {
                     let question
                     if (dif.toLowerCase() == 'any') return this.get_data()
-                    if (dif.toLowerCase() != 'easy' && dif.toLowerCase() != 'medium' && dif.toLowerCase() != 'hard') return this.message.channel.send('Please enter a valid Difficulty\nUse .trivia categories to view a list of categories and difficulties');
+                    if (dif.toLowerCase() != 'easy' && dif.toLowerCase() != 'medium' && dif.toLowerCase() != 'hard') return this.message.channel.send('Please enter a valid difficulty.');
                     await fetch('https://opentdb.com/api.php?amount=1&difficulty=' + dif.toLowerCase() + '&encode=base64')
                         .then(response => response.json())
                         .then(data => question = data);
@@ -45,8 +49,8 @@ module.exports = {
                             this.question_id = id_list[i].id
                         }
                     }
-                    if (dif.toLowerCase() != 'easy' && dif.toLowerCase() != 'medium' && dif.toLowerCase() != 'hard' && dif.toLowerCase() != 'any') return this.message.channel.send('Please enter a valid Difficulty\nUse .trivia categories to view a list of categories and difficulties');
-                    if (!this.question_id) return this.message.channel.send('Please enter a valid Category\nUse .trivia categories to view a list of categories and difficulties');
+                    if (dif.toLowerCase() != 'easy' && dif.toLowerCase() != 'medium' && dif.toLowerCase() != 'hard' && dif.toLowerCase() != 'any') return this.message.channel.send('Please enter a valid difficulty.');
+                    if (!this.question_id) return this.message.channel.send('Please enter a valid category.');
                     if (dif.toLowerCase() == 'any') {
                         await fetch('https://opentdb.com/api.php?amount=1&category=' + this.question_id + '&encode=base64')
                             .then(response => response.json())
