@@ -2,10 +2,10 @@ const canvacord = require('canvacord');
 const Discord = require('discord.js')
 
 module.exports = {
-    name: "slap",
+    name: "spank",
     cooldown: 10,
     description: 'Slap a user.',
-    usage: 'slap <username1> <username2>',
+    usage: 'spank <username1> <username2>',
     category: 'Image',
 
     async execute(client, message, args) {
