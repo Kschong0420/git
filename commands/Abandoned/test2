@@ -1,0 +1,15 @@
+const config = require('config');
+
+module.exports = {
+    name: "nekopic",
+    usage: "neko",
+    usageExample: "neko",
+    commands: ["neko", "nekopara"],
+    categories: ["nsfw"],
+    async execute(client, message, args) {
+        const data = await client.util.getJson("https://gallery.fluxpoint.dev/api/nsfw/nekopara", null, {
+            "Authorization": config.get("API.fluxpoint.key"),
+        });
+        return message.channel.send(data.file)
+    }
+};
