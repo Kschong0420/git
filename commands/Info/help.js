@@ -9,7 +9,7 @@ module.exports = {
     description: "Shows all available bot commands.",
     category: 'Info',
     cooldown: 5,
-    usage: 'help2',
+    usage: 'h',
 
     async execute (client, message, args) {
 

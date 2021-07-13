@@ -6,6 +6,9 @@ module.exports = {
   name: "command",
   aliases : ['cmd'],
   description: "Shows all available bot commands.",
+  category: 'Info',
+  cooldown: 5,
+  usage: 'command',
   async execute (client, message, args) {
 
     const p = await process.env.PREFIX
