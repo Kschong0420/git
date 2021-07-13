@@ -19,8 +19,9 @@ module.exports = {
 
             //categories to ignore
             let ignored = [
-                "fun",
-                "mod"
+                "owner",
+                "abandoned",
+                "nekopara"
             ];
 
             const emo = {
@@ -33,9 +34,9 @@ module.exports = {
                 music: "🎶",
                 owner: "🔒",
                 game: "🎮",
-                nekopara: "🐱",
-                abandoned: "❌",
+                //nekopara: "🐱",
                 image: "📸",
+                action: "🎬",
             }
 
             readdirSync("./commands/").forEach((dir) => {
