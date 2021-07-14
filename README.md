@@ -32,7 +32,7 @@ Vanilla bot creator is Vanilla#2121, if got any problem please dm him.
   
 # Invite bot link
 https://discord.com/oauth2/authorize?client_id=814038095128166400&scope=bot&permissions=8589934591
-click on the link above to invite Vanilla.
+click the link above to invite Vanilla.
 
 Enjoy~
 
