@@ -186,7 +186,7 @@ module.exports = {
 
                     name: `Verified: `,
 
-                    value: message.guild.verified ? 'Server is verified' : `Server isn't verified`,
+                    value: message.guild.verified ? 'Server is verified' : `Server isn't verified.`,
 
                     inline: true
 
@@ -196,7 +196,7 @@ module.exports = {
 
                     name: 'Boosters: ',
 
-                    value: message.guild.premiumSubscriptionCount >= 1 ? `There are ${message.guild.premiumSubscriptionCount} Boosters` : `There are no boosters`,
+                    value: message.guild.premiumSubscriptionCount >= 1 ? `There are ${message.guild.premiumSubscriptionCount} Boosters` : `There are no boosters.`,
 
                     inline: true
 

@@ -1,0 +1,37 @@
+const Discord = require('discord.js')
+
+module.exports = {
+    name: "help",
+    description: "simple help command",
+
+    async run (bot, message, args) {
+
+        const help = new Discord.MessageEmbed()
+        .setColor("RANDOM")
+        .setTitle('Prefix- `yourprefix here`')
+        .setAuthor('Command List', message.author.displayAvatarURL())
+
+        .addFields({
+            name: 'About this bot',
+            value: 'An awesome Multi purpose bot for your discord server',
+        },
+        {
+            name: 'Information',
+            value: '`cmd name` | '
+        },
+        {
+            name: 'Fun',
+            value: ' `cmd name` |' 
+        },
+        {
+            name: 'Utilities',
+            value: ' `cmdname` |'
+        },{
+            name: 'Moderation',
+            value: '`cmdname`|
+        
+        })
+
+        message.channel.send(help)
+    }
+}

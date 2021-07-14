@@ -9,7 +9,7 @@ module.exports = {
   cooldown: 5,
   description: 'Check someone osu game stats in taiko mode.',
   usage: 'taiko <osu username>',
-  category: 'Info',
+  category: 'Osu',
   async execute(client, message, args) {
     try {
       const user = args.join(' ')

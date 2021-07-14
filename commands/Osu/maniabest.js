@@ -7,17 +7,17 @@ const osuApi = new osu.Api(osuapikey, {
 })
 
 module.exports = {
-    name: 'osubest',
-    aliases: ["osub", "osuscore"],
-    category: "Info",
-    description: "Check out your best 3 scores in osu.",
-    usage: "osubest <username>",
+    name: 'maniabest',
+    aliases: ["maniab", "maniascore"],
+    category: "Osu",
+    description: "Check out your best 3 scores in osu mania mode.",
+    usage: "v maniabest <username>",
     cooldown: 5,
     async execute(client, message, args) {
         const user = args.join(' ')
         if(!user) return message.lineReplyNoMention("Please specify an osu username")
-        const au = await osuApi.getUser({ u: user })
-        osuApi.getUserBest({ u: args[0] }).then(scores => {
+        const au = await osuApi.getUser({ u: user, m: '3' })
+        osuApi.getUserBest({ u: args[0], m: '3' }).then(scores => {
             const best = new Discord.MessageEmbed()
             .setTitle("3 Best Scores")
             .setColor('#FF1493')
