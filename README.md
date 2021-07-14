@@ -18,8 +18,7 @@ use 'v cmd' to check all the commands and category,
 use 'v help <cmd>' to check a command info.
 
 Vanilla bot still coding in progress, 
-if found any bug or issue please use:
-"v feedback <bug or issue> to report the bug or issue to the owner.
+if found any bug or issue please use: "v feedback <bug or issue>" to report the bug or issue to the owner.
 
 # Privacy
 Vanilla bot won't save any of your personal data and infomation,
@@ -32,7 +31,7 @@ Vanilla bot creator is Vanilla#2121, if got any problem please dm him.
   
 # Invite bot link
 https://discord.com/oauth2/authorize?client_id=814038095128166400&scope=bot&permissions=8589934591
-click the link above to invite Vanilla.
+click the link to invite Vanilla.
 
 Enjoy~
 
