@@ -114,7 +114,7 @@ module.exports = {
       .addField(
         "USAGE:",
         command.usage
-          ? `\`${p}${command.name} ${command.usage}\``
+          ? `\`${p}${command.usage}\``
           : `\`${p}${command.name}\``
       )
       .addField(

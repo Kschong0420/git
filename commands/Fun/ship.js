@@ -11,7 +11,7 @@ module.exports = {
 
     async execute(client, message, args) {
         const user = message.mentions.users.first();
-        if (!user) return message.channel.send(`Please specify a user you want to ship with.`)
+        if (!user) return message.lineReplyNoMention(`Please specify a user you want to ship with.`)
         if (user && user.id === message.author.id) {
             return message.lineReplyNoMention("Bruh you want to ship yourself XD.")
         }

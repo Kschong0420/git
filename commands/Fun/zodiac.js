@@ -13,7 +13,7 @@ module.exports = {
         }
 
         if (month < 1 || month > 12) {
-            return message.lineReplyNoMention(' Please enter a valid month [1, 12].');
+            return message.lineReplyNoMention(' Please enter a valid month.');
         }
 
         if (!day) {
@@ -67,11 +67,11 @@ module.exports = {
         } 
         else if (month === 10) {
 			if (day >= 1 && day <= 22) return message.lineReplyNoMention(' Your zodiac is **Libra** :libra:');
-			if (day >= 23 && day <= 31) return message.lineReplyNoMention(' Your zodiac is **Scorpio** :scorpio:');
+			if (day >= 23 && day <= 31) return message.lineReplyNoMention(' Your zodiac is **Scorpio** :scorpius:');
 			return message.lineReplyNoMention(' Please enter a valid date.');;
         } 
         else if (month === 11) {
-			if (day >= 1 && day <= 21) return message.lineReplyNoMention(' Your zodiac is **Scorpio** :scorpio:');
+			if (day >= 1 && day <= 21) return message.lineReplyNoMention(' Your zodiac is **Scorpio** :scorpius:');
 			if (day >= 22 && day <= 31) return message.lineReplyNoMention(' Your zodiac is **Sagittarius** :sagittarius:');
 			return message.lineReplyNoMention(' Please enter a valid date.');;
         } 
