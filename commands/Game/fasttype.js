@@ -7,7 +7,7 @@ module.exports = {
     aliases: ['ftg', 'fast', 'type', 'fasttypegame', 'typegame', 'fasttyper'],
     description: 'Play a fasttyper game.',
     usage: 'fasttype',
-    category: 'Fun',
+    category: 'Game',
     async execute(client, message, args) {
         const game = new FastType({
         message: message,
