@@ -7,7 +7,7 @@ const api = new osu.Api(process.env.OSU, {
 
 module.exports = {
     name: "obeatmap",
-    aliases: ['osu-beatmap', 'osubeatmap'],
+    aliases: ['osu-beatmap', 'osubeatmap', 'circlebeatmap'],
     category: "Osu",
     description: "Shows info of a osu circle mode beatmap from osu.",
     usage: "obeatmap <beatmap ID>",
@@ -30,13 +30,13 @@ module.exports = {
                 .addField('Creator', beatmaps[0].creator, true)
                 .addField('Played Count', beatmaps[0].counts.plays, true)
                 .addField('Max Combo', `${beatmaps[0].maxCombo}x`, true)
-                .addField('Stars', beatmaps[0].difficulty.rating, true)
+                .addField("Stars", Math.round(beatmaps[0].difficulty.rating * 100) / 100 , true)
                 //.addField('Tags', beatmaps[0].tags)
                 .setFooter('Requested By ' + message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
             message.lineReplyNoMention(embed)
             //console.log(beatmaps[0])
         })
-
+        
     }
 }
 

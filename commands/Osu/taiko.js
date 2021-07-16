@@ -10,10 +10,11 @@ module.exports = {
   description: 'Check someone osu game stats in taiko mode.',
   usage: 'taiko <osu username>',
   category: 'Osu',
+  aliases: ["tk"],
   async execute(client, message, args) {
     try {
       const user = args.join(' ')
-      if (!user) return message.lineReplyNoMention('Please specific an osu username!')
+      if (!user) return message.lineReplyNoMention('Please specific an osu username.')
       const au = await osu.getUser({ u: user, m: '1' })
       var uname = au.name
         .replace('_', '\\_')

@@ -13,7 +13,7 @@ module.exports = {
     async execute(client, message, args) {
         try {
             const user = args.join(' ')
-            if (!user) return message.lineReplyNoMention('Please specific an osu username!')
+            if (!user) return message.lineReplyNoMention('Please specific an osu username.')
             const au = await osu.getUser({ u: user, m: '3' })
             var uname = au.name
                 .replace('_', '\\_')
