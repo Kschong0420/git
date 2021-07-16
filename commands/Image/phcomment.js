@@ -17,7 +17,7 @@ module.exports = {
         if(user){
             text = args.slice(1).join(" ");
         } else {
-            text = args.slice(" ")
+            text = args.join(" ")
             user = message.member;
         }
 
