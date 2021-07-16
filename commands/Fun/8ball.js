@@ -14,9 +14,9 @@ module.exports = {
 
     const answers = [
 
-      'Yes', 'No', 'Maybe', 'Never', 'For sure!', 'Ask again', 'Ask again later', 'Definitely', 'Absolutely', 'Literaly No', 'Of Course',
-      'Sadly No', 'Not today', 'Totally', 'Totally No', 'I refuse to answer.', 'Unlikely', 'Certainly', 'Without a doubt', 'Possibly', 'Impossible',
-      'Perhaps', 'Hmm it seems your question was too dumb for me.'
+      'Yes.', 'No.', 'Maybe.', 'Never.', 'For sure.', 'Ask again.', 'Ask again later.', 'Definitely.', 'Absolutely.', 'Literaly No.', 'Of Course.',
+      'Sadly No.', 'Not today.', 'Totally.', 'Totally No.', 'I refuse to answer.', 'Unlikely.', 'Certainly.', 'Without a doubt.', 'Possibly.', 'Impossible.',
+      'Perhaps.', 'Hmm it seems your question was too dumb for me.', 'Cannot predict now.', 'Concentrate and ask again.', 'Don\'t count on it.', 'Outlook good.'
 
 
     ];
@@ -34,8 +34,8 @@ module.exports = {
 }
 
 //Confirm Yes
-//  'Yes', 'No', 'Maybe', 'Never', 'For sure!', 'Ask again', 'Ask again later', 'Definitely', 'Absolutely', 'Literaly No', 'Of Course',
+//  'Yes', 'No', 'Maybe', 'Never', 'For sure.', 'Ask again', 'Ask again later', 'Definitely', 'Absolutely', 'Literaly No', 'Of Course',
 //  'Sadly No', 'Not today' 
 
 //50 % yes 50 % no
-// 'Yes', 'No', 'Maybe', 'Never', 'For sure!'
+// 'Yes', 'No', 'Maybe', 'Never', 'For sure.'

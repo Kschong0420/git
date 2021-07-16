@@ -1,6 +1,5 @@
 const Discord = require('discord.js')
 const osu = require('node-osu');
-const { execute } = require('./ctb');
 const api = new osu.Api(process.env.OSU, {
     notFoundAsError: true,
     completeScores: false
@@ -21,9 +20,9 @@ module.exports = {
             const embed = new Discord.MessageEmbed()
                 .setAuthor("Osu " + beatmaps[0].mode, "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Osu%21Logo_%282015%29.png/800px-Osu%21Logo_%282015%29.png")
                 .setTitle(beatmaps[0].title)
-                .setThumbnail("https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Osu%21Logo_%282015%29.png/800px-Osu%21Logo_%282015%29.png")
+                .setThumbnail(`https://b.ppy.sh/thumb/${beatmaps[0].beatmapSetId}.jpg`)
                 .setDescription(`Version: ${beatmaps[0].version}`)
-                .setImage(`https://assets.ppy.sh/beatmaps/${beatmaps[0].beatmapSetId}/covers/cover.jpg?1`)
+                //.setImage(`https://assets.ppy.sh/beatmaps/${beatmaps[0].beatmapSetId}/covers/cover.jpg?1`)
                 .setURL(`https://osu.ppy.sh/beatmapsets/${beatmaps[0].beatmapSetId}#osu/${beatmap[0]}`)
                 .setColor("#D0436A")
                 .addField('Name', beatmaps[0].title, true)
