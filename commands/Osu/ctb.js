@@ -8,7 +8,7 @@ module.exports = {
   name: "ctb",
   cooldown: 5,
   description: 'Checking someone osu game stats in catch the beat mode.',
-  usage: 'v ctb <osu username>',
+  usage: 'ctb <osu username>',
   category: 'Osu',
   async execute(client, message, args) {
     try {
