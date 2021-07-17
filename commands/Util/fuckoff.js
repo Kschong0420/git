@@ -10,6 +10,6 @@ module.exports = {
         const queue = client.distube.getQueue(message)
         if (!queue) return message.lineReply("Don't try to be rude at me!!!")
         client.distube.stop(message)
-        message.lineReply('Shigure also praised me for being calm but u are really making me mad now!')
+        message.lineReply('Even Shigure also praised me for being calm but u are really making me mad now!')
     }
 }

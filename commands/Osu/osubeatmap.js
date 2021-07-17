@@ -31,7 +31,7 @@ module.exports = {
                 .addField('Played Count', beatmaps[0].counts.plays, true)
                 .addField('Max Combo', `${beatmaps[0].maxCombo}x`, true)
                 .addField("Stars", Math.round(beatmaps[0].difficulty.rating * 100) / 100 , true)
-                //.addField('Tags', beatmaps[0].tags)
+                .addField('Tags:', beatmaps[0].tags ? beatmaps[0].tags.join(", ") : "No tag for this beatmap.")
                 .setFooter('Requested By ' + message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
             message.lineReplyNoMention(embed)
             //console.log(beatmaps[0])

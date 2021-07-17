@@ -1,23 +1,39 @@
+const { MessageEmbed } = require("discord.js");
+
 module.exports = {
-    name: "seek",
-    cooldown: 0,
-    inVoiceChannel: true,
-    description: 'Play a song.',
-    usage: 'play <song name/song url/playlist url> \`then\` <number>',
-    category: 'Music',
-    async execute(client, message, args) {
-        if (!message.member.voice.channel) return message.channel.send(`${client.emotes.error} You must be in voice channel first`)
-        if (message.guild.me.voice.channel) {
-            if (message.guild.me.voice.channel.id !== message.member.voice.channel.id) return message.channel.send(`${client.emotes.error} You must be in my voice channel`)
-        }
-        const queue = client.distube.getQueue(message)
-        if (!queue) return message.channel.send(`${client.emotes.error} | There is nothing in the queue right now!`)
-        const number = parseInt(args[0])
-        if(!number) message.channel.send(`${client.emotes.error} Please insert the time you want to seek.`)
-        try {
-            client.distube.seek(message, Number(number[0]))
-        } catch (e) {
-            message.channel.send(`${client.emotes.error} | Error: \`${e}\``)
-        }
+  name: "seek",
+  description: "Set the playing time to another position",
+  usage: "seek <amount in seconds>",
+  aliases: [],
+  cooldown: 3,
+  async execute(client, message, args) {
+    if (!message.member.voice.channel) {
+      const seekError = new MessageEmbed()
+        .setDescription(
+          `${client.emotes.error} You need to be in a voice channel to seek through music.`,
+        )
+        .setColor("RED");
+      return message.channel.send(seekError);
     }
-}
+    const queue = client.distube.getQueue(message)
+    if (!queue) {
+      const seekError2 = new MessageEmbed()
+        .setDescription(`${client.emotes.error} There is nothing playing`)
+        .setColor("RED");
+      return message.channel.send(seekError2);
+    }
+    if (isNaN(args[0])) {
+      const seekError3 = new MessageEmbed()
+        .setDescription(
+          `${client.emotes.error} Please enter a valid number of second(s) to seek!`,
+        )
+        .setColor("RED");
+      return message.channel.send(seekError3);
+    }
+
+    const seekAmount = args[0] * 1000;
+
+    client.distube.seek(message, seekAmount);
+    message.react(client.emotes.success);
+  },
+};

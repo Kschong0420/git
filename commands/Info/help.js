@@ -30,7 +30,7 @@ module.exports = {
         Music: "🎶",
         //owner: "🔒",
         Game: "🎮",
-        //nekopara: "🐱",
+        nekopara: "🐱",
         //abandoned: "❌",
         Image: "📸",
         Action: "🎬",
@@ -39,7 +39,7 @@ module.exports = {
 
 
     }
-    const ignored = ["Owner", "Abandoned", "Nekopara"]
+    const ignored = ["Owner", "Abandoned"]
     readdirSync("./commands/").forEach((dir) => {
       const editedName = `${diremojis[dir]}  ${dir.toUpperCase()}`
       if(ignored.includes(dir)) return;
@@ -100,29 +100,35 @@ module.exports = {
 
     const embed = new MessageEmbed()
       .setTitle("Command Details:")
-      .addField("PREFIX:", `\`${p}\``)
       .addField(
         "COMMAND:",
-        command.name ? `\`${command.name}\`` : "No name for this command."
+        command.name ? `\`\`\`${command.name}\`\`\`` : "\`\`\`No name for this command.\`\`\`"
       )
       .addField(
         "ALIASES:",
         command.aliases
-          ? `\`${command.aliases.join("` `")}\``
+          ? `\`\`\`${command.aliases.join(", ")}\`\`\``
           : "No aliases for this command."
+      )
+      .addField(
+        "COOLDOWN:",
+        command.cooldown
+          ? `\`\`\`js\n${command.cooldown} second(s)\`\`\``
+          : "\`\`\`No cooldown for this command.\`\`\`"
       )
       .addField(
         "USAGE:",
         command.usage
-          ? `\`${p}${command.usage}\``
-          : `\`${p}${command.name}\``
+          ? `\`\`\`${p}${command.usage}\`\`\``
+          : `\`\`\`${p}${command.name}\`\`\``
       )
       .addField(
         "DESCRIPTION:",
         command.description
-          ? command.description
-          : "No description for this command."
+          ? `\`\`\`${command.description}\`\`\``
+          : "\`\`\`No description for this command.\`\`\`"
       )
+      .setThumbnail(message.author.displayAvatarURL({ dynamic: true }))
       .setFooter(
         `Requested by ${message.author.tag}`,
         message.author.displayAvatarURL({ dynamic: true })

@@ -3,6 +3,9 @@ const paginationEmbed = require("discord.js-pagination")
 module.exports = {
   name: 'azuki',
   description: 'Azuki self introduction!',
+  cooldown: 45,
+  usage: 'azuki',
+  category: 'Nekopara',
   async execute (client, message, args, Discord) {
     const embed1 = new Discord.MessageEmbed()
     .setTitle('Azuki')
