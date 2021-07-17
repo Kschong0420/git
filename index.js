@@ -18,7 +18,7 @@ const { GiveawaysManager } = require("discord-giveaways");
 
 const memberCounter = require('./counters/member-counter')
 const config = require("./config.json")
-client.distube = new DisTube(client, { searchSongs: 15, emitNewSongOnly: true, leaveOnFinish: false, leaveOnEmpty: false, emptyCooldown: 60000, plugins: [new SpotifyPlugin({ parallel: true})]})
+client.distube = new DisTube(client, { searchSongs: 15, emitNewSongOnly: true, leaveOnFinish: false, leaveOnEmpty: false, emptyCooldown: 60000, plugins: [new SpotifyPlugin({ parallel: true })] })
 client.emotes = config.emoji
 client.aliases = new Discord.Collection()
 client.snipes = new Discord.Collection()
@@ -28,8 +28,8 @@ client.events = new Discord.Collection()
 client.discordTogether = new DiscordTogether(client);
 client.categories = fs.readdirSync("./commands/");
 ["command_handler"].forEach(handler => {
-    require(`./handlers/${handler}`)(client);
-}); 
+  require(`./handlers/${handler}`)(client);
+});
 
 ['command_handler', 'event_handler'].forEach(handler => {
   require(`./handlers/${handler}`)(client, Discord)
@@ -105,9 +105,9 @@ client.giveaways = new GiveawaysManager(client, {
 
 //invisible typing detect
 client.on('typingStart', (ch, user) => {
-  if(user.presence.status === 'offline') {
-    if(ch.type == 'dm') return;
-      ch.send(`Detect ${user.tag} opening invisible mode!`).then(m => m.delete({timeout: 10000}));  
+  if (user.presence.status === 'offline') {
+    if (ch.type == 'dm') return;
+    ch.send(`Detect ${user.tag} opening invisible mode!`).then(m => m.delete({ timeout: 10000 }));
   }
 })
 
@@ -287,27 +287,27 @@ client.once('ready', () => {
 //updated messages log
 client.on('messageUpdate', message => {
   if (message.author.id === client.user.id) return;
-  if(message.content.toLowerCase().startsWith('https://')) return;
+  if (message.content.toLowerCase().startsWith('https://')) return;
   if (message.author.bot) return
   if (!message.partial) {
-      const channel = message.guild.channels.cache.find(channel => channel.name === "logchannel")
-      if (!channel) return
-      const editedInChannel = client.channels.cache.get(message.channel.id)
-      if (channel) {
-          const embed29 = new Discord.MessageEmbed()
-              .setTitle(`Edited Message`)
-              //.setURL(message.url)
-              .setThumbnail(message.author.displayAvatarURL({ dynamic: true }))
-              .addField('Author', `${message.author.tag}`)
-              .addField(`Before`, `${message}`)
-              .addField(`After`, `${editedInChannel.messages.cache.get(message.id)}`)
-              .addField(`Channel`, `<#${message.channel.id}>`)
-              .setDescription(`[Jump to Message](${message.url})`)
-              .setColor('#fca503')
-              .setFooter(`User ID: ${message.author.id}`, message.author.displayAvatarURL({ dynamic: true }))
-              .setTimestamp()
-          channel.send(embed29)
-      } else return
+    const channel = message.guild.channels.cache.find(channel => channel.name === "logchannel")
+    if (!channel) return
+    const editedInChannel = client.channels.cache.get(message.channel.id)
+    if (channel) {
+      const embed29 = new Discord.MessageEmbed()
+        .setTitle(`Edited Message`)
+        //.setURL(message.url)
+        .setThumbnail(message.author.displayAvatarURL({ dynamic: true }))
+        .addField('Author', `${message.author.tag}`)
+        .addField(`Before`, `${message}`)
+        .addField(`After`, `${editedInChannel.messages.cache.get(message.id)}`)
+        .addField(`Channel`, `<#${message.channel.id}>`)
+        .setDescription(`[Jump to Message](${message.url})`)
+        .setColor('#fca503')
+        .setFooter(`User ID: ${message.author.id}`, message.author.displayAvatarURL({ dynamic: true }))
+        .setTimestamp()
+      channel.send(embed29)
+    } else return
   }
 })
 
@@ -331,27 +331,31 @@ client.on('messageDelete', async message => {
   logchannel.send(embed)
 })
 
-///mentioned bot give info (issue: reply bot also trigger)
-//client.on('message', async message => {
-//  if(message.mentions.users.first()) {
-//    if(message.mentions.users.first().id === '814038095128166400') return message.channel.send(
-//        new Discord.MessageEmbed()
-//        .setDescription('My prefix for this server is v or V')
-//        .addField('Try running v help for lists of commands', ':white_check_mark:')
-//    )
-//}
-//})
+///mentioned bot give info
+client.on('message', async message => {
+  const prefix = process.env.PREFIX
+  if (!message.reply) return
+  if (message.content === `<@${client.user.id}>` || message.content === `<@!${client.user.id}>`) return message.lineReplyNoMention(new Discord.MessageEmbed()
+    .setTitle("Vanilla Bot Info")
+    .setDescription(
+      `[Invite me](https://discord.com/oauth2/authorize?client_id=814038095128166400&scope=bot&permissions=8589934591)`
+    )
+    .addField('Prefix', `My prefix is \`${prefix}\`.`)
+    .addField('Need Help?', 'Use `v help` to get a list of command.')
+    .setFooter(
+      `Requested by ${message.author.tag}`,
+      message.author.displayAvatarURL({
+        dynamic: true
+      })
+    )
+    .setTimestamp()
+    .setThumbnail(client.user.displayAvatarURL({
+      dynamic: true
+    }))
+    .setColor('#510daf')
+  )
 
-///mentioned bot give info (issue: reply bot also trigger)
-//client.on("message", async message => {
-//  if (message.author.bot) return;
-//  if (message.mentions.has('814038095128166400')) {
-//    const infoembed = new Discord.MessageEmbed()
-//      .setTitle('You Pinged Me!')
-//      .setDescription('My prefix is **v** or **V**. Use **v help** or **V help** to check the command list!')
-//    message.channel.send(infoembed);
-//  }
-//})
+})
 
 ///anti emote system (not working)
 //client.on("message", async message => {
