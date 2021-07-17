@@ -30,7 +30,7 @@ module.exports = {
         Music: "🎶",
         //owner: "🔒",
         Game: "🎮",
-        nekopara: "🐱",
+        Nekopara: "🐱",
         //abandoned: "❌",
         Image: "📸",
         Action: "🎬",
