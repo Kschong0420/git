@@ -11,7 +11,7 @@ module.exports = {
     aliases: ["maniab", "maniascore"],
     category: "Osu",
     description: "Check out someone best 3 scores in osu mania mode.",
-    usage: "v maniabest <username>",
+    usage: "maniabest <username>",
     cooldown: 5,
     async execute(client, message, args) {
         const user = args.join(' ')

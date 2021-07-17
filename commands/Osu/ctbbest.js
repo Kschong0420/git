@@ -11,7 +11,7 @@ module.exports = {
     aliases: ["ctbb", "ctbscore"],
     category: "Osu",
     description: "Check out someone best 3 scores in osu ctb mode.",
-    usage: "v ctbbest <username>",
+    usage: "ctbbest <username>",
     cooldown: 5,
     async execute(client, message, args) {
         const user = args.join(' ')

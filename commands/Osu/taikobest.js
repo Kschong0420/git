@@ -11,7 +11,7 @@ module.exports = {
     aliases: ["taikob", "taikoscore", "tkbest", 'tkb', 'tkscore'],
     category: "Osu",
     description: "Check out someone best 3 scores in osu taiko mode.",
-    usage: "v taikobest <username>",
+    usage: "taikobest <username>",
     cooldown: 5,
     async execute(client, message, args) {
         const user = args.join(' ')
