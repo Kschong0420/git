@@ -11,7 +11,9 @@ module.exports = {
       try {
       const author = message.author.username;
       const user = message.mentions.users.first().username
-      if(!user) return message.lineReplyNoMention("Please mention someone.").then(m => m.delete(5000));
+      const check = message.mentions.users.first()
+      if(!user) return message.lineReplyNoMention("Please mention someone.")
+      if (check.id === message.author.id) return message.lineReplyNoMention("You can't let yourself crying.")
       const res = await fetch('https://shiro.gg/api/images/cry');
       const img = (await res.json()).url;
       const cry = new Discord.MessageEmbed()
@@ -21,7 +23,7 @@ module.exports = {
            message.lineReplyNoMention(cry);
     } catch (error) {
       console.log(error);
-      return message.lineReplyNoMention('Please mention someone.').then(m => m.delete(5000));
+      return message.lineReplyNoMention('Please mention someone.')
     }
 		}
 	}
