@@ -4,7 +4,7 @@ const fetch = require("node-fetch");
 module.exports = {
   name: "wink",
   category: "Action",
-  description: "wink someone!",
+  description: "Wink at someone!",
   usage: "wink <username>",
   cooldown: 7,
   async execute(client, message, args) {
