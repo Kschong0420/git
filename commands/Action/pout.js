@@ -4,8 +4,8 @@ const fetch = require("node-fetch");
 module.exports = {
     name: "pout",
     category: "Action",
-    description: "Let someone pout!",
-    usage: "pout <username>",
+    description: "Let yourself or someone pout!",
+    usage: "pout [username]",
     cooldown: 7,
     async execute(client, message, args) {
         try {

@@ -5,7 +5,7 @@ module.exports = {
   cooldown: 30,
   description: 'Nekopara introduction.',
   usage: 'character',
-  category: 'Info',
+  category: 'Nekopara',
 
   execute (client, message, args) {
     const newEmbed = new Discord.MessageEmbed()
