@@ -3,6 +3,7 @@ module.exports = {
 	category: 'Info',
 	description: 'Shows a enlarged version of an emote as well as the source link',
 	usage: 'enlarge <emoji>',
+    cooldown: 5,
 
 	async execute(client, message, args,Discord) {
 
