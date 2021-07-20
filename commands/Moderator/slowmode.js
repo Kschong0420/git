@@ -3,7 +3,7 @@ module.exports = {
     description: "Set the slowmode of a channel.",
     cooldown: 2,
     usage: 'slowmode <time> [reason]',
-    category: '',
+    category: 'Moderator',
     async execute(client, message, args) {
         if(!message.member.hasPermission("ADMINISTRATOR")) {
             return message.lineReplyNoMention("Unknown Command.")

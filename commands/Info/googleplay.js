@@ -4,7 +4,7 @@ const PlayStore = require("google-play-scraper");
 module.exports = {
   name: "playstore",
   aliases: ["pstore", "googleplaystore", "ps", "googleplay"],
-  description: "show playstore application information of your given name.",
+  description: "Show playstore application information of your given name.",
   usage: "playstore <Application Name>",
   cooldown: 5,
   category: 'Info',
@@ -38,7 +38,7 @@ module.exports = {
         .addField(`Price`, App.priceText, true)
         .addField(`Developer`, App.developer, true)
         .addField(`Score`, App.scoreText, true)
-        .setFooter(`Requested by ${message.author.username}`)
+        .setFooter(`Requested by ${message.member.displayName}`, message.author.displayAvatarURL({ dynamic: true }))
         .setTimestamp();
 
       return message.lineReplyNoMention(Embed);
