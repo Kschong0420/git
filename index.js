@@ -17,7 +17,8 @@ const { GiveawaysManager } = require("discord-giveaways");
 //const canva = new CanvasSenpai();
 
 const memberCounter = require('./counters/member-counter')
-const config = require("./config.json")
+const config = require("./config.json");
+const { id } = require('common-tags');
 client.distube = new DisTube(client, { searchSongs: 15, emitNewSongOnly: true, leaveOnFinish: false, leaveOnEmpty: false, emptyCooldown: 60000, plugins: [new SpotifyPlugin({ parallel: true })] })
 client.emotes = config.emoji
 client.aliases = new Discord.Collection()
@@ -284,6 +285,236 @@ client.once('ready', () => {
   memberCounter(client)
 })
 
+//voice log
+client.on("voiceStateUpdate", (oS, nS) => {
+  const logsChannel = oS.guild.channels.cache.find(channel => channel.name === "logchannel") || nS.guild.channels.cache.find(channel => channel.name === "logchannel")
+  if(!logsChannel) return
+  let u = nS.member.user.tag;
+  let user = nS.member.user;
+  if (!oS.streaming && nS.streaming) {
+    const startedStreamingEmbed = new Discord.MessageEmbed()
+      .setColor('#b46627')
+      .setAuthor("Voice Logs")
+      .setTitle("Started Streaming")
+      .setTimestamp()
+      .setDescription(
+        `**${u}** started streaming or sharing their screen in <#${nS.channel.id}>`
+      )
+      .setFooter(`User ID: ${user.id}`, user.displayAvatarURL({ dynamic: true }))
+      .setThumbnail(user.displayAvatarURL({ dynamic: true }))
+    logsChannel.send(startedStreamingEmbed);
+  }
+  if (oS.streaming && !nS.streaming) {
+    const endedStreamingEmbed = new Discord.MessageEmbed()
+      .setColor('#b46627')
+      .setAuthor("Voice Logs")
+      .setTitle("Stopped Streaming")
+      .setTimestamp()
+      .setDescription(
+        `**${u}** stopped streaming or sharing their screen in <#${nS.channel.id}>.`
+      )
+      .setFooter(`User ID: ${user.id}`, user.displayAvatarURL({ dynamic: true }))
+      .setThumbnail(user.displayAvatarURL({ dynamic: true }))
+    logsChannel.send(endedStreamingEmbed);
+  }
+  if (!oS.serverDeaf && nS.serverDeaf) {
+    const serverDefenYesEmbed = new Discord.MessageEmbed()
+      .setColor('#b46627')
+      .setAuthor("Voice Logs")
+      .setTitle("Server Deafen")
+      .setTimestamp()
+      .setDescription(`**${u}** got server deafened in <#${nS.channel.id}>.`)
+      .setFooter(`User ID: ${user.id}`, user.displayAvatarURL({ dynamic: true }))
+      .setThumbnail(user.displayAvatarURL({ dynamic: true }))
+    logsChannel.send(serverDefenYesEmbed);
+  }
+  if (oS.serverDeaf && !nS.serverDeaf) {
+    const serverDefenNoEmbed = new Discord.MessageEmbed()
+      .setColor('#b46627')
+      .setAuthor("Voice Logs")
+      .setTitle("Server Undeafen")
+      .setTimestamp()
+      .setDescription(
+        `**${u}** got server undeafened in <#${nS.channel.id}>.`
+      )
+      .setFooter(`User ID: ${user.id}`, user.displayAvatarURL({ dynamic: true }))
+      .setThumbnail(user.displayAvatarURL({ dynamic: true }))
+    logsChannel.send(serverDefenNoEmbed);
+  }
+  if (!oS.serverMute && nS.serverMute) {
+    const serverMuteYesEmbed = new Discord.MessageEmbed()
+      .setColor('#b46627')
+      .setAuthor("Voice Logs")
+      .setTitle("Server Mute")
+      .setTimestamp()
+      .setDescription(`**${u}** got server muted in <#${nS.channel.id}>.`)
+      .setFooter(`User ID: ${user.id}`, user.displayAvatarURL({ dynamic: true }))
+      .setThumbnail(user.displayAvatarURL({ dynamic: true }))
+    logsChannel.send(serverMuteYesEmbed);
+  }
+  if (oS.serverMute && !nS.serverMute) {
+    const serverMuteNoEmbed = new Discord.MessageEmbed()
+      .setTitle("Server Unmute")
+      .setColor('#b46627')
+      .setAuthor("Voice Logs")
+      .setTimestamp()
+      .setDescription(`**${u}** got server unmuted in <#${nS.channel.id}>.`)
+      .setFooter(`User ID: ${user.id}`, user.displayAvatarURL({ dynamic: true }))
+      .setThumbnail(user.displayAvatarURL({ dynamic: true }))
+    logsChannel.send(serverMuteNoEmbed);
+  }
+  if (!oS.selfDeaf && nS.selfDeaf) {
+    const deafendThemSelvesEmbed = new Discord.MessageEmbed()
+      .setTitle("Self Deafen")
+      .setColor('#b46627')
+      .setAuthor("Voice Logs")
+      .setTimestamp()
+      .setDescription(`**${u}** deafened themselves in <#${nS.channel.id}>.`)
+      .setFooter(`User ID: ${user.id}`, user.displayAvatarURL({ dynamic: true }))
+      .setThumbnail(user.displayAvatarURL({ dynamic: true }))
+    logsChannel.send(deafendThemSelvesEmbed);
+  }
+  if (oS.selfDeaf && !nS.selfDeaf) {
+    const uNdeafendThemSelvesEmbed = new Discord.MessageEmbed()
+      .setTitle("Self Undeafen")
+      .setColor('#b46627')
+      .setAuthor("Voice Logs")
+      .setTimestamp()
+      .setDescription(
+        `**${u}** undeafened themselves in <#${nS.channel.id}>.`
+      )
+      .setFooter(`User ID: ${user.id}`, user.displayAvatarURL({ dynamic: true }))
+      .setThumbnail(user.displayAvatarURL({ dynamic: true }))
+    logsChannel.send(uNdeafendThemSelvesEmbed);
+  }
+  if (!oS.selfMute && nS.selfMute) {
+    const mutedThemSelvesEmbed = new Discord.MessageEmbed()
+      .setTitle("Self Mute")
+      .setColor('#b46627')
+      .setAuthor("Voice Logs")
+      .setTimestamp()
+      .setDescription(`**${u}** muted themselves in <#${nS.channel.id}>.`)
+      .setFooter(`User ID: ${user.id}`, user.displayAvatarURL({ dynamic: true }))
+      .setThumbnail(user.displayAvatarURL({ dynamic: true }))
+    logsChannel.send(mutedThemSelvesEmbed);
+  }
+  if (oS.selfMute && !nS.selfMute) {
+    const unMutedThemSelvesEmbed = new Discord.MessageEmbed()
+      .setTitle("Self Unmute")
+      .setColor('#b46627')
+      .setAuthor("Voice Logs")
+      .setTimestamp()
+      .setDescription(`**${u}** unmuted themselves in <#${nS.channel.id}>.`)
+      .setFooter(`User ID: ${user.id}`, user.displayAvatarURL({ dynamic: true }))
+      .setThumbnail(user.displayAvatarURL({ dynamic: true }))
+    logsChannel.send(unMutedThemSelvesEmbed);
+  }
+  if (!oS.selfVideo && nS.selfVideo) {
+    const cameraOnEmbed = new Discord.MessageEmbed()
+      .setColor('#b46627')
+      .setTitle("Camera On")
+      .setAuthor("Voice Logs")
+      .setTimestamp()
+      .setDescription(
+        `**${u}** turned their camera on in <#${nS.channel.id}>.`
+      )
+      .setFooter(`User ID: ${user.id}`, user.displayAvatarURL({ dynamic: true }))
+      .setThumbnail(user.displayAvatarURL({ dynamic: true }))
+    logsChannel.send(cameraOnEmbed);
+  }
+  if (oS.selfVideo && !nS.selfVideo) {
+    const cameraOffEmbed = new Discord.MessageEmbed()
+      .setTitle("Camera Off")
+      .setColor('#b46627')
+      .setAuthor("Voice Logs")
+      .setTimestamp()
+      .setDescription(
+        `**${u}** turned their camera off in <#${nS.channel.id}>.`
+      )
+      .setFooter(`User ID: ${user.id}`, user.displayAvatarURL({ dynamic: true }))
+      .setThumbnail(user.displayAvatarURL({ dynamic: true }))
+    logsChannel.send(cameraOffEmbed);
+  }
+  if (!oS.channelID && nS.channelID) {
+    const joinedChannelEmbed = new Discord.MessageEmbed()
+      .setColor('#b46627')
+      .setTitle("Voice Channel Join")
+      .setAuthor("Voice Logs")
+      .setTimestamp()
+      .setDescription(`**${u}** joined <#${nS.channel.id}>.`)
+      .setFooter(`User ID: ${user.id}`, user.displayAvatarURL({ dynamic: true }))
+      .setThumbnail(user.displayAvatarURL({ dynamic: true }))
+    logsChannel.send(joinedChannelEmbed);
+  }
+  if (oS.channelID && !nS.channelID) {
+    const leftChannelEmbed = new Discord.MessageEmbed()
+      .setColor('#b46627')
+      .setAuthor("Voice Logs")
+      .setTimestamp()
+      .setTitle("Voice Channel Leave")
+      .setDescription(`**${u}** left <#${oS.channel.id}>.`)
+      .setFooter(`User ID: ${user.id}`, user.displayAvatarURL({ dynamic: true }))
+      .setThumbnail(user.displayAvatarURL({ dynamic: true }))
+    logsChannel.send(leftChannelEmbed);
+  }
+  //if (oS.channelID && !nS.channelID) {
+  //  const switchedChannelEmbed = new Discord.MessageEmbed()
+  //    .setColor('#b46627')
+  //    .setTitle("Voice Channel Switch")
+  //    .setAuthor("Voice Logs")
+  //    .setTimestamp()
+  //    .setDescription(
+  //      `**${u}** Switched from <#${oS.channel.id}> to <#${nS.channel.id}>`
+  //    )
+  //    .setFooter(`User ID: ${user.id}`, user.displayAvatarURL({ dynamic: true }))
+  //    .setThumbnail(user.displayAvatarURL({ dynamic: true }))
+  //  logsChannel.send(switchedChannelEmbed);
+  //}
+});
+
+//guild member join server
+client.on('guildMemberAdd', user => {
+  const channel = user.guild.channels.cache.find(channel => channel.name === "logchannel")
+  if (!channel) return
+  if (channel) {
+    const embed = new Discord.MessageEmbed()
+      .setTitle(`User Join`)
+      .setDescription(`A user has joined the server.`)
+      .addField('User Join', user.user.tag)
+      .setColor('#28a135')
+      .setFooter(`User ID: ${user.id}`, user.user.displayAvatarURL({ dynamic: true }))
+      .setThumbnail(user.user.displayAvatarURL({ dynamic: true }))
+      .setTimestamp()
+    channel.send(embed)
+  } else return
+}
+)
+
+//guild member leave server
+client.on('guildMemberRemove', async user => {
+  const logchannel = user.guild.channels.cache.find(ch => ch.name === 'leave')
+  if (!logchannel) return
+  logchannel.send(`**${user.user.tag}** has left the server.`)
+})
+
+client.on('guildMemberRemove', user => {
+    const channel = user.guild.channels.cache.find(channel => channel.name === "logchannel")
+    if (!channel) return
+    if (channel) {
+      const embed = new Discord.MessageEmbed()
+        .setTitle(`User Leave`)
+        .setDescription(`A user has left the server.`)
+        .addField('User Leave', user.user.tag)
+        .setColor('#cf1518')
+        .setFooter(`User ID: ${user.id}`, user.user.displayAvatarURL({ dynamic: true }))
+        .setThumbnail(user.user.displayAvatarURL({ dynamic: true }))
+        .setTimestamp()
+      channel.send(embed)
+    } else return
+  }
+)
+
+
 //updated messages log
 client.on('messageUpdate', message => {
   if (message.author.id === client.user.id) return;
@@ -310,7 +541,6 @@ client.on('messageUpdate', message => {
     } else return
   }
 })
-
 
 //deleted message log
 client.on('messageDelete', async message => {
