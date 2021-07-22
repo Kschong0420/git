@@ -105,12 +105,12 @@ client.giveaways = new GiveawaysManager(client, {
 //});
 
 //invisible typing detect
-client.on('typingStart', (ch, user) => {
-  if (user.presence.status === 'offline') {
-    if (ch.type == 'dm') return;
-    ch.send(`Detect ${user.tag} opening invisible mode!`).then(m => m.delete({ timeout: 10000 }));
-  }
-})
+//client.on('typingStart', (ch, user) => {
+//  if (user.presence.status === 'offline') {
+//    if (ch.type == 'dm') return;
+//    ch.send(`Detect ${user.tag} opening invisible mode!`).then(m => m.delete({ timeout: 10000 }));
+//  }
+//})
 
 //non nitro emoji 
 ///not stable yet
@@ -586,12 +586,6 @@ client.on('message', async message => {
   )
 
 })
-
-///anti emote system (not working)
-//client.on("message", async message => {
-//  if (message.author.bot) return;
-//  if (message.content === ' ') message.delete()
-//})
 
 //remind music bot ready
 client.on("ready", () => {
