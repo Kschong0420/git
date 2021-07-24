@@ -18,6 +18,7 @@ module.exports = {
     .setImage(randomMeme.data.url)
     .setColor("RANDOM")
     .setFooter(`Requested by ${message.member.displayName}`, message.author.displayAvatarURL({ dynamic: true }))
+    .setTimestamp()
 
     message.lineReplyNoMention(natureEmbed)
     }
