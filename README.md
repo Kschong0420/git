@@ -14,7 +14,7 @@ A bot that contains a lot of commands including category below:
 
 # Prefix and Infomation
 Vanilla bot's prefix is 'v ', 
-use 'v cmd' to check all the commands and category,
+use 'v help' to check all the commands and category,
 use 'v help <cmd>' to check a command info.
 
 Vanilla bot still coding in progress, 
