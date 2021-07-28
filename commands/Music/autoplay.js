@@ -1,6 +1,6 @@
 module.exports = {
     name: "autoplay",
-    aliases: ["auto", "atp", "ap", "at"],
+    aliases: ["auto", "atp", "ap"],
     cooldown: 3,
     description: 'Enable or disable autoplay, if enable music bot will continue play music after song queue finished.',
     usage: 'autoplay',

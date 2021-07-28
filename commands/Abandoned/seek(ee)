@@ -4,7 +4,6 @@ module.exports = {
   name: "seek",
   description: "Set the playing time to another position",
   usage: "seek <amount in seconds>",
-  aliases: [],
   cooldown: 3,
   async execute(client, message, args) {
     if (!message.member.voice.channel) {

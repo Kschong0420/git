@@ -5,7 +5,7 @@ module.exports = {
         aliases: ["polls"],
         cooldown: 30,
         description: 'Make a poll.',
-        usage: 'poll ',
+        usage: 'poll <query>',
         category: 'Moderator',
     
     async execute(client, message, args) {
@@ -16,7 +16,7 @@ module.exports = {
 
         const embed = new MessageEmbed()
             .setColor("GREEN")
-            .setTitle(`Poll For ${message.guild.name} Sever`)
+            .setTitle(`Poll For ${message.guild.name}`)
             .setFooter(message.member.displayName, message.author.displayAvatarURL())
             .setDescription(args.join(' '))
         var msg = await message.lineReplyNoMention(embed);

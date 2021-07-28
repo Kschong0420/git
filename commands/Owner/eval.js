@@ -5,7 +5,6 @@ module.exports = {
     description: "Owner Only Command",
     ownerOnly: true,
     cooldown: 0,
-    aliases: [],
     async execute(message, args, client) {
         message.delete()
         const code = args.join(' ')

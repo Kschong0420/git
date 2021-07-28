@@ -3,7 +3,6 @@ const fetch = require('node-fetch');
 
 module.exports = {
     name: 'horoscope',
-    aliases: [],
     category: 'Fun',
     description: 'Find out your horoscope for today.',
     usage: 'horoscope <constellation>',

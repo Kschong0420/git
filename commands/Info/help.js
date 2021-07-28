@@ -75,7 +75,7 @@ module.exports = {
       .setTitle("📬 Need help? Here are all of my commands:")
       .addFields(categories)
       .setDescription(
-        `Use \`${p}help\` followed by a command name to get more additional information on a command. For example: \`${p}help ban\`.`
+        `Use \`${p}help\` followed by a command name to get more additional information on a command. For example: \`${p}help ban\`.\n[Click me for more infomation about channel setup.](https://docs.google.com/document/d/e/2PACX-1vQRe2heaWL-9xyUg0obA470GZvUqwiZ8aFVBiuo1-boN8N-rvSW6-Pi7l88HjFMgu86a_uHe_L_0UEi/pub)`
       )
       .setFooter(
         `Requested by ${message.author.tag}`,
@@ -108,7 +108,7 @@ module.exports = {
         "ALIASES:",
         command.aliases
           ? `\`\`\`${command.aliases.join(", ")}\`\`\``
-          : "No aliases for this command."
+          : "\`\`\`No aliases for this command.\`\`\`"
       )
       .addField(
         "COOLDOWN:",
@@ -122,6 +122,12 @@ module.exports = {
           ? `\`\`\`${p}${command.usage}\`\`\``
           : `\`\`\`${p}${command.name}\`\`\``
       )
+      //.addField(
+      //  "CATEGORY:",
+      //  command.usage
+      //    ? `\`\`\`${command.category}\`\`\``
+      //    : `\`\`\`No category for this command.\`\`\``
+      //)
       .addField(
         "DESCRIPTION:",
         command.description

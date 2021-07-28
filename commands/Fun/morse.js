@@ -2,7 +2,6 @@ const fetch = require('node-fetch');
 
 module.exports = {
   name: "morse",
-  aliases: [],
   cooldown: 3,
   description: "Change a text to morse code.",
   category: "Fun",

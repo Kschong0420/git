@@ -3,14 +3,13 @@ const fetch = require("node-fetch");
 
 module.exports = {
  name: "country",
- aliases: [],
  description: "Gets a country info.",
  category: "Info",
  usage: "country <country name>",
  cooldown: 7,
  async execute(client, message, args) {
   try {
-   const country = args.slice().join(" ");
+   const country = args.join(" ");
    if (!country) {
     return message.lineReplyNoMention('Please provide a country name.');
    }
@@ -34,7 +33,7 @@ module.exports = {
     .addField("🏛️ Capital", `\`\`\`${data.capital ? data.capital : "None"}\`\`\``)
     .addField("📍 Location", `\`\`\`${data.subregion ? data.subregion : data.region}\`\`\``)
     .addField("💱 Currency", `\`\`\`${data.currencies[0].code} ${data.currencies[0].symbol}\`\`\``)
-    .addField("<:members:856161806606401556> Population", `\`\`\`${data.population.toLocaleString()}\`\`\``)
+    .addField(":people_holding_hands: Population", `\`\`\`${data.population.toLocaleString()}\`\`\``)
     .addField("🌐 Area", `\`\`\`${data.area.toLocaleString()}km\`\`\``)
     .addField("👅 Languages", `\`\`\`${data.languages.map((lang) => lang.name).join("/")}\`\`\``)
     .setFooter(

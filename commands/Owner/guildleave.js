@@ -1,6 +1,5 @@
 module.exports = {
     name: "guildleave",
-    aliases: [],
     category: "Owner",
     description: "Leave a guild",
     usage: "guildleave <server id>",
