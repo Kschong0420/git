@@ -4,7 +4,7 @@ module.exports = {
     name: 'esnipe',
     aliases: ['editsnipe'],
     cooldown: 7,
-    description: 'snipe an edited message.',
+    description: 'Snipe an edited message.',
     usage: 'esnipe',
     category: 'Util',
     async execute(client, message, args) {
