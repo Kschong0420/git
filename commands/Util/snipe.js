@@ -2,7 +2,7 @@ const { moment } = require('moment')
 
 module.exports = {
     name: 'snipe',
-    cooldown: 7,
+    cooldown: 10,
     description: 'Snipe a deleted message.',
     usage: 'snipe [value]',
     category: 'Util',

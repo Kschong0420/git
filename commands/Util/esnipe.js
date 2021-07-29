@@ -3,7 +3,7 @@ const { MessageEmbed } = require('discord.js')
 module.exports = {
     name: 'esnipe',
     aliases: ['editsnipe'],
-    cooldown: 5,
+    cooldown: 7,
     description: 'snipe an edited message.',
     usage: 'esnipe',
     category: 'Util',

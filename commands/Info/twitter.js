@@ -4,10 +4,10 @@ const { stripIndents } = require("common-tags") //npm i common-tags
 const twitter = require("twitter-api.js") //npm i twitter-api.js
 
 module.exports = {
-  name: '🆕twitter',
+  name: 'twitter',
   category: 'Info',
   description: 'Get the information about twitter account.',
-  aliases: ['twit', 'twitter'],
+  aliases: ['twit'],
   usage: 'twitter <username>',
   cooldown: 5,
   async execute(client, message, args) {
