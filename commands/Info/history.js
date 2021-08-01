@@ -7,6 +7,7 @@ module.exports = {
     description: "Check what happened before according to the date given.",
     category: 'Info',
     usage: "history <month> <day>",
+    cooldown: 5,
     async execute(client, message, args) {
         const month = parseInt(args[0]);
         const day = parseInt(args[1]);

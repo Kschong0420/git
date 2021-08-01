@@ -2,7 +2,10 @@ const Fetch = require("node-fetch");
 
 module.exports = {
     name: 'meme',
-    description: 'Random meme images!',
+    description: 'Random meme.',
+    category: "Fun",
+    usage: "meme",
+    cooldown: 5,
 
     async execute (client, message, args, Discord) {
 
