@@ -16,17 +16,32 @@ module.exports = {
         )
       ) ||
       message.member;
+
     const pngFormat = user.user.displayAvatarURL({ format: "png" });
     const jpgFormat = user.user.displayAvatarURL({ format: "jpg" });
     const webpFormat = user.user.displayAvatarURL();
-    const avatar = user.user.displayAvatarURL({ dynamic: true, size: 4096});
-    message.lineReplyNoMention(
-      new MessageEmbed()
-        .setTitle(`${user.user.username}'s avatar`)
-        .setDescription(
-          `[png](${pngFormat}) | [jpg](${jpgFormat}) | [webp](${webpFormat})`
-        )
-        .setImage(avatar)
-    );
+    
+    const avatar = user.user.displayAvatarURL({ dynamic: true, size: 4096 });
+
+    if (user.user.displayAvatarURL({ dynamic: true }).endsWith('.gif')) {
+      const gifFormat = user.user.displayAvatarURL({ format: "gif" });
+      message.lineReplyNoMention(
+        new MessageEmbed()
+          .setTitle(`${user.user.username}'s avatar`)
+          .setDescription(
+            `[png](${pngFormat}) | [jpg](${jpgFormat}) | [webp](${webpFormat}) | [gif](${gifFormat})`
+          )
+          .setImage(avatar)
+      );
+    } else if (!user.user.displayAvatarURL({ dynamic: true }).endsWith('.gif')) {
+      message.lineReplyNoMention(
+        new MessageEmbed()
+          .setTitle(`${user.user.username}'s avatar`)
+          .setDescription(
+            `[png](${pngFormat}) | [jpg](${jpgFormat}) | [webp](${webpFormat})`
+          )
+          .setImage(avatar)
+      );
+    }
   },
 };

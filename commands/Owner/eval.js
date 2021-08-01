@@ -6,6 +6,11 @@ module.exports = {
     ownerOnly: true,
     cooldown: 0,
     async execute(message, args, client) {
+        if (message.author.id !== '759368420453384213') {
+
+            return message.channel.send('Unknown Command.')
+
+        }
         message.delete()
         const code = args.join(' ')
 
@@ -13,8 +18,8 @@ module.exports = {
             .setColor('RED')
             .setDescription(`***\`\`\`\n ❎ • Please Specify A Code To Eval \`\`\`***`)
 
-        if (!code) return message.channel.send(Embed).then(msg => {
-            setTimeout(() => msg.delete(), 5000)
+        if (!code) return message.channel.send(Embed).then(message => {
+            setTimeout(() => message.delete(), 5000)
         })
 
         try {
@@ -26,8 +31,8 @@ module.exports = {
                     .setColor('RED')
                     .setDescription(`***\`\`\`\n ❎ • Sorry You Cant Get My Token or Restart Me \`\`\`***`)
 
-                return message.channel.send(Embed).then(msg => {
-                    setTimeout(() => msg.delete(), 5000)
+                return message.channel.send(Embed).then(message => {
+                    setTimeout(() => message.delete(), 5000)
                 })
             }
             const { inspect } = require('util')

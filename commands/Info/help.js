@@ -72,7 +72,7 @@ module.exports = {
     });
 
     const embed = new MessageEmbed()
-      .setTitle("📬 Need help? Here are all of my commands:")
+      .setTitle("<a:alert:871018456995205210> Need help? Here are all of my commands:")
       .addFields(categories)
       .setDescription(
         `Use \`${p}help\` followed by a command name to get more additional information on a command. For example: \`${p}help ban\`.\n[Click me for more infomation about channel setup.](https://docs.google.com/document/d/e/2PACX-1vQRe2heaWL-9xyUg0obA470GZvUqwiZ8aFVBiuo1-boN8N-rvSW6-Pi7l88HjFMgu86a_uHe_L_0UEi/pub)`
