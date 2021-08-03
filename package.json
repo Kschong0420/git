@@ -45,6 +45,7 @@
     "google-play-scraper": "^8.0.2",
     "hmtai": "^2.0.4",
     "imdb-api": "^4.4.1",
+    "jikan-node": "^1.2.1",
     "jumble-words": "^1.0.1",
     "kitsu.js": "^2.0.0",
     "lyrics-finder": "^21.7.0",

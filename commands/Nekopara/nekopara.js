@@ -1,10 +1,10 @@
 const Discord = require('discord.js')
 
 module.exports = {
-  name: 'character',
+  name: 'nekopara',
   cooldown: 30,
   description: 'Nekopara introduction.',
-  usage: 'character',
+  usage: 'nekopara',
   category: 'Nekopara',
 
   execute (client, message, args) {
