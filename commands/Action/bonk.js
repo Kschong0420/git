@@ -2,10 +2,10 @@ const Discord = require('discord.js');
 const fetch = require("node-fetch");
 
 module.exports = {
-    name: "handhold",
+    name: "bonk",
     category: "Action",
-    description: "Hold someone hand!",
-    usage: "handhold <username>",
+    description: "Kill someone!",
+    usage: "bonk <username>",
     cooldown: 7,
     async execute(client, message, args) {
         try {
@@ -13,14 +13,14 @@ module.exports = {
             const author = message.author.username;
             const user = message.mentions.users.first().username
             if (!user) return message.lineReplyNoMention("Please mention someone.")
-            if (check.id === message.author.id) return message.lineReplyNoMention('Hold yourself hand is bored LOL.')
-            const res = await fetch('https://waifu.pics/api/sfw/handhold');
+            if (check.id === message.author.id) return message.lineReplyNoMention('Don\'t bonk yourself.')
+            const res = await fetch('https://waifu.pics/api/sfw/bonk');
             const img = (await res.json()).url;
-            const handhold = new Discord.MessageEmbed()
-                .setTitle(`**${author}** is holding **${user}**'s hand! (>///<")`, true)
+            const bonk = new Discord.MessageEmbed()
+                .setTitle(`**${user}** has been bonked by **${author}** <:bonk:873652209345253426>`, true)
                 .setImage(img)
                 .setColor('#FF1493')
-            message.lineReplyNoMention(handhold);
+            message.lineReplyNoMention(bonk);
         } catch (error) {
             console.log(error);
             return message.lineReplyNoMention('Please mention someone.')

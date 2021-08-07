@@ -2,21 +2,21 @@ const Discord = require('discord.js');
 const fetch = require("node-fetch");
 
 module.exports = {
-    name: "sleep",
+    name: "dance",
     category: "Action",
-    description: "Goodnight.",
-    usage: "sleep",
+    description: "It's my showtime!",
+    usage: "dance",
     cooldown: 7,
     async execute(client, message, args) {
         try {
             const author = message.author.username;
-            const res = await fetch('https://shiro.gg/api/images/sleep');
+            const res = await fetch('https://waifu.pics/api/sfw/dance');
             const img = (await res.json()).url;
-            const sleep = new Discord.MessageEmbed()
-                .setTitle(`**${author}** is sleeping tight :3`, true)
+            const dance = new Discord.MessageEmbed()
+                .setTitle(`**${author}** is dancing >///<`, true)
                 .setImage(img)
                 .setColor('#4B0082')
-            message.lineReplyNoMention(sleep);
+            message.lineReplyNoMention(dance);
         } catch (error) {
             console.log(error);
             return message.lineReplyNoMention('An error occured.')

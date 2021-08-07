@@ -2,10 +2,10 @@ const Discord = require('discord.js');
 const fetch = require("node-fetch");
 
 module.exports = {
-    name: "handhold",
+    name: "wave",
     category: "Action",
-    description: "Hold someone hand!",
-    usage: "handhold <username>",
+    description: "Kill someone!",
+    usage: "wave <username>",
     cooldown: 7,
     async execute(client, message, args) {
         try {
@@ -13,14 +13,14 @@ module.exports = {
             const author = message.author.username;
             const user = message.mentions.users.first().username
             if (!user) return message.lineReplyNoMention("Please mention someone.")
-            if (check.id === message.author.id) return message.lineReplyNoMention('Hold yourself hand is bored LOL.')
-            const res = await fetch('https://waifu.pics/api/sfw/handhold');
+            if (check.id === message.author.id) return message.lineReplyNoMention('You want to wave to air?')
+            const res = await fetch('https://waifu.pics/api/sfw/wave');
             const img = (await res.json()).url;
-            const handhold = new Discord.MessageEmbed()
-                .setTitle(`**${author}** is holding **${user}**'s hand! (>///<")`, true)
+            const wave = new Discord.MessageEmbed()
+                .setTitle(`**${author}** is waving to **${user}** owo`, true)
                 .setImage(img)
                 .setColor('#FF1493')
-            message.lineReplyNoMention(handhold);
+            message.lineReplyNoMention(wave);
         } catch (error) {
             console.log(error);
             return message.lineReplyNoMention('Please mention someone.')
