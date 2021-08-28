@@ -25,7 +25,7 @@ module.exports = {
             .setColor('RANDOM')
             .setTimestamp(date)
             //.setFooter(`${moment(time).fromNow()} |  ${snipe - 1} / ${snipes.length}`)
-            .setFooter(`Get sniped lol |  ${snipe + 1} / ${snipes.length}`)
+            .setFooter(`Get sniped lol  |  ${snipe + 1} / ${snipes.length}`)
         )
     } //that should be it, now lets test it !
 }

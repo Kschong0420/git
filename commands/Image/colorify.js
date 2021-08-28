@@ -20,7 +20,7 @@ module.exports = {
             .setTitle("Colored Picture Of " + pinged.username)
             .setImage(image)
             .setColor(color.toUpperCase())
-            .setFooter("If the color shown is just grey, it is not supported.")
+            .setFooter("If the color shown is just grey or didn't show anything means it is not supported.")
 
         message.lineReplyNoMention(em)
     }

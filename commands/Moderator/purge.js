@@ -37,10 +37,10 @@ module.exports = {
 
 
 
-            if (!args[0] || !args.length) return message.channel.send(embd);
+            if (!args[0] || !args.length) return message.lineReplyNoMention(embd);
             let amount = Number(args[0], 10) || parseInt(args[0]);
-            if (isNaN(amount) || !Number.isInteger(amount)) return message.channel.send("Please enter a number of messages to purge.");
-            if (!amount || amount < 2 || amount > 100) return message.channel.send("Please enter a number of message between 2 and 100.")
+            if (isNaN(amount) || !Number.isInteger(amount)) return message.lineReplyNoMention("Please enter a number of messages to purge.");
+            if (!amount || amount < 2 || amount > 100) return message.lineReplyNoMention("Please enter a number of message between 2 and 100.")
             if (!args[1]) {
 
                 try {
@@ -51,12 +51,12 @@ module.exports = {
                             .setColor('0x#00ffff')
                             .setDescription(`✅  Cleared **${m.size}**/**${amount}** messages!`);
 
-                        message.channel.send(embed).then(msg => msg.delete({ timeout: 4000 }));
+                        message.lineReplyNoMention(embed).then(msg => msg.delete({ timeout: 4000 }));
                     })
 
                 } catch (e) {
                     console.log(e)
-                    message.channel.send(`You can only delete the messages which are not older than 14 days.`)
+                    message.lineReplyNoMention(`You can only delete the messages which are not older than 14 days.`)
 
 
                 }
@@ -81,12 +81,12 @@ module.exports = {
                                     .setColor('0x#00ffff')
                                     .setDescription(`✅  Cleared **${m.size}**/**${amount}** messages!`);
 
-                                message.channel.send(embed).then(msg => msg.delete({ timeout: 50000 }));
+                                message.lineReplyNoMention(embed).then(msg => msg.delete({ timeout: 50000 }));
                             })
 
                         } catch (e) {
                             console.log(e)
-                            message.channel.send(`You can only delete the messages which are not older than 14 days.`)
+                            message.lineReplyNoMention(`You can only delete the messages which are not older than 14 days.`)
                         }
 
                         break;
@@ -105,12 +105,12 @@ module.exports = {
                                     .setColor('0x#00ffff')
                                     .setDescription(`✅  Cleared **${m.size}**/**${amount}** messages!`);
 
-                                message.channel.send(embed).then(msg => msg.delete({ timeout: 50000 }));
+                                message.lineReplyNoMention(embed).then(msg => msg.delete({ timeout: 50000 }));
                             })
 
                         } catch (e) {
                             console.log(e)
-                            message.channel.send(`You can only delete the messages which are not older than 14 days.`)
+                            message.lineReplyNoMention(`You can only delete the messages which are not older than 14 days.`)
                         }
 
                         break;
@@ -129,12 +129,12 @@ module.exports = {
                                     .setColor('0x#00ffff')
                                     .setDescription(`✅  Cleared **${m.size}**/**${amount}** messages!`);
 
-                                message.channel.send(embed).then(msg => msg.delete({ timeout: 50000 }));
+                                message.lineReplyNoMention(embed).then(msg => msg.delete({ timeout: 50000 }));
                             })
 
                         } catch (e) {
                             console.log(e)
-                            message.channel.send(`You can only delete the messages which are not older than 14 days.`)
+                            message.lineReplyNoMention(`You can only delete the messages which are not older than 14 days.`)
                         }
 
                         break;
@@ -153,12 +153,12 @@ module.exports = {
                                     .setColor('0x#00ffff')
                                     .setDescription(`✅  Cleared **${m.size}**/**${amount}** messages!`);
 
-                                message.channel.send(embed).then(msg => msg.delete({ timeout: 50000 }));
+                                message.lineReplyNoMention(embed).then(msg => msg.delete({ timeout: 50000 }));
                             })
 
                         } catch (e) {
                             console.log(e)
-                            message.channel.send(`You can only delete the messages which are not older than 14 days.`)
+                            message.lineReplyNoMention(`You can only delete the messages which are not older than 14 days.`)
                         }
 
                         break; case "text":
@@ -176,12 +176,12 @@ module.exports = {
                                     .setColor('0x#00ffff')
                                     .setDescription(`✅  Cleared **${m.size}**/**${amount}** messages!`);
 
-                                message.channel.send(embed).then(msg => msg.delete({ timeout: 50000 }));
+                                message.lineReplyNoMention(embed).then(msg => msg.delete({ timeout: 50000 }));
                             })
 
                         } catch (e) {
                             console.log(e)
-                            message.channel.send(`You can only delete the messages which are not older than 14 days.`)
+                            message.lineReplyNoMention(`You can only delete the messages which are not older than 14 days.`)
                         }
 
                         break;
@@ -200,12 +200,12 @@ module.exports = {
                                     .setColor('0x#00ffff')
                                     .setDescription(`✅  Cleared **${m.size}**/**${amount}** messages!`);
 
-                                message.channel.send(embed).then(msg => msg.delete({ timeout: 50000 }));
+                                message.lineReplyNoMention(embed).then(msg => msg.delete({ timeout: 50000 }));
                             })
 
                         } catch (e) {
                             console.log(e)
-                            message.channel.send(`You can only delete the messages which are not older than 14 days.`)
+                            message.lineReplyNoMention(`You can only delete the messages which are not older than 14 days.`)
                         }
 
                         break;
@@ -224,12 +224,12 @@ module.exports = {
                                     .setColor('0x#00ffff')
                                     .setDescription(`✅  Cleared **${m.size}**/**${amount}** messages!`);
 
-                                message.channel.send(embed).then(msg => msg.delete({ timeout: 50000 }));
+                                message.lineReplyNoMention(embed).then(msg => msg.delete({ timeout: 50000 }));
                             })
 
                         } catch (e) {
                             console.log(e)
-                            message.channel.send(`You can only delete the messages which are not older than 14 days.`)
+                            message.lineReplyNoMention(`You can only delete the messages which are not older than 14 days.`)
                         }
 
                         break;
@@ -237,7 +237,7 @@ module.exports = {
                         msg = await message.channel.messages.fetch({ limit: amount })
                         data = []
                         msg.map(m => m).forEach(ms => {
-                            if (!args[2]) return message.channel.send(embd);
+                            if (!args[2]) return message.lineReplyNoMention(embd);
                             if (ms.content.includes(args.slice(2).join(" ")) && !ms.pinned) data.push(ms)
                         })
 
@@ -250,12 +250,12 @@ module.exports = {
                                     .setColor('0x#00ffff')
                                     .setDescription(`✅  Cleared **${m.size}**/**${amount}** messages!`);
 
-                                message.channel.send(embed).then(msg => msg.delete({ timeout: 50000 }));
+                                message.lineReplyNoMention(embed).then(msg => msg.delete({ timeout: 50000 }));
                             })
 
                         } catch (e) {
                             console.log(e)
-                            message.channel.send(`You can only delete the messages which are not older than 14 days.`)
+                            message.lineReplyNoMention(`You can only delete the messages which are not older than 14 days.`)
                         }
 
                         break;
@@ -263,7 +263,7 @@ module.exports = {
                         msg = await message.channel.messages.fetch({ limit: amount })
                         data = []
                         msg.map(m => m).forEach(ms => {
-                            if (!args[2]) return message.channel.send(embd);
+                            if (!args[2]) return message.lineReplyNoMention(embd);
                             if (!ms.content.includes(args.slice(2).join(" ")) && !ms.pinned) data.push(ms)
                         })
 
@@ -275,12 +275,12 @@ module.exports = {
                                     .setColor('0x#00ffff')
                                     .setDescription(`✅  Cleared **${m.size}**/**${amount}** messages!`);
 
-                                message.channel.send(embed).then(msg => msg.delete({ timeout: 50000 }));
+                                message.lineReplyNoMention(embed).then(msg => msg.delete({ timeout: 50000 }));
                             })
 
                         } catch (e) {
                             console.log(e)
-                            message.channel.send(`You can only delete the messages which are not older than 14 days.`)
+                            message.lineReplyNoMention(`You can only delete the messages which are not older than 14 days.`)
                         }
 
                         break;
@@ -288,7 +288,7 @@ module.exports = {
                         msg = await message.channel.messages.fetch({ limit: amount })
                         data = []
                         msg.map(m => m).forEach(ms => {
-                            if (!args[2]) return message.channel.send(embd);
+                            if (!args[2]) return message.lineReplyNoMention(embd);
                             if (ms.content.startsWith(args.slice(2).join(" ")) && !ms.pinned) data.push(ms)
                         })
 
@@ -300,12 +300,12 @@ module.exports = {
                                     .setColor('0x#00ffff')
                                     .setDescription(`✅  Cleared **${m.size}**/**${amount}** messages!`);
 
-                                message.channel.send(embed).then(msg => msg.delete({ timeout: 50000 }));
+                                message.lineReplyNoMention(embed).then(msg => msg.delete({ timeout: 50000 }));
                             })
 
                         } catch (e) {
                             console.log(e)
-                            message.channel.send(`You can only delete the messages which are not older than 14 days.`)
+                            message.lineReplyNoMention(`You can only delete the messages which are not older than 14 days.`)
                         }
 
                         break;
@@ -313,7 +313,7 @@ module.exports = {
                         msg = await message.channel.messages.fetch({ limit: amount })
                         data = []
                         msg.map(m => m).forEach(ms => {
-                            if (!args[2]) return message.channel.send(embd);
+                            if (!args[2]) return message.lineReplyNoMention(embd);
                             if (ms.content.endsWith(args.slice(2).join(" ")) && !ms.pinned) data.push(ms)
                         })
 
@@ -325,26 +325,26 @@ module.exports = {
                                     .setColor('0x#00ffff')
                                     .setDescription(`✅  Cleared **${m.size}**/**${amount}** messages!`);
 
-                                message.channel.send(embed).then(msg => msg.delete({ timeout: 50000 }));
+                                message.lineReplyNoMention(embed).then(msg => msg.delete({ timeout: 50000 }));
                             })
 
                         } catch (e) {
                             console.log(e)
-                            message.channel.send(`You can only delete the messages which are not older than 14 days.`)
+                            message.lineReplyNoMention(`You can only delete the messages which are not older than 14 days.`)
                         }
 
                         break;
                     default:
-                        return message.channel.send(embd)
+                        return message.lineReplyNoMention(embd)
                         break;
                 }
 
             } else {
-                return message.channel.send(`An error occoured.`)
+                return message.lineReplyNoMention(`An error occoured.`)
             }
         } catch (error) {
             console.log(error)
-            message.channel.send(`An error occurred: \`${error}\``)
+            message.lineReplyNoMention(`An error occurred: \`${error}\``)
         }
 
 
