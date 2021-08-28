@@ -1,77 +1,59 @@
-const guildNumber = new Map();
-const guildAttempts = new Map();
-
-function guildNumberMap(message) {
-    const guildId = message.guild.id;
-
-    var number = Math.floor(Math.random() * 100) + 1;
-    // If there is no command running map for the guild, create one
-    if (!guildNumber.get(guildId)) {
-        guildNumber.set(guildId, number);
-    }
-}
-
-function guildAttemptsMap(message) {
-    const guildId = message.guild.id;
-    // If there is no command running map for the guild, create one
-    if (!guildAttempts.get(guildId)) {
-        guildAttempts.set(guildId, { attempts: 1 });
-    } else {
-        guildAttempts.get(guildId).attempts++;
-    }
-}
+const { MessageCollector, MessageEmbed } = require('discord.js');
 
 module.exports = {
-    name: "numberguess",
-    aliases: ["ng", "nbg", "number", "numbguess", "numb", "no.", "no.guess"],
-    cooldown: 1,
-    description: 'Guess a number between 1 to 100.',
-    usage: 'numberguess \`then\` v numberguess <value 1 to 100>',
+    name: 'guessthenumber',
+    aliases: ['gtn', 'numberguess', 'nbg'],
+    description: 'Play guess the number',
+    usage: 'gtn `then` <number>',
     category: 'Game',
-    async execute(client, message, args, Discord) {
-        const { member, channel, guild } = message;
+    cooldown: 15,
+    
+    async execute(client, message, args) {
+        let number = Math.ceil(Math.random() * 10000);
+        //console.log(number)
+        let finished = false;
 
-        const provideaguess = new Discord.MessageEmbed()
-            .setColor('#F30B04')
-            .setDescription(`**❌ Please provide a guess!**`)
+        message.channel.send(
+            new MessageEmbed()
+            .setTitle(`Guess The Number`)
+            .setDescription(`Guess a number (1-10000), you have \`2 minutes\`.`)
+            .setColor('RANDOM')
+            .setFooter(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
+            .setTimestamp()
+        )
 
-        const pickinganumber = new Discord.MessageEmbed()
-            .setColor('#33F304')
-            .setDescription('**Picking a number between 1 and 100**')
+        let collector = new MessageCollector(message.channel, msg => msg.author.id == message.author.id, {
+            time: 120000,
+        });
 
+        let tries = 0;
 
+        collector.on('collect', async(msg) => {
+            if(finished == false) {
+                let split = msg.content.split(/ +/);
+                let attempt = split.shift();
 
-        await guildNumberMap(message);
-        await guildAttemptsMap(message);
+                if(isNaN(attempt)) return message.lineReply(`${attempt} is not a number.`);
 
-        console.log(guildNumber.get(guild.id))
-
-        let guess = args[0];
-        if (!guess && guildAttempts.get(guild.id).attempts === 1) {
-            return channel.send(pickinganumber)
-        } else if (!guess) {
-            return channel.send(provideaguess);
-        }
-
-        if (+guess === guildNumber.get(guild.id)) {
-            let attempts = guildAttempts.get(guild.id);
-
-            const guessedthenumber = new Discord.MessageEmbed()
-                .setColor('#33F304')
-                .setDescription(`✅ Perfect, <@${member.id}>the number was ${guildNumber.get(guild.id)}, it only took you ${attempts.attempts} attempts!`)
-
-            channel.send(guessedthenumber);
-            guildNumber.delete(guild.id);
-            guildAttempts.delete(guild.id);
-
-
-            return;
-        } else if (+ guess < guildNumber.get(guild.id)) {
-            return message.reply(`${guess} Is too low!`);
-        } else if (+guess > guildNumber.get(guild.id)) {
-            return message.reply(`${guess} Is too high!`);
-        } else {
-            return message.reply("Invalid number please try again");
-        }
-    },
-};
+                tries++;
+    
+                if(parseInt(attempt) !== number) return message.lineReplyNoMention(`${parseInt(msg)} is too **${parseInt(msg) < number ? 'low' : 'high'}**.`)
+    
+                finished = true;
+    
+                message.lineReplyNoMention(
+                    new MessageEmbed()
+                    .setTitle(`You Won!`)
+                    .setDescription(`The answer is \`${parseInt(msg)}\`.\nIt took you \`${tries}\` times to get it!`)
+                    .setFooter(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
+                    .setTimestamp()
+                    .setColor('GREEN')
+                )
+            }
+        });
+        
+        collector.on('end', async(collected) => {
+            if(finished == false) return message.lineReplyNoMention(`You timed out! The answer was \`${number}\`.`);
+        });
+    }
+}
