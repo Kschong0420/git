@@ -28,9 +28,6 @@ client.commands = new Discord.Collection()
 client.events = new Discord.Collection()
 client.discordTogether = new DiscordTogether(client);
 client.categories = fs.readdirSync("./commands/");
-["command_handler"].forEach(handler => {
-  require(`./handlers/${handler}`)(client);
-});
 
 ['command_handler', 'event_handler'].forEach(handler => {
   require(`./handlers/${handler}`)(client, Discord)
