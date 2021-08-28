@@ -12,7 +12,7 @@ module.exports = {
 
         try {
             const emoji =
-                message.guild.emojis.cache.find(x => x.name === args[0].split(":")[1]).url
+                client.emojis.cache.find(x => x.name === args[0].split(":")[1]).url
 
             let em = new Discord.MessageEmbed()
                 .setImage(`https://api.popcat.xyz/gun?image=${emoji}`)
