@@ -4,7 +4,7 @@ module.exports = {
     name: "id",
     aliases: ["userid"],
     description: "Display a user ID",
-    usage: "id <username>",
+    usage: "id [username]",
     type: "Info",
     cooldown: 3,
     async execute(client, message, args) {
