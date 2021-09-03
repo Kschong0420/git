@@ -58,6 +58,7 @@
     "node-osu": "^2.2.1",
     "node-superfetch": "^0.1.11",
     "parse-ms": "^2.1.0",
+    "pet-pet-gif": "^1.0.9",
     "pokecord": "^1.0.0",
     "pokedex-promise-v2": "^3.3.0",
     "querystring": "^0.2.1",
