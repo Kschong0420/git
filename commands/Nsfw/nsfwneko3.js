@@ -20,9 +20,7 @@ module.exports = {
                     message.lineReplyNoMention(embed);
                 });
         } catch (err) {
-            if (bot.config.debug) bot.logger.error(`${err.message} - command: hneko.`);
-            message.lineReplyNoMention({ embed: { color: 15158332, description: `${emojis[0]} An error occured when running this command, please try again or contact support.` } }).then(m => m.delete({ timeout: 5000 }));
-            message.delete();
+            message.lineReplyNoMention('An error occured when running this command, please try again or contact support.')
         }
     }
 };
