@@ -17,7 +17,7 @@ module.exports = {
         const user = song.user.tag
         const avatar = song.user.displayAvatarURL({ dynamic: true, format: "png" })
         const link = song.url
-        const time = song.duration * 1000
+        const time = song.duration 
         const currenttime = queue.currentTime
         const tn = song.thumbnail
         const remaining = (time - currenttime) < 0 ? "◉ LIVE" : time - currenttime
@@ -27,10 +27,12 @@ module.exports = {
                 .setAuthor(user, avatar)
                 .setTitle(name)
                 .setURL(`${link}`)
-                .setDescription(`${createBar(time === 0 ? currenttime : time, currenttime, 10)[0]} \`[${queue.formattedCurrentTime}/${song.formattedDuration}]\`\n` +
+                .setDescription(`${createBar.splitBar(time === 0 ? currenttime : time, currenttime, 10)[0]} \`[${queue.formattedCurrentTime}/${song.formattedDuration}]\`\n` +
                 `${":pause_button:"} ${time === 0 ? "" : `| Time Remaining: \`${toColonNotation(remaining)}\``}`)
                 .setThumbnail(`${tn}`)
             message.channel.send(embed)
+            message.channel.send(queue.currentTime)
+            message.channel.send(time)
         } catch (e) {
             message.channel.send(`An error occured.\n\`${e}\``)
         }

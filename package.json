@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "@discordjs/opus": "^0.4.0",
+    "@discordjs/voice": "^0.6.0",
     "@distube/spotify": "^0.4.0",
     "@freezegold/anime.js": "^2.0.5-beta",
     "@iamtraction/google-translate": "^1.1.2",
@@ -23,6 +24,7 @@
     "atob": "^2.1.2",
     "axios": "^0.21.1",
     "canvacord": "^5.1.0",
+    "canvas": "^2.8.0",
     "cheerio": "^1.0.0-rc.5",
     "colon-notation": "^1.2.1",
     "common-tags": "^1.8.0",
@@ -67,14 +69,14 @@
     "request-promise-native": "^1.0.9",
     "snekfetch": "^4.0.4",
     "something-random-on-discord": "^3.1.2",
-    "string-progressbar": "^1.0.3",
+    "string-progressbar": "^1.0.4",
     "superagent": "^6.1.0",
     "twitter-api.js": "0.0.12",
     "txtgen": "^2.2.8",
     "weather-js": "^2.0.0",
     "weky": "^1.4.1",
     "wikijs": "^6.2.1",
-    "ytdl-core": "^4.9.0",
+    "ytdl-core": "github:skick1234/node-ytdl-core",
     "ytsr": "^3.3.1"
   },
   "devDependencies": {
