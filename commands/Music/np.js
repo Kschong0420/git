@@ -28,11 +28,12 @@ module.exports = {
                 .setTitle(name)
                 .setURL(`${link}`)
                 .setDescription(`${createBar.splitBar(time === 0 ? currenttime : time, currenttime, 10)[0]} \`[${queue.formattedCurrentTime}/${song.formattedDuration}]\`\n` +
-                `${":pause_button:"} ${time === 0 ? "" : `| Time Remaining: \`${toColonNotation(remaining)}\``}`)
+                `${":pause_button:"} ${time === 0 ? "" : `| Time Remaining: \`${toColonNotation(remaining * 1000)}\``}`)
                 .setThumbnail(`${tn}`)
             message.channel.send(embed)
-            message.channel.send(queue.currentTime)
-            message.channel.send(time)
+            //message.channel.send(queue.currentTime)
+            //message.channel.send(time)
+            //message.channel.send(remaining)
         } catch (e) {
             message.channel.send(`An error occured.\n\`${e}\``)
         }
