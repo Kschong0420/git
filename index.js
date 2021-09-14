@@ -2,6 +2,7 @@ const Discord = require('discord.js')
 const DisTube = require("distube")
 const SpotifyPlugin = require("@distube/spotify")
 const { DiscordTogether } = require('discord-together');
+const COOKIE = 'VISITOR_INFO1_LIVE=PJ-cy0fWchw; LOGIN_INFO=AFmmF2swRQIgFfOTwn4F8j-RW5jEyDnCGR7e5ROObMTxq-Busg2YAxwCIQDDrnHLWtAWGur1u_JDgBw6Z0iT0429hH0wc-256NTeCw:QUQ3MjNmeVFZU1ZqMEFQVllpYktNU0hEMUQ5VWV5OVpyb01FczM4VlpqUTF6U2haMFhTN0FobWtQd2tSaHE3RnhVUnp5YW1IaWZLOUltcWVfLV9ZeTFWTWItdE1lRXVVUHNBWWZWR3hXMjJiR1FEMDRJZlJ0Zk9jVUxpMURrTlJkZWRycV9VQk5FNVpBWHN3OXhkS1BmbkpkWmkyc3JHUWNR; HSID=AHNA1recyiv661Bj1; SSID=AYMtvlAKe1wfVORLY; APISID=tL1GbsUEOLxVgjGk/A3bR0kz74U-prSAyS; SAPISID=UGxZKBVIa_BL1Mdu/A4E3rq13X_zRO_lUg; __Secure-1PAPISID=UGxZKBVIa_BL1Mdu/A4E3rq13X_zRO_lUg; __Secure-3PAPISID=UGxZKBVIa_BL1Mdu/A4E3rq13X_zRO_lUg; SID=BAjmVznnI-ZUz1Ffzg_AkF58xI9M2BPCPjVanBwOhTpR8gTTjO7uJcY-hAn-qqdyoTpmZg.; __Secure-1PSID=BAjmVznnI-ZUz1Ffzg_AkF58xI9M2BPCPjVanBwOhTpR8gTTdXdakgC67s_DefmlstZBYQ.; __Secure-3PSID=BAjmVznnI-ZUz1Ffzg_AkF58xI9M2BPCPjVanBwOhTpR8gTT8xgui1FlCmjb0wIJ0jubVw.; PREF=f4=4000000&tz=Asia.Singapore&f5=30000&f6=400; YSC=9f4dVQm0nyE; CONSISTENCY=AGDxDeOnPWxQcUksxpU1JiRWcdu4O-eSYADgVCW0ugesYL-0y2LqGFa2MHFxQ9CEN1yYpey6eE4KggUPwyh7oUkPjWBIkLN30Yr9_ngKzcB6XPxdDQPvYYLzsriPOvq9kcNSoPGJKXSWWYeAM-1vWWU2; SIDCC=AJi4QfGLjMfuLg2qivPetjJJsY-RaXKPoNKf3ZmpD0V0EouQlRjP1Q2eSQROsJDnxFUrvQdoVT8; __Secure-3PSIDCC=AJi4QfFA3gHXNb-rd-LEBiu1SzdnHHckmAbzV7DFY6IRZYw-VM1SSvh3VfJlSeqYCEz3G38fhEpX'
 require('dotenv').config()
 const inlinereply = require('discord-reply')
 const client = new Discord.Client({
@@ -19,7 +20,7 @@ const { GiveawaysManager } = require("discord-giveaways");
 const memberCounter = require('./counters/member-counter')
 const config = require("./config.json");
 const { id } = require('common-tags');
-client.distube = new DisTube(client, { searchSongs: 15, emitNewSongOnly: true, leaveOnFinish: false, leaveOnEmpty: false, emptyCooldown: 10000, plugins: [new SpotifyPlugin({ parallel: true })] })
+client.distube = new DisTube(client, { searchSongs: 15, emitNewSongOnly: true, leaveOnFinish: false, leaveOnEmpty: false, emptyCooldown: 10000, youtubeCookie = COOKIE, plugins: [new SpotifyPlugin({ parallel: true })] })
 client.emotes = config.emoji
 client.aliases = new Discord.Collection()
 client.snipes = new Discord.Collection()
