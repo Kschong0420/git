@@ -20,7 +20,7 @@ const { GiveawaysManager } = require("discord-giveaways");
 const memberCounter = require('./counters/member-counter')
 const config = require("./config.json");
 const { id } = require('common-tags');
-client.distube = new DisTube(client, { searchSongs: 15, emitNewSongOnly: true, leaveOnFinish: false, leaveOnEmpty: false, emptyCooldown: 10000, youtubeCookie = COOKIE, plugins: [new SpotifyPlugin({ parallel: true })] })
+client.distube = new DisTube(client, { youtubeCookie: COOKIE, searchSongs: 15, emitNewSongOnly: true, leaveOnFinish: false, leaveOnEmpty: false, emptyCooldown: 10000, plugins: [new SpotifyPlugin({ parallel: true })] })
 client.emotes = config.emoji
 client.aliases = new Discord.Collection()
 client.snipes = new Discord.Collection()
