@@ -5,7 +5,7 @@ module.exports = {
     name: "yaoi",
     cooldown: 7,
     description: 'Return a random yaoi picture.',
-    aliases: ['nsfwyaoi'],
+    aliases: ['nsfwyaoi', 'nyaoi'],
     usage: 'yaoi',
     category: 'NSFW',
 
