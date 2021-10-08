@@ -1,8 +1,8 @@
 const { MessageEmbed } = require('discord.js');
 const translate = require('@iamtraction/google-translate')
 module.exports = {
-    name: 'translate2',
-    aliases: ['t2', 'tl2'],
+    name: 'translate',
+    aliases: ['tl'],
     cooldown: 3,
     description: 'Translate a sentence.',
     usage: 'translate2 <language> <word>',
