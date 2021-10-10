@@ -6,7 +6,7 @@ module.exports = {
     aliases: ["l", "lyrics", "lyr"],
     cooldown: 15,
     description: 'Show a song lyric.',
-    usage: 'lyric <artist> \`then type\` <song name>',
+    usage: 'lyric [artist] \`then type\` <song name>',
     category: 'Music',
     async execute(client, message, args, Discord) {
 

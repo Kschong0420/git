@@ -5,7 +5,7 @@ module.exports = {
     aliases: ["l2", "lyrics2", "lyr2"],
     cooldown: 15,
     description: 'Show a song lyric.',
-    usage: 'lyric <artist> \`then type\` <song name>',
+    usage: 'lyric <song name>',
     category: 'Music',
     async execute(client, message, args) {
         const song = args.join(" ")
