@@ -488,9 +488,29 @@ client.on('guildMemberAdd', user => {
 }
 )
 
+//guild member join server
+client.on('guildMemberAdd', async user => {
+  const logchannel = user.guild.channels.cache.find(ch => ch.name === 'velcome')
+  if (!logchannel) return
+  logchannel.send(`**${user.user.tag}** has joined the server.`)
+})
+
 //guild member leave server
 client.on('guildMemberRemove', async user => {
   const logchannel = user.guild.channels.cache.find(ch => ch.name === 'leave')
+  if (!logchannel) return
+  logchannel.send(`**${user.user.tag}** has left the server.`)
+})
+
+//guild member join and leave server
+client.on('guildMemberAdd', async user => {
+  const logchannel = user.guild.channels.cache.find(ch => ch.name === 'join-leave')
+  if (!logchannel) return
+  logchannel.send(`**${user.user.tag}** has joined the server.`)
+})
+
+client.on('guildMemberRemove', async user => {
+  const logchannel = user.guild.channels.cache.find(ch => ch.name === 'join-leave')
   if (!logchannel) return
   logchannel.send(`**${user.user.tag}** has left the server.`)
 })
