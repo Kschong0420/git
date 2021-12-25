@@ -20,6 +20,7 @@
     "amethyste-api": "^1.1.5",
     "animequote": "^1.1.1",
     "app-store-scraper": "^0.17.0",
+    "array-move-item": "^1.0.0",
     "atob": "^2.1.2",
     "axios": "^0.21.1",
     "canvacord": "^5.1.0",
@@ -73,9 +74,9 @@
     "twitter-api.js": "0.0.12",
     "txtgen": "^2.2.8",
     "weather-js": "^2.0.0",
-    "weky": "^1.4.1",
+    "weky": "^1.9.8",
     "wikijs": "^6.2.1",
-    "ytdl-core": "github:skick1234/node-ytdl-core",
+    "ytdl-core": "github:kabirsingh2004/node-ytdl-core",
     "ytsr": "^3.3.1"
   },
   "devDependencies": {
