@@ -18,7 +18,7 @@ module.exports = {
             const user = args.join(' ')
             if (!user) return message.lineReplyNoMention("Please specify an osu username.")
             const au = await osuApi.getUser({ u: user, m: '2' })
-            osuApi.getUserRecent({ u: args[0] }).then(scores => {
+            osuApi.getUserRecent({ u: args[0], m: '2' }).then(scores => {
                 const recent = new Discord.MessageEmbed()
                     .setTitle(`${user}'s Recent Playing Record in Ctb Mode`)
                     .setColor('#FF1493')
