@@ -27,7 +27,7 @@ so no need worry about your infomation leak to other places,
 if you really feel unsafety about the bot, pls dm the bot owner.
 
 # Bot owner
-Vanilla bot creator is Vanilla#2121, if got any problem please dm him.
+Vanilla bot creator is Vanilla#7530, if got any problem please dm him.
   
 # Invite bot link
 https://discord.com/oauth2/authorize?client_id=814038095128166400&scope=bot&permissions=8589934591
