@@ -3,6 +3,7 @@ const Discord = require("discord.js")
 module.exports = {
 	name: 'emotes',
 	category: 'info',
+	cooldown: 15,
 	description: 'Show the emotes of the guild',
 	async execute(client, message, args) {
 		let emojiArray = [];
