@@ -555,7 +555,7 @@ client.on('messageUpdate', message => {
         .setColor('#fca503')
         .setFooter(`User ID: ${message.author.id}`, message.author.displayAvatarURL({ dynamic: true }))
         .setTimestamp()
-      channel.send(embed29)
+      channel.send({embed: embed29})
     } else return
   }
 })
@@ -576,7 +576,7 @@ client.on('messageDelete', async message => {
     .setThumbnail(message.author.displayAvatarURL({ dynamic: true }))
     .setTimestamp()
     .setFooter(`User ID: ${message.author.id}`, message.author.displayAvatarURL({ dynamic: true }))
-  logchannel.send(embed)
+  logchannel.send({embed: embed})
 })
 
 ///mentioned bot give info

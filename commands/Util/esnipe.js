@@ -21,6 +21,6 @@ module.exports = {
         .setFooter('Get sniped lol')
         if (msg.image) embed.setImage(msg.image)
 
-        message.lineReplyNoMention(embed)
+        message.lineReplyNoMention({embed: embed})
     } //that should be it, now lets test it !
 }

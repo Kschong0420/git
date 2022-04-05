@@ -4,7 +4,7 @@ const { MessageEmbed } = require("discord.js")
 
 module.exports = {
     name: "trace",
-    description: "Trace image and find anime.",
+    description: "Trace gif and find anime, image always shown not correct anime.",
     usage: "trace <image>",
     cooldown: 7,
     category: 'Info',
@@ -19,7 +19,7 @@ module.exports = {
             .catch((err) => {
                 message.channe.send("unable to fetch the image")
             })
-            if (!traceDetails.result.length) return message.channe.send("No resoult found")
+            if (!traceDetails.result.length) return message.channe.send("No result found")
             const animeResult = traceDetails.result[0];
             const animeDetails = await axios
               .post(`https://graphql.anilist.co`, {

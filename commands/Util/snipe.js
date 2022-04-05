@@ -17,15 +17,16 @@ module.exports = {
         if(!target) return message.lineReplyNoMention(`There is only \`${snipes.length}\` messages. `)
 
         const { msg, image, date, time } = target;
-        message.lineReplyNoMention(
-            new Discord.MessageEmbed()
+            const embed = new Discord.MessageEmbed()
             .setAuthor(msg.author.tag, msg.author.displayAvatarURL({ dynamic: true }))
             .setImage(image)
             .setDescription(msg.content)
             .setColor('RANDOM')
             .setTimestamp(date)
             //.setFooter(`${moment(time).fromNow()} |  ${snipe - 1} / ${snipes.length}`)
-            .setFooter(`Get sniped lol  |  ${snipe + 1} / ${snipes.length}`)
-        )
-    } //that should be it, now lets test it !
+            .setFooter(`Get sniped lol  |  ${snipe + 1} / ${snipes.length}`) 
+
+        message.lineReplyNoMention({embed: embed})
+    } 
+    //that should be it, now lets test it !
 }
