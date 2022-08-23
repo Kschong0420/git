@@ -18,6 +18,7 @@ module.exports = {
 
             const embed = new Discord.MessageEmbed()
                 .setImage(json.message)
+                .setColor('ff007f')
             message.lineReplyNoMention(embed);
         } catch (err) {
             return message.lineReplyNoMention('An error occured.')
