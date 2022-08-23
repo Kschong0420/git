@@ -14,5 +14,6 @@ module.exports = {
         if (!message.channel.nsfw) return message.lineReplyNoMention("This command can only be used in channels marked nsfw.")
         const embed = new Discord.MessageEmbed()
         .setImage(body.neko)
+        .setColor('ff007f')
         message.lineReplyNoMention(embed)
   }}

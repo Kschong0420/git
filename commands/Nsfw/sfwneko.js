@@ -13,6 +13,7 @@ module.exports = {
         const embed = new Discord.MessageEmbed()
 
         .setImage(hmtai.neko())
+        .setColor('ff007f')
         message.lineReplyNoMention(embed)
     }
 }

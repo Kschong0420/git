@@ -4,7 +4,7 @@ const hmtai = require("hmtai");
 
 module.exports = {
     name: 'nsfwzettaiRyouiki',
-    aliases: ['nzettaiRyouiki', 'nsfwzr', 'nzr'],
+    aliases: ['nzettaiRyouiki', 'nsfwzr', 'nzr', 'nbutt', 'nsfwbutt'],
     cooldown: 0,
     description: 'That one part of the flesh being squeeze in thigh-highs~<3',
     usage: 'nsfwcreampie',
@@ -14,6 +14,7 @@ module.exports = {
         const embed = new Discord.MessageEmbed()
 
         .setImage(hmtai.nsfw.zettaiRyouiki())
+        .setColor('ff007f')
         message.lineReplyNoMention(embed)
     }
 }

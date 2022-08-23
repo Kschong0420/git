@@ -15,6 +15,7 @@ module.exports = {
             .end((err, response) => {
                 const embed = new Discord.MessageEmbed()
                 .setImage(response.body.url)
+                .setColor('ff007f')
                 
                 message.lineReplyNoMention(embed);
             })

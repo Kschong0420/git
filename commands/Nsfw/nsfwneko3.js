@@ -16,7 +16,8 @@ module.exports = {
                 .query({ type: 'hneko' })
                 .end((err, response) => {
                     const embed = new MessageEmbed()
-                        .setImage(response.body.message);
+                        .setImage(response.body.message)
+                        .setColor('ff007f')
                     message.lineReplyNoMention(embed);
                 });
         } catch (err) {

@@ -14,6 +14,7 @@ module.exports = {
         const embed = new Discord.MessageEmbed()
 
         .setImage(hmtai.nsfw.cuckold())
+        .setColor('ff007f')
         message.lineReplyNoMention(embed)
     }
 }

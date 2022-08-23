@@ -4,7 +4,7 @@ const hmtai = require("hmtai");
 
 module.exports = {
     name: 'nsfwmasturbation',
-    aliases: ['masturbation', 'nsfwmastur', 'mastur', 'nmasturbation', 'nmastur', "nmtbt"],
+    aliases: ['masturbation', 'nsfwmastur', 'mastur', 'nmasturbation', 'nmastur', "nmtbt", "nsfwmasturbate", "masturbate"],
     cooldown: 0,
     description: 'You like lewd solo?~',
     usage: 'nsfwmasturbation',
@@ -14,6 +14,7 @@ module.exports = {
         const embed = new Discord.MessageEmbed()
 
         .setImage(hmtai.nsfw.masturbation())
+        .setColor('ff007f')
         message.lineReplyNoMention(embed)
     }
 }
