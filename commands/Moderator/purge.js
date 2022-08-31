@@ -46,12 +46,12 @@ module.exports = {
                 try {
                     await message.delete()
                     await message.channel.bulkDelete(amount).then(async (m) => {
+                        message.channel.send(`Cleared ${m.size}/${amount} messages!`)
+                        //const embed = new Discord.MessageEmbed()
+                        //    .setColor('0x#00ffff')
+                        //    .setDescription(`✅  Cleared **${m.size}**/**${amount}** messages!`);
 
-                        let embed = new Discord.MessageEmbed()
-                            .setColor('0x#00ffff')
-                            .setDescription(`✅  Cleared **${m.size}**/**${amount}** messages!`);
-
-                        message.lineReplyNoMention(embed).then(msg => msg.delete({ timeout: 4000 }));
+                        //message.lineReplyNoMention(embed)
                     })
 
                 } catch (e) {

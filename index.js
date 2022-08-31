@@ -647,7 +647,7 @@ client.distube
       .addField(`Duration: `, `${song.formattedDuration}`, true)
       .addField(`Settings：`, `${status(queue)}`)
       .setThumbnail(`${song.thumbnail}`)
-    queue.textChannel.send(PlayEmbed)
+    queue.textChannel.send({embed: PlayEmbed})
   })
 
   .on("addSong", (queue, song) => {
